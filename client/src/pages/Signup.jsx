@@ -24,7 +24,9 @@ const Signup = () => {
       const errorData = await response.json();
       throw new Error(errorData.error);
     }
-    toast.success("Registration successful!, Please login");
+    
+    const data = await response.json()
+    toast.success(data.message);
     setEmail("");
     setPassword("");
     setName("");
