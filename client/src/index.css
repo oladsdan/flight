@@ -1,3 +1,7 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.dash {
+  border-top-left-radius: 50px;
+}

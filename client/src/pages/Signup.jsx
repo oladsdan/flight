@@ -1,42 +1,38 @@
-
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import { toast } from "react-toastify";
 
 const Signup = () => {
-
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
- const handleRegister = async (e) => {
-  e.preventDefault();
-  try {
-    const response = await fetch("http://localhost:5000/auth/register", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({ name, email, password }),
-    });
+  const handleRegister = async (e) => {
+    e.preventDefault();
+    try {
+      const response = await fetch("http://localhost:5000/auth/register", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ name, email, password }),
+      });
 
-    if (!response.ok) {
-      const errorData = await response.json();
-      throw new Error(errorData.error);
+      if (!response.ok) {
+        const errorData = await response.json();
+        throw new Error(errorData.error);
+      }
+
+      const data = await response.json();
+      toast.success(data.message);
+      setEmail("");
+      setPassword("");
+      setName("");
+    } catch (error) {
+      toast.error(error.message);
+      console.log(error);
     }
-    
-    const data = await response.json()
-    toast.success(data.message);
-    setEmail("");
-    setPassword("");
-    setName("");
-  } catch (error) {
-    toast.error(error.message);
-    console.log(error);
-  }
-
-
- }
+  };
 
   return (
     <div className="flex justify-center items-center h-screen bg-gray-100">

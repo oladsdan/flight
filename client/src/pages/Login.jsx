@@ -2,14 +2,12 @@ import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 // import { FcGoogle } from "react-icons/fc";
 // import { FaApple } from "react-icons/fa6";
-import {  toast } from 'react-toastify';
-
+import { toast } from "react-toastify";
 
 const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const navigate = useNavigate();
-
 
   const handleLogin = async (e) => {
     e.preventDefault();
@@ -28,19 +26,17 @@ const Login = () => {
       }
 
       const data = await response.json();
-      toast.success('Login successful');
+      toast.success("Login successful");
       setEmail("");
       setPassword("");
       navigate("/");
-      
 
       console.log(data);
     } catch (error) {
       toast.error(error.message);
       console.log(error);
     }
-  }
-
+  };
 
   return (
     <div
@@ -66,7 +62,6 @@ const Login = () => {
               onChange={(e) => setEmail(e.target.value)}
               value={email}
               required
-              
             />
           </div>
           <div className="mb-4">
@@ -80,7 +75,6 @@ const Login = () => {
               onChange={(e) => setPassword(e.target.value)}
               value={password}
               required
-              
             />
           </div>
           <button
@@ -120,8 +114,17 @@ const Login = () => {
             Sign Up
           </Link>
         </p>
+
+        <p className="mt-4 text-center text-sm">
+          Forget Password?{" "}
+          <Link
+            to="/ForgetPassword"
+            className="text-blue-500 hover:underline font-bold"
+          >
+            Click here!
+          </Link>
+        </p>
       </div>
-      
     </div>
   );
 };

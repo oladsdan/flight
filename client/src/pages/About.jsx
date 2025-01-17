@@ -74,8 +74,6 @@ const About = () => {
             Contact Us
           </a>
         </section>
-
-        
       </div>
     </div>
   );
