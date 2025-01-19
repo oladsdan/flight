@@ -15,7 +15,7 @@ import ResetLink from "./pages/ResetLink";
 import EmailVerificationPage from "./pages/EmailVerificationPage";
 // import Logout from "./components/Logout";
 // import Banner from "./components/Banner";
-import AuthContext from "./stateManagement/Auth";
+// import AuthContext from "./stateManagement/Auth";
 
 
 
@@ -24,36 +24,36 @@ import AuthContext from "./stateManagement/Auth";
 
 // protected routes that require authentication
 
-const ProtectedRoute = ({ children }) => {
+// const ProtectedRoute = ({ children }) => {
 
-  const {isAuthenticated, user} = useContext(AuthContext);
+//   const {isAuthenticated, user} = useContext(AuthContext);
 
-  if (!isAuthenticated) {
-    return <Navigate to="/login" replace />;
-  }
+//   if (!isAuthenticated) {
+//     return <Navigate to="/login" replace />;
+//   }
 
-  if (!user.isVerified){
-    return <Navigate to="/email-verification" replace />;
-  }
+//   if (!user.isVerified){
+//     return <Navigate to="/email-verification" replace />;
+//   }
 
-  return children;
+//   return children;
 
 
-}
+// }
 
 //redirect authenticated users and verified users to homepage
 
-const RedirectAuthenticatedUser = ({ children }) => {
+// const RedirectAuthenticatedUser = ({ children }) => {
 
-  const {isAuthenticated, user} = useContext(AuthContext);
+//   const {isAuthenticated, user} = useContext(AuthContext);
 
-  if (isAuthenticated && user.isVerified) {
-    return <Navigate to="/" replace />;
-  }
+//   if (isAuthenticated && user.isVerified) {
+//     return <Navigate to="/" replace />;
+//   }
 
-  return children;
+//   return children;
 
-}
+// }
 
 
 
@@ -70,9 +70,8 @@ function App() {
           <Route path="/login" element={<Login />} />
           <Route path="/signup" element={<Signup />} />
           <Route path="/forgetpassword" element={
-            <RedirectAuthenticatedUser>
+          
               <ForgetPassword />
-            </RedirectAuthenticatedUser>
 
           } />
           <Route path="/reset-password/:token" element={
