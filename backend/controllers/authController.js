@@ -74,8 +74,8 @@ export const login = async(req, res) => {
 
 
 export const verifyEmail = async (req, res) => {
-  const { verificationToken } = req.body;
-  console.log(verificationToken)
+  const { email,  verificationToken } = req.body;
+  
   try{
     // const user = await prisma.user.findUnique({
     //   where: {
@@ -85,14 +85,24 @@ export const verifyEmail = async (req, res) => {
     //     ]
     //   }
     // });
+    // const user = await prisma.user.findFirst({
+    //   where: {
+    //     AND: [
+    //       { verificationToken: verificationToken },
+    //       { verificationTokenExpiresAt: { gt: new Date() } }
+    //     ]
+    //   }
+    // });
+
     const user = await prisma.user.findFirst({
       where: {
-        AND: [
-          { verificationToken: verificationToken },
-          { verificationTokenExpiresAt: { gt: new Date() } }
-        ]
+        email: email,
+        verificationToken: verificationToken,
+        verificationTokenExpiresAt: { gt: new Date() }
       }
     });
+
+
     console.log(user)
 
     if (!user) {
@@ -135,6 +145,8 @@ export const forgotPassword = async (req, res) => {
       data: { resetPasswordToken: resetToken, resetPasswordExpiresAt: resetTokenExpiresAt },
     });
 
+  
+
     if (!updatedUser) {
       return res.status(500).json({ error: 'Unable to reset password' });   
     }
@@ -152,6 +164,7 @@ export const forgotPassword = async (req, res) => {
 export const resetPassword = async (req, res) => {
   try {
     const {token} = req.params;
+    console.log(token)
     const {password} = req.body;
 
     const user = await prisma.user.findFirst({

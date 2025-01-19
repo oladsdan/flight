@@ -1,37 +1,29 @@
-import { useState } from "react";
+import { useState, useContext } from "react";
 import { Link, useNavigate } from "react-router-dom";
 // import { FcGoogle } from "react-icons/fc";
 // import { FaApple } from "react-icons/fa6";
 import { toast } from "react-toastify";
+import AuthContext from "../stateManagement/Auth";
+
 
 const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const navigate = useNavigate();
 
+  const { login } = useContext(AuthContext);
+
   const handleLogin = async (e) => {
     e.preventDefault();
     try {
-      const response = await fetch("http://localhost:5000/auth/login", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({ email, password }),
-      });
-
-      if (!response.ok) {
-        const errorData = await response.json();
-        throw new Error(errorData.error);
-      }
-
-      const data = await response.json();
+  
+       await login(email, password);
       toast.success("Login successful");
       setEmail("");
       setPassword("");
       navigate("/");
 
-      console.log(data);
+  
     } catch (error) {
       toast.error(error.message);
       console.log(error);

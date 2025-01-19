@@ -1,38 +1,45 @@
-import { useState } from "react";
-import { Link } from "react-router-dom";
+import { useState, useContext, useEffect } from "react";
+import { Link} from "react-router-dom";
 import { toast } from "react-toastify";
+import  AuthContext  from "../stateManagement/Auth";
+import { useNavigate } from "react-router-dom";
+
+
 
 const Signup = () => {
+  const { signup, message, user, isLoading, error, setError } = useContext(AuthContext);
+
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const navigate = useNavigate();
 
   const handleRegister = async (e) => {
     e.preventDefault();
     try {
-      const response = await fetch("http://localhost:5000/auth/register", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({ name, email, password }),
-      });
-
-      if (!response.ok) {
-        const errorData = await response.json();
-        throw new Error(errorData.error);
-      }
-
-      const data = await response.json();
-      toast.success(data.message);
+      
+      await signup(name, email, password);
+      // console.log(message);
+      // console.log(user)
+      // toast.success(message);
+      toast.success("Account created successfully. Please verify your email address.");
+      navigate("/email-verification", { state: { email } }, { replace: true });
       setEmail("");
       setPassword("");
       setName("");
+      setError(null);
     } catch (error) {
-      toast.error(error.message);
+      // toast.error(error.message);
       console.log(error);
     }
   };
+
+  useEffect(() => {
+    if (user) {
+      console.log(user);
+     
+    }
+  }, [user, message]);
 
   return (
     <div className="flex justify-center items-center h-screen bg-gray-100">
@@ -76,11 +83,13 @@ const Signup = () => {
               value={password}
             />
           </div>
+          {error && <p className="text-red-500 font-semibold mt-2">{error}</p>}
           <button
             type="submit"
             className="w-full bg-green-500 text-white py-2 rounded-lg hover:bg-green-600"
+            disabled={isLoading}
           >
-            Sign Up
+            {isLoading ? "Registering..." : "Sign Up"}
           </button>
         </form>
 

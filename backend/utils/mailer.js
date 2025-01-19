@@ -1,6 +1,6 @@
 import nodemailer from "nodemailer"
 import dotenv from "dotenv"
-import { PASSWORD_RESET_REQUEST_TEMPLATE, VERIFICATION_EMAIL_TEMPLATE } from "./emailTemplates.js";
+import { PASSWORD_RESET_REQUEST_TEMPLATE, VERIFICATION_EMAIL_TEMPLATE, PASSWORD_RESET_SUCCESS_TEMPLATE  } from "./emailTemplates.js";
 
 dotenv.config();
 
@@ -50,7 +50,7 @@ export const sendPasswordResetEmail = async (email, resetURL) => {
             from: process.env.EMAIL,
             to: email,
             subject: "Password reset",
-            html: PASSWORD_RESET_REQUEST_TEMPLATE.replace("{resetUrl}", resetURL),
+            html: PASSWORD_RESET_REQUEST_TEMPLATE.replace("{resetURL}", resetURL),
         }
         
         //send the email

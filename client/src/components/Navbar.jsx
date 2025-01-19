@@ -1,10 +1,20 @@
-import React, { useState } from "react";
+import  {  useContext, useEffect } from "react";
 import { Navbar } from "flowbite-react";
 import { Link } from "react-router-dom";
 import { FaUserCircle } from "react-icons/fa";
+import  AuthContext  from "../stateManagement/Auth";
+
+
 function CustomNavbar() {
   // const [UserRole, setUserRole] = useState();
-  const [isUser, setIsUser] = useState(true);
+  // const [isUser, setIsUser] = useState(true);
+
+  const {  isAuthenticated,  } = useContext(AuthContext);
+  // console.log("thisisauth", isAuthenticated);
+
+  // useEffect(() => {
+  //   console.log("thisisauth", isAuthenticated);
+  // }, [isAuthenticated]);
 
   return (
     <>
@@ -21,15 +31,31 @@ function CustomNavbar() {
         </Navbar.Brand>
         <div className="flex md:order-2 px-10 text-sm">
           <div className="flex gap-3">
-            <button className="bg-blue-500 rounded-lg p-2 text-white  hover:bg-blue-600">
-              <Link to="/login">{isUser ? <FaUserCircle /> : ` Login`}</Link>
-            </button>
-            <Link to="/signup">
-              Dont have an account?{" "}
-              <button className="bg-red-500 rounded-lg pt-1 pb-1 pl-2 pr-2 text-white">
-                Signup
-              </button>
-            </Link>
+
+            {isAuthenticated ? (
+               <div className="bg-blue-500 rounded-lg p-2 text-white  hover:bg-blue-600">
+                  <FaUserCircle /> 
+              </div>
+ 
+            ):(
+              <>
+                  <button className="bg-blue-500 rounded-lg p-2 text-white  hover:bg-blue-600">
+                  <Link to="/login">Login</Link>
+                  </button>
+
+                  
+                  <Link to="/signup">
+                    Dont have an account?{" "}
+                    <button className="bg-red-500 rounded-lg pt-1 pb-1 pl-2 pr-2 text-white">
+                      Signup
+                    </button>
+                  </Link>
+              </>
+              
+
+            )}
+
+            
           </div>
 
           <Navbar.Toggle />
