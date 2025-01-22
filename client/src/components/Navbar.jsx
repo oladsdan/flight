@@ -1,20 +1,38 @@
-import  {  useContext, useEffect } from "react";
+import  {  useContext, useState,} from "react";
 import { Navbar } from "flowbite-react";
-import { Link } from "react-router-dom";
+import { Link, } from "react-router-dom";
 import { FaUserCircle } from "react-icons/fa";
 import  AuthContext  from "../stateManagement/Auth";
 
 
 function CustomNavbar() {
-  // const [UserRole, setUserRole] = useState();
-  // const [isUser, setIsUser] = useState(true);
+
 
   const {  isAuthenticated,  } = useContext(AuthContext);
+  const [dropdownVisible, setDropdownVisible] = useState(false);
+  let timeoutId;
+  
   // console.log("thisisauth", isAuthenticated);
 
   // useEffect(() => {
   //   console.log("thisisauth", isAuthenticated);
   // }, [isAuthenticated]);
+
+  const handleMouseEnter = () => {
+    clearTimeout(timeoutId);
+    setDropdownVisible(true);
+  }
+
+  const handleMouseLeave = () => {
+    timeoutId = setTimeout(() => {
+      setDropdownVisible(false);
+    }, 300);
+  }
+
+
+  const handleLogout = () => {
+    localStorage.removeItem("auth-token");
+  };
 
   return (
     <>
@@ -33,10 +51,40 @@ function CustomNavbar() {
           <div className="flex gap-3">
 
             {isAuthenticated ? (
-               <div className="bg-blue-500 rounded-lg p-2 text-white  hover:bg-blue-600">
-                  <FaUserCircle /> 
-              </div>
- 
+              
+                  <>
+                      <div
+                        className="relative"
+                        onMouseEnter={handleMouseEnter}
+                        onMouseLeave={handleMouseLeave}
+                      >
+                        <div className="bg-blue-500 rounded-lg p-2 text-white hover:bg-blue-600 cursor-pointer">
+                          <FaUserCircle />
+                        </div>
+                        {dropdownVisible && (
+                          <div
+                            className="absolute right-0 mt-2 w-48 z-50 bg-white border border-gray-200 rounded-lg shadow-lg"
+                            onMouseEnter={handleMouseEnter}
+                            onMouseLeave={handleMouseLeave}
+                          >
+                            <Link
+                              to="/dashboard"
+                              className="block px-4 py-2 text-gray-800 hover:bg-gray-100"
+                            >
+                              My Account
+                            </Link>
+                            <button
+                              onClick={handleLogout}
+                              className="block w-full text-left px-4 py-2 text-gray-800 hover:bg-gray-100"
+                            >
+                              Logout
+                            </button>
+                          </div>
+                        )}
+                      </div>
+                    
+              </>
+
             ):(
               <>
                   <button className="bg-blue-500 rounded-lg p-2 text-white  hover:bg-blue-600">
@@ -61,21 +109,28 @@ function CustomNavbar() {
           <Navbar.Toggle />
         </div>
         <Navbar.Collapse>
-          <Navbar.Link className="text-black" href="/" active>
-            Home
-          </Navbar.Link>
-          <Navbar.Link className="text-black" href="/about">
-            About
-          </Navbar.Link>
-          <Navbar.Link className="text-black" href="#">
+          <Link to="/">
+            <Navbar.Link className="text-black"  active>
+              Home
+            </Navbar.Link>
+          </Link>
+          <Link to="/about">
+            <Navbar.Link className="text-black">
+              About
+            </Navbar.Link>
+          </Link>
+          <Navbar.Link className="text-black" >
             Services
           </Navbar.Link>
-          <Navbar.Link className="text-black" href="#">
+          <Navbar.Link className="text-black" >
             Pricing
           </Navbar.Link>
-          <Navbar.Link className="text-black" href="/contact">
-            Contact
-          </Navbar.Link>
+
+          <Link to="/contact">
+            <Navbar.Link className="text-black">
+              Contact
+            </Navbar.Link>
+          </Link>
         </Navbar.Collapse>
       </Navbar>
     </>
@@ -83,3 +138,7 @@ function CustomNavbar() {
 }
 
 export default CustomNavbar;
+
+
+
+

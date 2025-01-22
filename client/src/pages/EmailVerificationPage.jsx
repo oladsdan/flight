@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState, useContext } from "react";
-import {useNavigate, useLocation} from "react-router-dom";
+import {useNavigate, useLocation, Navigate} from "react-router-dom";
 import { toast } from "react-toastify";
 import  AuthContext  from "../stateManagement/Auth";
 
@@ -15,7 +15,13 @@ const EmailVerificationPage = () => {
     const inputRefs = useRef([]);
     const navigate = useNavigate();
 	const location = useLocation();
-	const email = location.state.email;
+	const email = location?.state?.email;
+
+
+	if(!email) {
+		
+		return <Navigate to="/signup" />
+	}
 
 
 
