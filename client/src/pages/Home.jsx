@@ -1,4 +1,4 @@
-import React from "react";
+
 import { Card } from "flowbite-react";
 
 function Home() {
@@ -28,7 +28,8 @@ function Home() {
 
       {/* Flight Search Section */}
 
-      <div className="flex flex-col gap-8 bg-[#01004D]  shadow-lg rounded-lg mx-auto mt-[-3rem] w-9/12 max-w-9xl p-6 relative">
+     
+      <div className="flex flex-col gap-8 bg-gradient-to-br from-green-400 to-blue-600  shadow-lg rounded-lg mx-auto mt-[-3rem] w-9/12 max-w-9xl p-6 relative">
         <div className="flex justify-start gap-4 items-center ">
           <div className="flex items-center ">
             <input type="radio" id="oneWay" name="tripType" defaultChecked />
@@ -98,7 +99,6 @@ function Home() {
           </button>
         </div>
       </div>
-
       {/* Features Section */}
       <div className="text-center mt-8 px-6 pb-5">
         <h2 className="text-2xl font-bold mb-4">FEATURING</h2>
