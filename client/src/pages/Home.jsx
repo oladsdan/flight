@@ -1,7 +1,98 @@
 
 import { Card } from "flowbite-react";
+import { useEffect, useState } from "react";
+import AirportModal from "../components/AirportModal";
+// import dotenv from "dotenv";
+
+// dotenv.config();
+// const APi_KEY = process.env.Aviation_API_KEY;
+//eslint
+// const API_KEY = process.env.REACT_APP_AVIATION_API_KEY;
+
 
 function Home() {
+
+  //we dynamically call the trip type by using state
+  const [tripType, setTripType] = useState("oneWay");
+  const [departureCity, setDepartureCity] = useState("");
+  const [destinationCity, setDestinationCity] = useState("");
+  const [airports, setAirports] = useState([]);
+  const [suggestions, setSuggestions] = useState([]);
+  const [departureDate, setDepartureDate] = useState("");
+  const [returnDate, setReturnDate] = useState("");
+  const [filteredAirports, setFilteredAirports] = useState([]);
+  const [showModal, setShowModal] = useState(false);
+  const [activeField, setActiveField] = useState("");
+
+
+  
+
+
+
+  useEffect(() => {
+    const fetchAirports = async () => {
+
+      try {
+        const response = await fetch(`https://api.aviationstack.com/v1/airports?access_key=d6cc78c7ea5cbafc33a181beb3ff92ff`);
+        const data = await response.json();
+        setAirports(data.data);
+        console.log(data.data)
+        
+        
+      } catch (error) {
+        console.error('Error fetching airports:', error);
+        
+      }
+    
+    };
+    fetchAirports();
+  }, []);
+
+  //Then we get suggestions
+  const getSuggestions = (value) => {
+    const inputValue = value.trim().toLowerCase();
+    const inputLength = inputValue.length;
+
+    return inputLength === 0
+      ? []
+      : airports.filter((airport) =>
+          airport.airport_name.toLowerCase().includes(inputValue) || airport.iata_code.toLowerCase().includes(inputValue)
+        ).slice(0, 10);
+  };
+  
+
+  //we handleInputChange
+  const handleInputChange = (e, field) => {
+    const value = e.target.value;
+    if (field === "departure") {
+      setDepartureCity(value);
+      setActiveField("departure");
+    } else {
+      setDestinationCity(value);
+      setActiveField("destination");
+    }
+    setSuggestions(getSuggestions(value));
+    if (value === "") {
+      setShowModal(false);
+    }else{
+      setShowModal(true);
+    }
+    
+  };
+
+
+  //we handle when the user click the suggestion
+  const handleSuggestionClick = (suggestion) => {
+    if (activeField === "departure") {
+      setDepartureCity(`${suggestion.airport_name} (${suggestion.iata_code})`);
+    } else {
+      setDestinationCity(`${suggestion.airport_name} (${suggestion.iata_code})`);
+    }
+    setShowModal(false);
+    setSuggestions([]);
+  };
+
+
   return (
     <div className="bg-gray-50 min-h-screen ">
       {/* Header Section */}
@@ -32,27 +123,45 @@ function Home() {
       <div className="flex flex-col gap-8 bg-gradient-to-br from-green-400 to-blue-600  shadow-lg rounded-lg mx-auto mt-[-3rem] w-9/12 max-w-9xl p-6 relative">
         <div className="flex justify-start gap-4 items-center ">
           <div className="flex items-center ">
-            <input type="radio" id="oneWay" name="tripType" defaultChecked />
+            <input type="radio" id="oneWay" name="tripType" onChange={() => setTripType("oneWay")} defaultChecked />
             <label htmlFor="oneWay" className="text-white">
               One-way
             </label>
           </div>
           <div className="flex items-center ">
-            <input type="radio" id="roundTrip" name="tripType" />
+            <input type="radio" id="roundTrip" name="tripType" onChange={() => setTripType("roundTrip")} checked={tripType === "roundTrip"} />
             <label htmlFor="roundTrip" className="text-white">
               Roundtrip
             </label>
           </div>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-6 lg:grid-cols-5  gap-4 w-full text-white text-sm">
-          <div>
+        <div className="grid grid-cols-1 md:grid-cols-6 lg:grid-cols-5  gap-4 w-full text-black text-sm">
+          <div className="relative">
             <p className="flex">Departure City</p>
             <input
               type="text"
               placeholder="Departure City"
-              className="border rounded-lg text-black focus:outline-none focus:ring-2 focus:ring-blue-500 text-sm"
+              value={departureCity}
+              onChange={(e) => handleInputChange(e, "departure")}
+              className="border rounded-lg  focus:outline-none focus:ring-2 focus:ring-blue-500 text-sm"
             />
+            {showModal && activeField === "departure" && (
+            <div className="absolute left-0 right-0 mt-2 bg-white border border-gray-200 rounded-lg w-[500px] shadow-lg z-50 font-bold">
+              <ul>
+                {suggestions.map((suggestion) => (
+                  <li
+                    key={suggestion.iata_code}
+                    className="p-2 text-black hover:bg-gray-200 cursor-pointer"
+                    onClick={() => handleSuggestionClick(suggestion)}
+                  >
+                    {suggestion.airport_name} ({suggestion.iata_code})
+                  </li>
+                ))}
+              </ul>
+            </div>
+          )}
+          
           </div>
 
           <div>
@@ -72,14 +181,17 @@ function Home() {
             />
           </div>
 
-          <div>
-            <p>Return Date</p>
-            <input
-              type="date"
-              placeholder="Return Date"
-              className="border rounded-lg text-black focus:outline-none focus:ring-2 focus:ring-blue-500 text-sm"
-            />
-          </div>
+          {tripType === "roundTrip" && (
+            <div>
+              <p>Return Date</p>
+              <input
+                type="date"
+                placeholder="Return Date"
+                className="border rounded-lg text-black focus:outline-none focus:ring-2 focus:ring-blue-500 text-sm"
+              />
+            </div>
+
+          )}
 
           <div>
             <p>Cabin class</p>
@@ -99,6 +211,12 @@ function Home() {
           </button>
         </div>
       </div>
+
+
+
+
+
+
       {/* Features Section */}
       <div className="text-center mt-8 px-6 pb-5">
         <h2 className="text-2xl font-bold mb-4">FEATURING</h2>
