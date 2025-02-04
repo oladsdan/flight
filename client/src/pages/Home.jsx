@@ -147,30 +147,25 @@ function Home() {
               className="border rounded-lg  focus:outline-none focus:ring-2 focus:ring-blue-500 text-sm"
             />
             {showModal && activeField === "departure" && (
-            <div className="absolute left-0 right-0 mt-2 bg-white border border-gray-200 rounded-lg w-[500px] shadow-lg z-50 font-bold">
-              <ul>
-                {suggestions.map((suggestion) => (
-                  <li
-                    key={suggestion.iata_code}
-                    className="p-2 text-black hover:bg-gray-200 cursor-pointer"
-                    onClick={() => handleSuggestionClick(suggestion)}
-                  >
-                    {suggestion.airport_name} ({suggestion.iata_code})
-                  </li>
-                ))}
-              </ul>
-            </div>
+            <AirportModal suggestions={suggestions} handleSuggestionClick={handleSuggestionClick} />
           )}
           
           </div>
 
-          <div>
+          <div className="relative">
             <p>Destination City</p>
             <input
               type="text"
               placeholder="Destination City"
+              value={destinationCity}
+              onChange={(e) => handleInputChange(e, "destination")}
               className="border rounded-lg text-black focus:outline-none focus:ring-2 focus:ring-blue-500 text-sm"
             />
+
+            {showModal && activeField === "destination" && (
+            <AirportModal suggestions={suggestions} handleSuggestionClick={handleSuggestionClick} />
+            )}
+
           </div>
           <div>
             <p>Departure Date</p>

@@ -1,60 +1,19 @@
 
-// import { Dialog, DialogContent, DialogOverlay } from "@/components/ui/dialog";
-// import { Button } from "@/components/ui/button";
-
-// const AirportModal = ({ airportSuggestions, handleAirportSelect, onClose }) => {
-//   return (
-//     <Dialog onClose={onClose}>
-//       <DialogOverlay className="fixed inset-0 bg-black bg-opacity-25" />
-//       <DialogContent className="fixed inset-1/4 bg-white p-6 rounded-lg">
-//         <h2 className="text-lg font-bold mb-4">Select Airport</h2>
-//         <ul className="max-h-60 overflow-auto">
-//           {airportSuggestions.map((airport, index) => (
-//             <li
-//               key={index}
-//               className="p-2 hover:bg-gray-200 cursor-pointer"
-//               onClick={() => handleAirportSelect(`${airport.name} (${airport.code})`)}
-//             >
-//               {airport.name} ({airport.code})
-//             </li>
-//           ))}
-//         </ul>
-//         <Button onClick={onClose} className="w-full mt-4 bg-red-500 text-white">Close</Button>
-//       </DialogContent>
-//     </Dialog>
-//   );
-// };
-
-// export default AirportModal;
-import { Modal } from 'flowbite-react';
-// import { Button } from "@/components/ui/button";
-
-const AirportModal = ({ airportSuggestions, handleAirportSelect, onClose, showModal }) => {
+const AirportModal = ({ suggestions, handleSuggestionClick }) => {
   return (
-    <Modal show={showModal} onClose={onClose}>
-      <Modal.Header>Select Airport</Modal.Header>
-      <Modal.Body>
-        <ul className="max-h-60 overflow-auto">
-          {airportSuggestions.map((airport, index) => (
-            <li
-              key={index}
-              className="p-2 hover:bg-gray-200 cursor-pointer"
-              onClick={() => handleAirportSelect(`${airport.name} (${airport.code})`)}
-            >
-              {airport.name} ({airport.code})
-            </li>
-          ))}
-        </ul>
-      </Modal.Body>
-      <Modal.Footer>
-        <button onClick={onClose} className="bg-red-500 text-white">
-            Close
-        </button>
-        {/* <Button onClick={onClose} className="bg-red-500 text-white">
-          Close
-        </Button> */}
-      </Modal.Footer>
-    </Modal>
+    <div className="absolute left-0 right-0 mt-2 bg-white border border-gray-200 rounded-lg w-[400px] shadow-lg z-50 font-bold">
+    <ul>
+      {suggestions.map((suggestion) => (
+        <li
+          key={suggestion.iata_code}
+          className="p-2 text-black hover:bg-gray-200 cursor-pointer"
+          onClick={() => handleSuggestionClick(suggestion)}
+        >
+          {suggestion.airport_name} ({suggestion.iata_code})
+        </li>
+      ))}
+    </ul>
+  </div>
   );
 };
 
