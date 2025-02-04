@@ -20,7 +20,6 @@ function Home() {
   const [suggestions, setSuggestions] = useState([]);
   const [departureDate, setDepartureDate] = useState("");
   const [returnDate, setReturnDate] = useState("");
-  const [filteredAirports, setFilteredAirports] = useState([]);
   const [showModal, setShowModal] = useState(false);
   const [activeField, setActiveField] = useState("");
 

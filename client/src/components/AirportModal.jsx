@@ -1,3 +1,5 @@
+import { Plane } from 'lucide-react';
+
 
 const AirportModal = ({ suggestions, handleSuggestionClick }) => {
   return (
@@ -9,7 +11,10 @@ const AirportModal = ({ suggestions, handleSuggestionClick }) => {
           className="p-2 text-black hover:bg-gray-200 cursor-pointer"
           onClick={() => handleSuggestionClick(suggestion)}
         >
-          {suggestion.airport_name} ({suggestion.iata_code})
+            <div className="flex  items-center">
+            <Plane className="w-6 h-6" />   {suggestion.airport_name} 
+          ({suggestion.iata_code})
+          </div>
         </li>
       ))}
     </ul>
