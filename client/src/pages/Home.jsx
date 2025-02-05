@@ -1,13 +1,8 @@
 
-import { Card } from "flowbite-react";
+import { Card, Datepicker } from "flowbite-react";
 import { useEffect, useState } from "react";
 import AirportModal from "../components/AirportModal";
-// import dotenv from "dotenv";
 
-// dotenv.config();
-// const APi_KEY = process.env.Aviation_API_KEY;
-//eslint
-// const API_KEY = process.env.REACT_APP_AVIATION_API_KEY;
 
 
 function Home() {
@@ -31,23 +26,54 @@ function Home() {
   useEffect(() => {
     const fetchAirports = async () => {
 
+
+      const url = 'https://sky-scanner3.p.rapidapi.com/flights/airports';
+      const options = {
+	      method: 'GET',
+	      headers: {
+          'x-rapidapi-key': '7904ddccf4msh1d487968a36450dp12492fjsnb4a82e52fa1c',
+          'x-rapidapi-host': 'sky-scanner3.p.rapidapi.com'
+	      }
+      };
+
       try {
-        const response = await fetch(`https://api.aviationstack.com/v1/airports?access_key=d6cc78c7ea5cbafc33a181beb3ff92ff`);
-        const data = await response.json();
-        setAirports(data.data);
-        console.log(data.data)
-        
-        
+        const response = await fetch(url, options);
+        const result = await response.json();
+        setAirports(result.data);
       } catch (error) {
-        console.error('Error fetching airports:', error);
-        
+        console.error(error);
       }
+
+      // try {
+      //   const response = await fetch(`https://api.aviationstack.com/v1/airports?access_key=d6cc78c7ea5cbafc33a181beb3ff92ff`);
+      //   const data = await response.json();
+      //   setAirports(data.data);
+      //   console.log("this is data for country now")
+      
+      //   data.data.slice(0, 5).forEach(item => {item.country_name? console.log(item?.country_name.toLowerCase()):console.log("no country name")});
+        
+        
+      // } catch (error) {
+      //   console.error('Error fetching airports:', error);
+        
+      // }
     
     };
     fetchAirports();
   }, []);
 
   //Then we get suggestions
+  // const getSuggestions = (value) => {
+  //   const inputValue = value.trim().toLowerCase();
+  //   const inputLength = inputValue.length;
+
+  //   return inputLength === 0
+  //     ? []
+  //     : airports.filter((airport) =>
+  //        airport.country_name? airport.country_name.toLowerCase().includes(inputValue) : airport.airport_name.toLowerCase().includes(inputValue) || airport.iata_code.toLowerCase().includes(inputValue)
+  //       ).slice(0, 10);
+  // };
+  
   const getSuggestions = (value) => {
     const inputValue = value.trim().toLowerCase();
     const inputLength = inputValue.length;
@@ -55,7 +81,7 @@ function Home() {
     return inputLength === 0
       ? []
       : airports.filter((airport) =>
-          airport.airport_name.toLowerCase().includes(inputValue) || airport.iata_code.toLowerCase().includes(inputValue)
+         airport.location? airport.location.toLowerCase().includes(inputValue) : airport.name.toLowerCase().includes(inputValue) || airport.iata.toLowerCase().includes(inputValue)
         ).slice(0, 10);
   };
   
@@ -81,11 +107,20 @@ function Home() {
 
 
   //we handle when the user click the suggestion
+  // const handleSuggestionClick = (suggestion) => {
+  //   if (activeField === "departure") {
+  //     setDepartureCity(`${suggestion.airport_name} (${suggestion.iata_code})`);
+  //   } else {
+  //     setDestinationCity(`${suggestion.airport_name} (${suggestion.iata_code})`);
+  //   }
+  //   setShowModal(false);
+  //   setSuggestions([]);
+  // };
   const handleSuggestionClick = (suggestion) => {
     if (activeField === "departure") {
-      setDepartureCity(`${suggestion.airport_name} (${suggestion.iata_code})`);
+      setDepartureCity(`${suggestion.name} (${suggestion.iata})`);
     } else {
-      setDestinationCity(`${suggestion.airport_name} (${suggestion.iata_code})`);
+      setDestinationCity(`${suggestion.name} (${suggestion.iata})`);
     }
     setShowModal(false);
     setSuggestions([]);
@@ -168,9 +203,10 @@ function Home() {
           </div>
           <div>
             <p>Departure Date</p>
-            <input
-              type="date"
-              placeholder="Departure Date"
+            <Datepicker
+              selected={departureDate}
+              onChange={(date) => setDepartureDate(date)}
+              minDate={new Date()}
               className="border rounded-lg text-black focus:outline-none focus:ring-2 focus:ring-blue-500 text-sm"
             />
           </div>
@@ -178,9 +214,10 @@ function Home() {
           {tripType === "roundTrip" && (
             <div>
               <p>Return Date</p>
-              <input
-                type="date"
-                placeholder="Return Date"
+              <Datepicker
+                selected={returnDate}
+                onChange={(date) => setReturnDate(date)}
+                minDate={departureDate}
                 className="border rounded-lg text-black focus:outline-none focus:ring-2 focus:ring-blue-500 text-sm"
               />
             </div>

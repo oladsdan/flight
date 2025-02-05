@@ -12,8 +12,8 @@ const AirportModal = ({ suggestions, handleSuggestionClick }) => {
           onClick={() => handleSuggestionClick(suggestion)}
         >
             <div className="flex  items-center">
-            <Plane className="w-6 h-6" />   {suggestion.airport_name} 
-          ({suggestion.iata_code})
+            <Plane className="w-6 h-6" />   {suggestion.name} 
+          ({suggestion.iata})
           </div>
         </li>
       ))}
