@@ -43,37 +43,12 @@ function Home() {
       } catch (error) {
         console.error(error);
       }
-
-      // try {
-      //   const response = await fetch(`https://api.aviationstack.com/v1/airports?access_key=d6cc78c7ea5cbafc33a181beb3ff92ff`);
-      //   const data = await response.json();
-      //   setAirports(data.data);
-      //   console.log("this is data for country now")
-      
-      //   data.data.slice(0, 5).forEach(item => {item.country_name? console.log(item?.country_name.toLowerCase()):console.log("no country name")});
-        
-        
-      // } catch (error) {
-      //   console.error('Error fetching airports:', error);
-        
-      // }
     
     };
     fetchAirports();
   }, []);
 
-  //Then we get suggestions
-  // const getSuggestions = (value) => {
-  //   const inputValue = value.trim().toLowerCase();
-  //   const inputLength = inputValue.length;
 
-  //   return inputLength === 0
-  //     ? []
-  //     : airports.filter((airport) =>
-  //        airport.country_name? airport.country_name.toLowerCase().includes(inputValue) : airport.airport_name.toLowerCase().includes(inputValue) || airport.iata_code.toLowerCase().includes(inputValue)
-  //       ).slice(0, 10);
-  // };
-  
   const getSuggestions = (value) => {
     const inputValue = value.trim().toLowerCase();
     const inputLength = inputValue.length;
@@ -106,16 +81,7 @@ function Home() {
   };
 
 
-  //we handle when the user click the suggestion
-  // const handleSuggestionClick = (suggestion) => {
-  //   if (activeField === "departure") {
-  //     setDepartureCity(`${suggestion.airport_name} (${suggestion.iata_code})`);
-  //   } else {
-  //     setDestinationCity(`${suggestion.airport_name} (${suggestion.iata_code})`);
-  //   }
-  //   setShowModal(false);
-  //   setSuggestions([]);
-  // };
+
   const handleSuggestionClick = (suggestion) => {
     if (activeField === "departure") {
       setDepartureCity(`${suggestion.name} (${suggestion.iata})`);
