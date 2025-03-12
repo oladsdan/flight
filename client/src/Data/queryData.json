@@ -1,0 +1,3891 @@
+{
+  "data": {
+    "context": {
+      "status": "incomplete",
+      "sessionId": "Cl0IARJZCk4KJDczMDcwYTBjLTYxYTQtNDcxNi05NjJmLTQxOWE1MmM4YjhmNxACGiQ0NDliY2RkZC04YjBlLTRlMDEtODcwMC00ZWNmMjk4M2Q1YjMQnLyMq9gyGAESKHVzc19iNmJiMTU5Ni0zMzU3LTQ3YWMtOWEyNS1jZDdhOWUzM2Q5ODYiAlVT",
+      "totalResults": 10
+    },
+    "itineraries": [
+      {
+        "id": "13681-2503131340--32340-1-13554-2503140635|13554-2503192015--32340-1-13681-2503201225",
+        "price": {
+          "raw": 1614422.0,
+          "formatted": "₦1,614,422",
+          "pricingOptionId": "DXSRmcB7tn7I"
+        },
+        "legs": [
+          {
+            "id": "13681-2503131340--32340-1-13554-2503140635",
+            "origin": {
+              "id": "LOS",
+              "entityId": "95673335",
+              "name": "Lagos",
+              "displayCode": "LOS",
+              "city": "Lagos",
+              "country": "Nigeria",
+              "isHighlighted": false
+            },
+            "destination": {
+              "id": "LHR",
+              "entityId": "95565050",
+              "name": "London Heathrow",
+              "displayCode": "LHR",
+              "city": "London",
+              "country": "United Kingdom",
+              "isHighlighted": false
+            },
+            "durationInMinutes": 1075,
+            "stopCount": 1,
+            "isSmallestStops": false,
+            "departure": "2025-03-13T13:40:00",
+            "arrival": "2025-03-14T06:35:00",
+            "timeDeltaInDays": 1,
+            "carriers": {
+              "marketing": [
+                {
+                  "id": -32340,
+                  "alternateId": "ET",
+                  "logoUrl": "https://logos.skyscnr.com/images/airlines/favicon/ET.png",
+                  "name": "Ethiopian Airlines"
+                }
+              ],
+              "operationType": "fully_operated"
+            },
+            "segments": [
+              {
+                "id": "13681-9252-2503131340-2503132100--32340",
+                "origin": {
+                  "flightPlaceId": "LOS",
+                  "displayCode": "LOS",
+                  "parent": {
+                    "flightPlaceId": "LOSA",
+                    "displayCode": "LOS",
+                    "name": "Lagos",
+                    "type": "City"
+                  },
+                  "name": "Lagos",
+                  "type": "Airport",
+                  "country": "Nigeria"
+                },
+                "destination": {
+                  "flightPlaceId": "ADD",
+                  "displayCode": "ADD",
+                  "parent": {
+                    "flightPlaceId": "ADDA",
+                    "displayCode": "ADD",
+                    "name": "Addis Ababa",
+                    "type": "City"
+                  },
+                  "name": "Addis Ababa",
+                  "type": "Airport",
+                  "country": "Ethiopia"
+                },
+                "departure": "2025-03-13T13:40:00",
+                "arrival": "2025-03-13T21:00:00",
+                "durationInMinutes": 320,
+                "flightNumber": "900",
+                "marketingCarrier": {
+                  "id": -32340,
+                  "name": "Ethiopian Airlines",
+                  "alternateId": "ET",
+                  "allianceId": 0,
+                  "displayCode": ""
+                },
+                "operatingCarrier": {
+                  "id": -32340,
+                  "name": "Ethiopian Airlines",
+                  "alternateId": "ET",
+                  "allianceId": 0,
+                  "displayCode": ""
+                }
+              },
+              {
+                "id": "9252-13554-2503140135-2503140635--32340",
+                "origin": {
+                  "flightPlaceId": "ADD",
+                  "displayCode": "ADD",
+                  "parent": {
+                    "flightPlaceId": "ADDA",
+                    "displayCode": "ADD",
+                    "name": "Addis Ababa",
+                    "type": "City"
+                  },
+                  "name": "Addis Ababa",
+                  "type": "Airport",
+                  "country": "Ethiopia"
+                },
+                "destination": {
+                  "flightPlaceId": "LHR",
+                  "displayCode": "LHR",
+                  "parent": {
+                    "flightPlaceId": "LOND",
+                    "displayCode": "LON",
+                    "name": "London",
+                    "type": "City"
+                  },
+                  "name": "London Heathrow",
+                  "type": "Airport",
+                  "country": "United Kingdom"
+                },
+                "departure": "2025-03-14T01:35:00",
+                "arrival": "2025-03-14T06:35:00",
+                "durationInMinutes": 480,
+                "flightNumber": "700",
+                "marketingCarrier": {
+                  "id": -32340,
+                  "name": "Ethiopian Airlines",
+                  "alternateId": "ET",
+                  "allianceId": 0,
+                  "displayCode": ""
+                },
+                "operatingCarrier": {
+                  "id": -32340,
+                  "name": "Ethiopian Airlines",
+                  "alternateId": "ET",
+                  "allianceId": 0,
+                  "displayCode": ""
+                }
+              }
+            ]
+          },
+          {
+            "id": "13554-2503192015--32340-1-13681-2503201225",
+            "origin": {
+              "id": "LHR",
+              "entityId": "95565050",
+              "name": "London Heathrow",
+              "displayCode": "LHR",
+              "city": "London",
+              "country": "United Kingdom",
+              "isHighlighted": false
+            },
+            "destination": {
+              "id": "LOS",
+              "entityId": "95673335",
+              "name": "Lagos",
+              "displayCode": "LOS",
+              "city": "Lagos",
+              "country": "Nigeria",
+              "isHighlighted": false
+            },
+            "durationInMinutes": 910,
+            "stopCount": 1,
+            "isSmallestStops": false,
+            "departure": "2025-03-19T20:15:00",
+            "arrival": "2025-03-20T12:25:00",
+            "timeDeltaInDays": 1,
+            "carriers": {
+              "marketing": [
+                {
+                  "id": -32340,
+                  "alternateId": "ET",
+                  "logoUrl": "https://logos.skyscnr.com/images/airlines/favicon/ET.png",
+                  "name": "Ethiopian Airlines"
+                }
+              ],
+              "operationType": "fully_operated"
+            },
+            "segments": [
+              {
+                "id": "13554-9252-2503192015-2503200700--32340",
+                "origin": {
+                  "flightPlaceId": "LHR",
+                  "displayCode": "LHR",
+                  "parent": {
+                    "flightPlaceId": "LOND",
+                    "displayCode": "LON",
+                    "name": "London",
+                    "type": "City"
+                  },
+                  "name": "London Heathrow",
+                  "type": "Airport",
+                  "country": "United Kingdom"
+                },
+                "destination": {
+                  "flightPlaceId": "ADD",
+                  "displayCode": "ADD",
+                  "parent": {
+                    "flightPlaceId": "ADDA",
+                    "displayCode": "ADD",
+                    "name": "Addis Ababa",
+                    "type": "City"
+                  },
+                  "name": "Addis Ababa",
+                  "type": "Airport",
+                  "country": "Ethiopia"
+                },
+                "departure": "2025-03-19T20:15:00",
+                "arrival": "2025-03-20T07:00:00",
+                "durationInMinutes": 465,
+                "flightNumber": "701",
+                "marketingCarrier": {
+                  "id": -32340,
+                  "name": "Ethiopian Airlines",
+                  "alternateId": "ET",
+                  "allianceId": 0,
+                  "displayCode": ""
+                },
+                "operatingCarrier": {
+                  "id": -32340,
+                  "name": "Ethiopian Airlines",
+                  "alternateId": "ET",
+                  "allianceId": 0,
+                  "displayCode": ""
+                }
+              },
+              {
+                "id": "9252-13681-2503200900-2503201225--32340",
+                "origin": {
+                  "flightPlaceId": "ADD",
+                  "displayCode": "ADD",
+                  "parent": {
+                    "flightPlaceId": "ADDA",
+                    "displayCode": "ADD",
+                    "name": "Addis Ababa",
+                    "type": "City"
+                  },
+                  "name": "Addis Ababa",
+                  "type": "Airport",
+                  "country": "Ethiopia"
+                },
+                "destination": {
+                  "flightPlaceId": "LOS",
+                  "displayCode": "LOS",
+                  "parent": {
+                    "flightPlaceId": "LOSA",
+                    "displayCode": "LOS",
+                    "name": "Lagos",
+                    "type": "City"
+                  },
+                  "name": "Lagos",
+                  "type": "Airport",
+                  "country": "Nigeria"
+                },
+                "departure": "2025-03-20T09:00:00",
+                "arrival": "2025-03-20T12:25:00",
+                "durationInMinutes": 325,
+                "flightNumber": "901",
+                "marketingCarrier": {
+                  "id": -32340,
+                  "name": "Ethiopian Airlines",
+                  "alternateId": "ET",
+                  "allianceId": 0,
+                  "displayCode": ""
+                },
+                "operatingCarrier": {
+                  "id": -32340,
+                  "name": "Ethiopian Airlines",
+                  "alternateId": "ET",
+                  "allianceId": 0,
+                  "displayCode": ""
+                }
+              }
+            ]
+          }
+        ],
+        "isSelfTransfer": false,
+        "isProtectedSelfTransfer": false,
+        "farePolicy": {
+          "isChangeAllowed": false,
+          "isPartiallyChangeable": false,
+          "isCancellationAllowed": false,
+          "isPartiallyRefundable": false
+        },
+        "fareAttributes": {},
+        "tags": ["second_cheapest", "shortest"],
+        "isMashUp": false,
+        "hasFlexibleOptions": false,
+        "score": 0.999
+      },
+      {
+        "id": "13681-2503131225--32139-1-13554-2503141530|13554-2503191725--32139-1-13681-2503201130",
+        "price": {
+          "raw": 1260137.19,
+          "formatted": "₦1,260,138",
+          "pricingOptionId": "bSJ6uiNiD8Aw"
+        },
+        "legs": [
+          {
+            "id": "13681-2503131225--32139-1-13554-2503141530",
+            "origin": {
+              "id": "LOS",
+              "entityId": "95673335",
+              "name": "Lagos",
+              "displayCode": "LOS",
+              "city": "Lagos",
+              "country": "Nigeria",
+              "isHighlighted": false
+            },
+            "destination": {
+              "id": "LHR",
+              "entityId": "95565050",
+              "name": "London Heathrow",
+              "displayCode": "LHR",
+              "city": "London",
+              "country": "United Kingdom",
+              "isHighlighted": false
+            },
+            "durationInMinutes": 1685,
+            "stopCount": 1,
+            "isSmallestStops": false,
+            "departure": "2025-03-13T12:25:00",
+            "arrival": "2025-03-14T15:30:00",
+            "timeDeltaInDays": 1,
+            "carriers": {
+              "marketing": [
+                {
+                  "id": -32139,
+                  "alternateId": "KQ",
+                  "logoUrl": "https://logos.skyscnr.com/images/airlines/favicon/KQ.png",
+                  "name": "Kenya Airways"
+                }
+              ],
+              "operationType": "fully_operated"
+            },
+            "segments": [
+              {
+                "id": "13681-14572-2503131225-2503131945--32139",
+                "origin": {
+                  "flightPlaceId": "LOS",
+                  "displayCode": "LOS",
+                  "parent": {
+                    "flightPlaceId": "LOSA",
+                    "displayCode": "LOS",
+                    "name": "Lagos",
+                    "type": "City"
+                  },
+                  "name": "Lagos",
+                  "type": "Airport",
+                  "country": "Nigeria"
+                },
+                "destination": {
+                  "flightPlaceId": "NBO",
+                  "displayCode": "NBO",
+                  "parent": {
+                    "flightPlaceId": "NBOA",
+                    "displayCode": "NBO",
+                    "name": "Nairobi",
+                    "type": "City"
+                  },
+                  "name": "Nairobi Jomo Kenyatta",
+                  "type": "Airport",
+                  "country": "Kenya"
+                },
+                "departure": "2025-03-13T12:25:00",
+                "arrival": "2025-03-13T19:45:00",
+                "durationInMinutes": 320,
+                "flightNumber": "533",
+                "marketingCarrier": {
+                  "id": -32139,
+                  "name": "Kenya Airways",
+                  "alternateId": "KQ",
+                  "allianceId": 0,
+                  "displayCode": ""
+                },
+                "operatingCarrier": {
+                  "id": -32139,
+                  "name": "Kenya Airways",
+                  "alternateId": "KQ",
+                  "allianceId": 0,
+                  "displayCode": ""
+                }
+              },
+              {
+                "id": "14572-13554-2503140910-2503141530--32139",
+                "origin": {
+                  "flightPlaceId": "NBO",
+                  "displayCode": "NBO",
+                  "parent": {
+                    "flightPlaceId": "NBOA",
+                    "displayCode": "NBO",
+                    "name": "Nairobi",
+                    "type": "City"
+                  },
+                  "name": "Nairobi Jomo Kenyatta",
+                  "type": "Airport",
+                  "country": "Kenya"
+                },
+                "destination": {
+                  "flightPlaceId": "LHR",
+                  "displayCode": "LHR",
+                  "parent": {
+                    "flightPlaceId": "LOND",
+                    "displayCode": "LON",
+                    "name": "London",
+                    "type": "City"
+                  },
+                  "name": "London Heathrow",
+                  "type": "Airport",
+                  "country": "United Kingdom"
+                },
+                "departure": "2025-03-14T09:10:00",
+                "arrival": "2025-03-14T15:30:00",
+                "durationInMinutes": 560,
+                "flightNumber": "100",
+                "marketingCarrier": {
+                  "id": -32139,
+                  "name": "Kenya Airways",
+                  "alternateId": "KQ",
+                  "allianceId": 0,
+                  "displayCode": ""
+                },
+                "operatingCarrier": {
+                  "id": -32139,
+                  "name": "Kenya Airways",
+                  "alternateId": "KQ",
+                  "allianceId": 0,
+                  "displayCode": ""
+                }
+              }
+            ]
+          },
+          {
+            "id": "13554-2503191725--32139-1-13681-2503201130",
+            "origin": {
+              "id": "LHR",
+              "entityId": "95565050",
+              "name": "London Heathrow",
+              "displayCode": "LHR",
+              "city": "London",
+              "country": "United Kingdom",
+              "isHighlighted": false
+            },
+            "destination": {
+              "id": "LOS",
+              "entityId": "95673335",
+              "name": "Lagos",
+              "displayCode": "LOS",
+              "city": "Lagos",
+              "country": "Nigeria",
+              "isHighlighted": false
+            },
+            "durationInMinutes": 1025,
+            "stopCount": 1,
+            "isSmallestStops": false,
+            "departure": "2025-03-19T17:25:00",
+            "arrival": "2025-03-20T11:30:00",
+            "timeDeltaInDays": 1,
+            "carriers": {
+              "marketing": [
+                {
+                  "id": -32139,
+                  "alternateId": "KQ",
+                  "logoUrl": "https://logos.skyscnr.com/images/airlines/favicon/KQ.png",
+                  "name": "Kenya Airways"
+                }
+              ],
+              "operationType": "fully_operated"
+            },
+            "segments": [
+              {
+                "id": "13554-14572-2503191725-2503200525--32139",
+                "origin": {
+                  "flightPlaceId": "LHR",
+                  "displayCode": "LHR",
+                  "parent": {
+                    "flightPlaceId": "LOND",
+                    "displayCode": "LON",
+                    "name": "London",
+                    "type": "City"
+                  },
+                  "name": "London Heathrow",
+                  "type": "Airport",
+                  "country": "United Kingdom"
+                },
+                "destination": {
+                  "flightPlaceId": "NBO",
+                  "displayCode": "NBO",
+                  "parent": {
+                    "flightPlaceId": "NBOA",
+                    "displayCode": "NBO",
+                    "name": "Nairobi",
+                    "type": "City"
+                  },
+                  "name": "Nairobi Jomo Kenyatta",
+                  "type": "Airport",
+                  "country": "Kenya"
+                },
+                "departure": "2025-03-19T17:25:00",
+                "arrival": "2025-03-20T05:25:00",
+                "durationInMinutes": 540,
+                "flightNumber": "101",
+                "marketingCarrier": {
+                  "id": -32139,
+                  "name": "Kenya Airways",
+                  "alternateId": "KQ",
+                  "allianceId": 0,
+                  "displayCode": ""
+                },
+                "operatingCarrier": {
+                  "id": -32139,
+                  "name": "Kenya Airways",
+                  "alternateId": "KQ",
+                  "allianceId": 0,
+                  "displayCode": ""
+                }
+              },
+              {
+                "id": "14572-13681-2503200815-2503201130--32139",
+                "origin": {
+                  "flightPlaceId": "NBO",
+                  "displayCode": "NBO",
+                  "parent": {
+                    "flightPlaceId": "NBOA",
+                    "displayCode": "NBO",
+                    "name": "Nairobi",
+                    "type": "City"
+                  },
+                  "name": "Nairobi Jomo Kenyatta",
+                  "type": "Airport",
+                  "country": "Kenya"
+                },
+                "destination": {
+                  "flightPlaceId": "LOS",
+                  "displayCode": "LOS",
+                  "parent": {
+                    "flightPlaceId": "LOSA",
+                    "displayCode": "LOS",
+                    "name": "Lagos",
+                    "type": "City"
+                  },
+                  "name": "Lagos",
+                  "type": "Airport",
+                  "country": "Nigeria"
+                },
+                "departure": "2025-03-20T08:15:00",
+                "arrival": "2025-03-20T11:30:00",
+                "durationInMinutes": 315,
+                "flightNumber": "532",
+                "marketingCarrier": {
+                  "id": -32139,
+                  "name": "Kenya Airways",
+                  "alternateId": "KQ",
+                  "allianceId": 0,
+                  "displayCode": ""
+                },
+                "operatingCarrier": {
+                  "id": -32139,
+                  "name": "Kenya Airways",
+                  "alternateId": "KQ",
+                  "allianceId": 0,
+                  "displayCode": ""
+                }
+              }
+            ]
+          }
+        ],
+        "isSelfTransfer": false,
+        "isProtectedSelfTransfer": false,
+        "farePolicy": {
+          "isChangeAllowed": false,
+          "isPartiallyChangeable": false,
+          "isCancellationAllowed": false,
+          "isPartiallyRefundable": false
+        },
+        "fareAttributes": {},
+        "tags": ["cheapest"],
+        "isMashUp": false,
+        "hasFlexibleOptions": false,
+        "score": 0.855443
+      },
+      {
+        "id": "13681-2503131340--32340-1-13554-2503140635|13554-2503192015--32340-3-13681-2503201700",
+        "price": {
+          "raw": 1928661.0,
+          "formatted": "₦1,928,661",
+          "pricingOptionId": "CXn9AbpE1FEr"
+        },
+        "legs": [
+          {
+            "id": "13681-2503131340--32340-1-13554-2503140635",
+            "origin": {
+              "id": "LOS",
+              "entityId": "95673335",
+              "name": "Lagos",
+              "displayCode": "LOS",
+              "city": "Lagos",
+              "country": "Nigeria",
+              "isHighlighted": false
+            },
+            "destination": {
+              "id": "LHR",
+              "entityId": "95565050",
+              "name": "London Heathrow",
+              "displayCode": "LHR",
+              "city": "London",
+              "country": "United Kingdom",
+              "isHighlighted": false
+            },
+            "durationInMinutes": 1075,
+            "stopCount": 1,
+            "isSmallestStops": false,
+            "departure": "2025-03-13T13:40:00",
+            "arrival": "2025-03-14T06:35:00",
+            "timeDeltaInDays": 1,
+            "carriers": {
+              "marketing": [
+                {
+                  "id": -32340,
+                  "alternateId": "ET",
+                  "logoUrl": "https://logos.skyscnr.com/images/airlines/favicon/ET.png",
+                  "name": "Ethiopian Airlines"
+                }
+              ],
+              "operationType": "fully_operated"
+            },
+            "segments": [
+              {
+                "id": "13681-9252-2503131340-2503132100--32340",
+                "origin": {
+                  "flightPlaceId": "LOS",
+                  "displayCode": "LOS",
+                  "parent": {
+                    "flightPlaceId": "LOSA",
+                    "displayCode": "LOS",
+                    "name": "Lagos",
+                    "type": "City"
+                  },
+                  "name": "Lagos",
+                  "type": "Airport",
+                  "country": "Nigeria"
+                },
+                "destination": {
+                  "flightPlaceId": "ADD",
+                  "displayCode": "ADD",
+                  "parent": {
+                    "flightPlaceId": "ADDA",
+                    "displayCode": "ADD",
+                    "name": "Addis Ababa",
+                    "type": "City"
+                  },
+                  "name": "Addis Ababa",
+                  "type": "Airport",
+                  "country": "Ethiopia"
+                },
+                "departure": "2025-03-13T13:40:00",
+                "arrival": "2025-03-13T21:00:00",
+                "durationInMinutes": 320,
+                "flightNumber": "900",
+                "marketingCarrier": {
+                  "id": -32340,
+                  "name": "Ethiopian Airlines",
+                  "alternateId": "ET",
+                  "allianceId": 0,
+                  "displayCode": ""
+                },
+                "operatingCarrier": {
+                  "id": -32340,
+                  "name": "Ethiopian Airlines",
+                  "alternateId": "ET",
+                  "allianceId": 0,
+                  "displayCode": ""
+                }
+              },
+              {
+                "id": "9252-13554-2503140135-2503140635--32340",
+                "origin": {
+                  "flightPlaceId": "ADD",
+                  "displayCode": "ADD",
+                  "parent": {
+                    "flightPlaceId": "ADDA",
+                    "displayCode": "ADD",
+                    "name": "Addis Ababa",
+                    "type": "City"
+                  },
+                  "name": "Addis Ababa",
+                  "type": "Airport",
+                  "country": "Ethiopia"
+                },
+                "destination": {
+                  "flightPlaceId": "LHR",
+                  "displayCode": "LHR",
+                  "parent": {
+                    "flightPlaceId": "LOND",
+                    "displayCode": "LON",
+                    "name": "London",
+                    "type": "City"
+                  },
+                  "name": "London Heathrow",
+                  "type": "Airport",
+                  "country": "United Kingdom"
+                },
+                "departure": "2025-03-14T01:35:00",
+                "arrival": "2025-03-14T06:35:00",
+                "durationInMinutes": 480,
+                "flightNumber": "700",
+                "marketingCarrier": {
+                  "id": -32340,
+                  "name": "Ethiopian Airlines",
+                  "alternateId": "ET",
+                  "allianceId": 0,
+                  "displayCode": ""
+                },
+                "operatingCarrier": {
+                  "id": -32340,
+                  "name": "Ethiopian Airlines",
+                  "alternateId": "ET",
+                  "allianceId": 0,
+                  "displayCode": ""
+                }
+              }
+            ]
+          },
+          {
+            "id": "13554-2503192015--32340-3-13681-2503201700",
+            "origin": {
+              "id": "LHR",
+              "entityId": "95565050",
+              "name": "London Heathrow",
+              "displayCode": "LHR",
+              "city": "London",
+              "country": "United Kingdom",
+              "isHighlighted": false
+            },
+            "destination": {
+              "id": "LOS",
+              "entityId": "95673335",
+              "name": "Lagos",
+              "displayCode": "LOS",
+              "city": "Lagos",
+              "country": "Nigeria",
+              "isHighlighted": false
+            },
+            "durationInMinutes": 1185,
+            "stopCount": 3,
+            "isSmallestStops": false,
+            "departure": "2025-03-19T20:15:00",
+            "arrival": "2025-03-20T17:00:00",
+            "timeDeltaInDays": 1,
+            "carriers": {
+              "marketing": [
+                {
+                  "id": -32340,
+                  "alternateId": "ET",
+                  "logoUrl": "https://logos.skyscnr.com/images/airlines/favicon/ET.png",
+                  "name": "Ethiopian Airlines"
+                }
+              ],
+              "operating": [
+                {
+                  "id": -32557,
+                  "alternateId": "KP",
+                  "logoUrl": "https://logos.skyscnr.com/images/airlines/favicon/KP.png",
+                  "name": "ASKY Airlines"
+                }
+              ],
+              "operationType": "partially_operated"
+            },
+            "segments": [
+              {
+                "id": "13554-9252-2503192015-2503200700--32340",
+                "origin": {
+                  "flightPlaceId": "LHR",
+                  "displayCode": "LHR",
+                  "parent": {
+                    "flightPlaceId": "LOND",
+                    "displayCode": "LON",
+                    "name": "London",
+                    "type": "City"
+                  },
+                  "name": "London Heathrow",
+                  "type": "Airport",
+                  "country": "United Kingdom"
+                },
+                "destination": {
+                  "flightPlaceId": "ADD",
+                  "displayCode": "ADD",
+                  "parent": {
+                    "flightPlaceId": "ADDA",
+                    "displayCode": "ADD",
+                    "name": "Addis Ababa",
+                    "type": "City"
+                  },
+                  "name": "Addis Ababa",
+                  "type": "Airport",
+                  "country": "Ethiopia"
+                },
+                "departure": "2025-03-19T20:15:00",
+                "arrival": "2025-03-20T07:00:00",
+                "durationInMinutes": 465,
+                "flightNumber": "701",
+                "marketingCarrier": {
+                  "id": -32340,
+                  "name": "Ethiopian Airlines",
+                  "alternateId": "ET",
+                  "allianceId": 0,
+                  "displayCode": ""
+                },
+                "operatingCarrier": {
+                  "id": -32340,
+                  "name": "Ethiopian Airlines",
+                  "alternateId": "ET",
+                  "allianceId": 0,
+                  "displayCode": ""
+                }
+              },
+              {
+                "id": "9252-13521-2503200900-2503201130--32340",
+                "origin": {
+                  "flightPlaceId": "ADD",
+                  "displayCode": "ADD",
+                  "parent": {
+                    "flightPlaceId": "ADDA",
+                    "displayCode": "ADD",
+                    "name": "Addis Ababa",
+                    "type": "City"
+                  },
+                  "name": "Addis Ababa",
+                  "type": "Airport",
+                  "country": "Ethiopia"
+                },
+                "destination": {
+                  "flightPlaceId": "LFW",
+                  "displayCode": "LFW",
+                  "parent": {
+                    "flightPlaceId": "LFWA",
+                    "displayCode": "LFW",
+                    "name": "Lome",
+                    "type": "City"
+                  },
+                  "name": "Lome",
+                  "type": "Airport",
+                  "country": "Togo"
+                },
+                "departure": "2025-03-20T09:00:00",
+                "arrival": "2025-03-20T11:30:00",
+                "durationInMinutes": 330,
+                "flightNumber": "514",
+                "marketingCarrier": {
+                  "id": -32340,
+                  "name": "Ethiopian Airlines",
+                  "alternateId": "ET",
+                  "allianceId": 0,
+                  "displayCode": ""
+                },
+                "operatingCarrier": {
+                  "id": -32340,
+                  "name": "Ethiopian Airlines",
+                  "alternateId": "ET",
+                  "allianceId": 0,
+                  "displayCode": ""
+                }
+              },
+              {
+                "id": "13521-10675-2503201410-2503201550--32340",
+                "origin": {
+                  "flightPlaceId": "LFW",
+                  "displayCode": "LFW",
+                  "parent": {
+                    "flightPlaceId": "LFWA",
+                    "displayCode": "LFW",
+                    "name": "Lome",
+                    "type": "City"
+                  },
+                  "name": "Lome",
+                  "type": "Airport",
+                  "country": "Togo"
+                },
+                "destination": {
+                  "flightPlaceId": "COO",
+                  "displayCode": "COO",
+                  "parent": {
+                    "flightPlaceId": "COOA",
+                    "displayCode": "COO",
+                    "name": "Cotonou",
+                    "type": "City"
+                  },
+                  "name": "Cotonou",
+                  "type": "Airport",
+                  "country": "Benin"
+                },
+                "departure": "2025-03-20T14:10:00",
+                "arrival": "2025-03-20T15:50:00",
+                "durationInMinutes": 40,
+                "flightNumber": "1026",
+                "marketingCarrier": {
+                  "id": -32340,
+                  "name": "Ethiopian Airlines",
+                  "alternateId": "ET",
+                  "allianceId": 0,
+                  "displayCode": ""
+                },
+                "operatingCarrier": {
+                  "id": -32557,
+                  "name": "ASKY Airlines",
+                  "alternateId": "KP",
+                  "allianceId": 0,
+                  "displayCode": ""
+                }
+              },
+              {
+                "id": "10675-13681-2503201630-2503201700--32340",
+                "origin": {
+                  "flightPlaceId": "COO",
+                  "displayCode": "COO",
+                  "parent": {
+                    "flightPlaceId": "COOA",
+                    "displayCode": "COO",
+                    "name": "Cotonou",
+                    "type": "City"
+                  },
+                  "name": "Cotonou",
+                  "type": "Airport",
+                  "country": "Benin"
+                },
+                "destination": {
+                  "flightPlaceId": "LOS",
+                  "displayCode": "LOS",
+                  "parent": {
+                    "flightPlaceId": "LOSA",
+                    "displayCode": "LOS",
+                    "name": "Lagos",
+                    "type": "City"
+                  },
+                  "name": "Lagos",
+                  "type": "Airport",
+                  "country": "Nigeria"
+                },
+                "departure": "2025-03-20T16:30:00",
+                "arrival": "2025-03-20T17:00:00",
+                "durationInMinutes": 30,
+                "flightNumber": "1026",
+                "marketingCarrier": {
+                  "id": -32340,
+                  "name": "Ethiopian Airlines",
+                  "alternateId": "ET",
+                  "allianceId": 0,
+                  "displayCode": ""
+                },
+                "operatingCarrier": {
+                  "id": -32557,
+                  "name": "ASKY Airlines",
+                  "alternateId": "KP",
+                  "allianceId": 0,
+                  "displayCode": ""
+                }
+              }
+            ]
+          }
+        ],
+        "isSelfTransfer": false,
+        "isProtectedSelfTransfer": false,
+        "farePolicy": {
+          "isChangeAllowed": false,
+          "isPartiallyChangeable": false,
+          "isCancellationAllowed": false,
+          "isPartiallyRefundable": false
+        },
+        "fareAttributes": {},
+        "isMashUp": false,
+        "hasFlexibleOptions": false,
+        "score": 0.602621
+      },
+      {
+        "id": "13681-2503130915--32557,-32340-3-13554-2503140635|13554-2503192015--32340-1-13681-2503201225",
+        "price": {
+          "raw": 1767484.0,
+          "formatted": "₦1,767,484",
+          "pricingOptionId": "U1IP8-yEFLju"
+        },
+        "legs": [
+          {
+            "id": "13681-2503130915--32557,-32340-3-13554-2503140635",
+            "origin": {
+              "id": "LOS",
+              "entityId": "95673335",
+              "name": "Lagos",
+              "displayCode": "LOS",
+              "city": "Lagos",
+              "country": "Nigeria",
+              "isHighlighted": false
+            },
+            "destination": {
+              "id": "LHR",
+              "entityId": "95565050",
+              "name": "London Heathrow",
+              "displayCode": "LHR",
+              "city": "London",
+              "country": "United Kingdom",
+              "isHighlighted": false
+            },
+            "durationInMinutes": 1340,
+            "stopCount": 3,
+            "isSmallestStops": false,
+            "departure": "2025-03-13T09:15:00",
+            "arrival": "2025-03-14T06:35:00",
+            "timeDeltaInDays": 1,
+            "carriers": {
+              "marketing": [
+                {
+                  "id": -32557,
+                  "alternateId": "KP",
+                  "logoUrl": "https://logos.skyscnr.com/images/airlines/favicon/KP.png",
+                  "name": "ASKY Airlines"
+                },
+                {
+                  "id": -32340,
+                  "alternateId": "ET",
+                  "logoUrl": "https://logos.skyscnr.com/images/airlines/favicon/ET.png",
+                  "name": "Ethiopian Airlines"
+                }
+              ],
+              "operationType": "fully_operated"
+            },
+            "segments": [
+              {
+                "id": "13681-10675-2503130915-2503130945--32557",
+                "origin": {
+                  "flightPlaceId": "LOS",
+                  "displayCode": "LOS",
+                  "parent": {
+                    "flightPlaceId": "LOSA",
+                    "displayCode": "LOS",
+                    "name": "Lagos",
+                    "type": "City"
+                  },
+                  "name": "Lagos",
+                  "type": "Airport",
+                  "country": "Nigeria"
+                },
+                "destination": {
+                  "flightPlaceId": "COO",
+                  "displayCode": "COO",
+                  "parent": {
+                    "flightPlaceId": "COOA",
+                    "displayCode": "COO",
+                    "name": "Cotonou",
+                    "type": "City"
+                  },
+                  "name": "Cotonou",
+                  "type": "Airport",
+                  "country": "Benin"
+                },
+                "departure": "2025-03-13T09:15:00",
+                "arrival": "2025-03-13T09:45:00",
+                "durationInMinutes": 30,
+                "flightNumber": "63",
+                "marketingCarrier": {
+                  "id": -32557,
+                  "name": "ASKY Airlines",
+                  "alternateId": "KP",
+                  "allianceId": 0,
+                  "displayCode": ""
+                },
+                "operatingCarrier": {
+                  "id": -32557,
+                  "name": "ASKY Airlines",
+                  "alternateId": "KP",
+                  "allianceId": 0,
+                  "displayCode": ""
+                }
+              },
+              {
+                "id": "10675-13521-2503131025-2503131005--32557",
+                "origin": {
+                  "flightPlaceId": "COO",
+                  "displayCode": "COO",
+                  "parent": {
+                    "flightPlaceId": "COOA",
+                    "displayCode": "COO",
+                    "name": "Cotonou",
+                    "type": "City"
+                  },
+                  "name": "Cotonou",
+                  "type": "Airport",
+                  "country": "Benin"
+                },
+                "destination": {
+                  "flightPlaceId": "LFW",
+                  "displayCode": "LFW",
+                  "parent": {
+                    "flightPlaceId": "LFWA",
+                    "displayCode": "LFW",
+                    "name": "Lome",
+                    "type": "City"
+                  },
+                  "name": "Lome",
+                  "type": "Airport",
+                  "country": "Togo"
+                },
+                "departure": "2025-03-13T10:25:00",
+                "arrival": "2025-03-13T10:05:00",
+                "durationInMinutes": 40,
+                "flightNumber": "63",
+                "marketingCarrier": {
+                  "id": -32557,
+                  "name": "ASKY Airlines",
+                  "alternateId": "KP",
+                  "allianceId": 0,
+                  "displayCode": ""
+                },
+                "operatingCarrier": {
+                  "id": -32557,
+                  "name": "ASKY Airlines",
+                  "alternateId": "KP",
+                  "allianceId": 0,
+                  "displayCode": ""
+                }
+              },
+              {
+                "id": "13521-9252-2503131245-2503132110--32340",
+                "origin": {
+                  "flightPlaceId": "LFW",
+                  "displayCode": "LFW",
+                  "parent": {
+                    "flightPlaceId": "LFWA",
+                    "displayCode": "LFW",
+                    "name": "Lome",
+                    "type": "City"
+                  },
+                  "name": "Lome",
+                  "type": "Airport",
+                  "country": "Togo"
+                },
+                "destination": {
+                  "flightPlaceId": "ADD",
+                  "displayCode": "ADD",
+                  "parent": {
+                    "flightPlaceId": "ADDA",
+                    "displayCode": "ADD",
+                    "name": "Addis Ababa",
+                    "type": "City"
+                  },
+                  "name": "Addis Ababa",
+                  "type": "Airport",
+                  "country": "Ethiopia"
+                },
+                "departure": "2025-03-13T12:45:00",
+                "arrival": "2025-03-13T21:10:00",
+                "durationInMinutes": 325,
+                "flightNumber": "517",
+                "marketingCarrier": {
+                  "id": -32340,
+                  "name": "Ethiopian Airlines",
+                  "alternateId": "ET",
+                  "allianceId": 0,
+                  "displayCode": ""
+                },
+                "operatingCarrier": {
+                  "id": -32340,
+                  "name": "Ethiopian Airlines",
+                  "alternateId": "ET",
+                  "allianceId": 0,
+                  "displayCode": ""
+                }
+              },
+              {
+                "id": "9252-13554-2503140135-2503140635--32340",
+                "origin": {
+                  "flightPlaceId": "ADD",
+                  "displayCode": "ADD",
+                  "parent": {
+                    "flightPlaceId": "ADDA",
+                    "displayCode": "ADD",
+                    "name": "Addis Ababa",
+                    "type": "City"
+                  },
+                  "name": "Addis Ababa",
+                  "type": "Airport",
+                  "country": "Ethiopia"
+                },
+                "destination": {
+                  "flightPlaceId": "LHR",
+                  "displayCode": "LHR",
+                  "parent": {
+                    "flightPlaceId": "LOND",
+                    "displayCode": "LON",
+                    "name": "London",
+                    "type": "City"
+                  },
+                  "name": "London Heathrow",
+                  "type": "Airport",
+                  "country": "United Kingdom"
+                },
+                "departure": "2025-03-14T01:35:00",
+                "arrival": "2025-03-14T06:35:00",
+                "durationInMinutes": 480,
+                "flightNumber": "700",
+                "marketingCarrier": {
+                  "id": -32340,
+                  "name": "Ethiopian Airlines",
+                  "alternateId": "ET",
+                  "allianceId": 0,
+                  "displayCode": ""
+                },
+                "operatingCarrier": {
+                  "id": -32340,
+                  "name": "Ethiopian Airlines",
+                  "alternateId": "ET",
+                  "allianceId": 0,
+                  "displayCode": ""
+                }
+              }
+            ]
+          },
+          {
+            "id": "13554-2503192015--32340-1-13681-2503201225",
+            "origin": {
+              "id": "LHR",
+              "entityId": "95565050",
+              "name": "London Heathrow",
+              "displayCode": "LHR",
+              "city": "London",
+              "country": "United Kingdom",
+              "isHighlighted": false
+            },
+            "destination": {
+              "id": "LOS",
+              "entityId": "95673335",
+              "name": "Lagos",
+              "displayCode": "LOS",
+              "city": "Lagos",
+              "country": "Nigeria",
+              "isHighlighted": false
+            },
+            "durationInMinutes": 910,
+            "stopCount": 1,
+            "isSmallestStops": false,
+            "departure": "2025-03-19T20:15:00",
+            "arrival": "2025-03-20T12:25:00",
+            "timeDeltaInDays": 1,
+            "carriers": {
+              "marketing": [
+                {
+                  "id": -32340,
+                  "alternateId": "ET",
+                  "logoUrl": "https://logos.skyscnr.com/images/airlines/favicon/ET.png",
+                  "name": "Ethiopian Airlines"
+                }
+              ],
+              "operationType": "fully_operated"
+            },
+            "segments": [
+              {
+                "id": "13554-9252-2503192015-2503200700--32340",
+                "origin": {
+                  "flightPlaceId": "LHR",
+                  "displayCode": "LHR",
+                  "parent": {
+                    "flightPlaceId": "LOND",
+                    "displayCode": "LON",
+                    "name": "London",
+                    "type": "City"
+                  },
+                  "name": "London Heathrow",
+                  "type": "Airport",
+                  "country": "United Kingdom"
+                },
+                "destination": {
+                  "flightPlaceId": "ADD",
+                  "displayCode": "ADD",
+                  "parent": {
+                    "flightPlaceId": "ADDA",
+                    "displayCode": "ADD",
+                    "name": "Addis Ababa",
+                    "type": "City"
+                  },
+                  "name": "Addis Ababa",
+                  "type": "Airport",
+                  "country": "Ethiopia"
+                },
+                "departure": "2025-03-19T20:15:00",
+                "arrival": "2025-03-20T07:00:00",
+                "durationInMinutes": 465,
+                "flightNumber": "701",
+                "marketingCarrier": {
+                  "id": -32340,
+                  "name": "Ethiopian Airlines",
+                  "alternateId": "ET",
+                  "allianceId": 0,
+                  "displayCode": ""
+                },
+                "operatingCarrier": {
+                  "id": -32340,
+                  "name": "Ethiopian Airlines",
+                  "alternateId": "ET",
+                  "allianceId": 0,
+                  "displayCode": ""
+                }
+              },
+              {
+                "id": "9252-13681-2503200900-2503201225--32340",
+                "origin": {
+                  "flightPlaceId": "ADD",
+                  "displayCode": "ADD",
+                  "parent": {
+                    "flightPlaceId": "ADDA",
+                    "displayCode": "ADD",
+                    "name": "Addis Ababa",
+                    "type": "City"
+                  },
+                  "name": "Addis Ababa",
+                  "type": "Airport",
+                  "country": "Ethiopia"
+                },
+                "destination": {
+                  "flightPlaceId": "LOS",
+                  "displayCode": "LOS",
+                  "parent": {
+                    "flightPlaceId": "LOSA",
+                    "displayCode": "LOS",
+                    "name": "Lagos",
+                    "type": "City"
+                  },
+                  "name": "Lagos",
+                  "type": "Airport",
+                  "country": "Nigeria"
+                },
+                "departure": "2025-03-20T09:00:00",
+                "arrival": "2025-03-20T12:25:00",
+                "durationInMinutes": 325,
+                "flightNumber": "901",
+                "marketingCarrier": {
+                  "id": -32340,
+                  "name": "Ethiopian Airlines",
+                  "alternateId": "ET",
+                  "allianceId": 0,
+                  "displayCode": ""
+                },
+                "operatingCarrier": {
+                  "id": -32340,
+                  "name": "Ethiopian Airlines",
+                  "alternateId": "ET",
+                  "allianceId": 0,
+                  "displayCode": ""
+                }
+              }
+            ]
+          }
+        ],
+        "isSelfTransfer": false,
+        "isProtectedSelfTransfer": false,
+        "farePolicy": {
+          "isChangeAllowed": false,
+          "isPartiallyChangeable": false,
+          "isCancellationAllowed": false,
+          "isPartiallyRefundable": false
+        },
+        "fareAttributes": {},
+        "tags": ["third_cheapest"],
+        "isMashUp": false,
+        "hasFlexibleOptions": false,
+        "score": 0.449607
+      },
+      {
+        "id": "13681-2503130915--32340-3-13554-2503140635|13554-2503192015--32340-1-13681-2503201225",
+        "price": {
+          "raw": 2087981.0,
+          "formatted": "₦2,087,981",
+          "pricingOptionId": "_sPrtQaf72vv"
+        },
+        "legs": [
+          {
+            "id": "13681-2503130915--32340-3-13554-2503140635",
+            "origin": {
+              "id": "LOS",
+              "entityId": "95673335",
+              "name": "Lagos",
+              "displayCode": "LOS",
+              "city": "Lagos",
+              "country": "Nigeria",
+              "isHighlighted": false
+            },
+            "destination": {
+              "id": "LHR",
+              "entityId": "95565050",
+              "name": "London Heathrow",
+              "displayCode": "LHR",
+              "city": "London",
+              "country": "United Kingdom",
+              "isHighlighted": false
+            },
+            "durationInMinutes": 1340,
+            "stopCount": 3,
+            "isSmallestStops": false,
+            "departure": "2025-03-13T09:15:00",
+            "arrival": "2025-03-14T06:35:00",
+            "timeDeltaInDays": 1,
+            "carriers": {
+              "marketing": [
+                {
+                  "id": -32340,
+                  "alternateId": "ET",
+                  "logoUrl": "https://logos.skyscnr.com/images/airlines/favicon/ET.png",
+                  "name": "Ethiopian Airlines"
+                }
+              ],
+              "operating": [
+                {
+                  "id": -32557,
+                  "alternateId": "KP",
+                  "logoUrl": "https://logos.skyscnr.com/images/airlines/favicon/KP.png",
+                  "name": "ASKY Airlines"
+                }
+              ],
+              "operationType": "partially_operated"
+            },
+            "segments": [
+              {
+                "id": "13681-10675-2503130915-2503130945--32340",
+                "origin": {
+                  "flightPlaceId": "LOS",
+                  "displayCode": "LOS",
+                  "parent": {
+                    "flightPlaceId": "LOSA",
+                    "displayCode": "LOS",
+                    "name": "Lagos",
+                    "type": "City"
+                  },
+                  "name": "Lagos",
+                  "type": "Airport",
+                  "country": "Nigeria"
+                },
+                "destination": {
+                  "flightPlaceId": "COO",
+                  "displayCode": "COO",
+                  "parent": {
+                    "flightPlaceId": "COOA",
+                    "displayCode": "COO",
+                    "name": "Cotonou",
+                    "type": "City"
+                  },
+                  "name": "Cotonou",
+                  "type": "Airport",
+                  "country": "Benin"
+                },
+                "departure": "2025-03-13T09:15:00",
+                "arrival": "2025-03-13T09:45:00",
+                "durationInMinutes": 30,
+                "flightNumber": "1025",
+                "marketingCarrier": {
+                  "id": -32340,
+                  "name": "Ethiopian Airlines",
+                  "alternateId": "ET",
+                  "allianceId": 0,
+                  "displayCode": ""
+                },
+                "operatingCarrier": {
+                  "id": -32557,
+                  "name": "ASKY Airlines",
+                  "alternateId": "KP",
+                  "allianceId": 0,
+                  "displayCode": ""
+                }
+              },
+              {
+                "id": "10675-13521-2503131025-2503131005--32340",
+                "origin": {
+                  "flightPlaceId": "COO",
+                  "displayCode": "COO",
+                  "parent": {
+                    "flightPlaceId": "COOA",
+                    "displayCode": "COO",
+                    "name": "Cotonou",
+                    "type": "City"
+                  },
+                  "name": "Cotonou",
+                  "type": "Airport",
+                  "country": "Benin"
+                },
+                "destination": {
+                  "flightPlaceId": "LFW",
+                  "displayCode": "LFW",
+                  "parent": {
+                    "flightPlaceId": "LFWA",
+                    "displayCode": "LFW",
+                    "name": "Lome",
+                    "type": "City"
+                  },
+                  "name": "Lome",
+                  "type": "Airport",
+                  "country": "Togo"
+                },
+                "departure": "2025-03-13T10:25:00",
+                "arrival": "2025-03-13T10:05:00",
+                "durationInMinutes": 40,
+                "flightNumber": "1025",
+                "marketingCarrier": {
+                  "id": -32340,
+                  "name": "Ethiopian Airlines",
+                  "alternateId": "ET",
+                  "allianceId": 0,
+                  "displayCode": ""
+                },
+                "operatingCarrier": {
+                  "id": -32557,
+                  "name": "ASKY Airlines",
+                  "alternateId": "KP",
+                  "allianceId": 0,
+                  "displayCode": ""
+                }
+              },
+              {
+                "id": "13521-9252-2503131245-2503132110--32340",
+                "origin": {
+                  "flightPlaceId": "LFW",
+                  "displayCode": "LFW",
+                  "parent": {
+                    "flightPlaceId": "LFWA",
+                    "displayCode": "LFW",
+                    "name": "Lome",
+                    "type": "City"
+                  },
+                  "name": "Lome",
+                  "type": "Airport",
+                  "country": "Togo"
+                },
+                "destination": {
+                  "flightPlaceId": "ADD",
+                  "displayCode": "ADD",
+                  "parent": {
+                    "flightPlaceId": "ADDA",
+                    "displayCode": "ADD",
+                    "name": "Addis Ababa",
+                    "type": "City"
+                  },
+                  "name": "Addis Ababa",
+                  "type": "Airport",
+                  "country": "Ethiopia"
+                },
+                "departure": "2025-03-13T12:45:00",
+                "arrival": "2025-03-13T21:10:00",
+                "durationInMinutes": 325,
+                "flightNumber": "517",
+                "marketingCarrier": {
+                  "id": -32340,
+                  "name": "Ethiopian Airlines",
+                  "alternateId": "ET",
+                  "allianceId": 0,
+                  "displayCode": ""
+                },
+                "operatingCarrier": {
+                  "id": -32340,
+                  "name": "Ethiopian Airlines",
+                  "alternateId": "ET",
+                  "allianceId": 0,
+                  "displayCode": ""
+                }
+              },
+              {
+                "id": "9252-13554-2503140135-2503140635--32340",
+                "origin": {
+                  "flightPlaceId": "ADD",
+                  "displayCode": "ADD",
+                  "parent": {
+                    "flightPlaceId": "ADDA",
+                    "displayCode": "ADD",
+                    "name": "Addis Ababa",
+                    "type": "City"
+                  },
+                  "name": "Addis Ababa",
+                  "type": "Airport",
+                  "country": "Ethiopia"
+                },
+                "destination": {
+                  "flightPlaceId": "LHR",
+                  "displayCode": "LHR",
+                  "parent": {
+                    "flightPlaceId": "LOND",
+                    "displayCode": "LON",
+                    "name": "London",
+                    "type": "City"
+                  },
+                  "name": "London Heathrow",
+                  "type": "Airport",
+                  "country": "United Kingdom"
+                },
+                "departure": "2025-03-14T01:35:00",
+                "arrival": "2025-03-14T06:35:00",
+                "durationInMinutes": 480,
+                "flightNumber": "700",
+                "marketingCarrier": {
+                  "id": -32340,
+                  "name": "Ethiopian Airlines",
+                  "alternateId": "ET",
+                  "allianceId": 0,
+                  "displayCode": ""
+                },
+                "operatingCarrier": {
+                  "id": -32340,
+                  "name": "Ethiopian Airlines",
+                  "alternateId": "ET",
+                  "allianceId": 0,
+                  "displayCode": ""
+                }
+              }
+            ]
+          },
+          {
+            "id": "13554-2503192015--32340-1-13681-2503201225",
+            "origin": {
+              "id": "LHR",
+              "entityId": "95565050",
+              "name": "London Heathrow",
+              "displayCode": "LHR",
+              "city": "London",
+              "country": "United Kingdom",
+              "isHighlighted": false
+            },
+            "destination": {
+              "id": "LOS",
+              "entityId": "95673335",
+              "name": "Lagos",
+              "displayCode": "LOS",
+              "city": "Lagos",
+              "country": "Nigeria",
+              "isHighlighted": false
+            },
+            "durationInMinutes": 910,
+            "stopCount": 1,
+            "isSmallestStops": false,
+            "departure": "2025-03-19T20:15:00",
+            "arrival": "2025-03-20T12:25:00",
+            "timeDeltaInDays": 1,
+            "carriers": {
+              "marketing": [
+                {
+                  "id": -32340,
+                  "alternateId": "ET",
+                  "logoUrl": "https://logos.skyscnr.com/images/airlines/favicon/ET.png",
+                  "name": "Ethiopian Airlines"
+                }
+              ],
+              "operationType": "fully_operated"
+            },
+            "segments": [
+              {
+                "id": "13554-9252-2503192015-2503200700--32340",
+                "origin": {
+                  "flightPlaceId": "LHR",
+                  "displayCode": "LHR",
+                  "parent": {
+                    "flightPlaceId": "LOND",
+                    "displayCode": "LON",
+                    "name": "London",
+                    "type": "City"
+                  },
+                  "name": "London Heathrow",
+                  "type": "Airport",
+                  "country": "United Kingdom"
+                },
+                "destination": {
+                  "flightPlaceId": "ADD",
+                  "displayCode": "ADD",
+                  "parent": {
+                    "flightPlaceId": "ADDA",
+                    "displayCode": "ADD",
+                    "name": "Addis Ababa",
+                    "type": "City"
+                  },
+                  "name": "Addis Ababa",
+                  "type": "Airport",
+                  "country": "Ethiopia"
+                },
+                "departure": "2025-03-19T20:15:00",
+                "arrival": "2025-03-20T07:00:00",
+                "durationInMinutes": 465,
+                "flightNumber": "701",
+                "marketingCarrier": {
+                  "id": -32340,
+                  "name": "Ethiopian Airlines",
+                  "alternateId": "ET",
+                  "allianceId": 0,
+                  "displayCode": ""
+                },
+                "operatingCarrier": {
+                  "id": -32340,
+                  "name": "Ethiopian Airlines",
+                  "alternateId": "ET",
+                  "allianceId": 0,
+                  "displayCode": ""
+                }
+              },
+              {
+                "id": "9252-13681-2503200900-2503201225--32340",
+                "origin": {
+                  "flightPlaceId": "ADD",
+                  "displayCode": "ADD",
+                  "parent": {
+                    "flightPlaceId": "ADDA",
+                    "displayCode": "ADD",
+                    "name": "Addis Ababa",
+                    "type": "City"
+                  },
+                  "name": "Addis Ababa",
+                  "type": "Airport",
+                  "country": "Ethiopia"
+                },
+                "destination": {
+                  "flightPlaceId": "LOS",
+                  "displayCode": "LOS",
+                  "parent": {
+                    "flightPlaceId": "LOSA",
+                    "displayCode": "LOS",
+                    "name": "Lagos",
+                    "type": "City"
+                  },
+                  "name": "Lagos",
+                  "type": "Airport",
+                  "country": "Nigeria"
+                },
+                "departure": "2025-03-20T09:00:00",
+                "arrival": "2025-03-20T12:25:00",
+                "durationInMinutes": 325,
+                "flightNumber": "901",
+                "marketingCarrier": {
+                  "id": -32340,
+                  "name": "Ethiopian Airlines",
+                  "alternateId": "ET",
+                  "allianceId": 0,
+                  "displayCode": ""
+                },
+                "operatingCarrier": {
+                  "id": -32340,
+                  "name": "Ethiopian Airlines",
+                  "alternateId": "ET",
+                  "allianceId": 0,
+                  "displayCode": ""
+                }
+              }
+            ]
+          }
+        ],
+        "isSelfTransfer": false,
+        "isProtectedSelfTransfer": false,
+        "farePolicy": {
+          "isChangeAllowed": false,
+          "isPartiallyChangeable": false,
+          "isCancellationAllowed": false,
+          "isPartiallyRefundable": false
+        },
+        "fareAttributes": {},
+        "isMashUp": false,
+        "hasFlexibleOptions": false,
+        "score": 0.444632
+      },
+      {
+        "id": "13681-2503131340--32340-1-13554-2503140635|13554-2503192015--32340,-32557-3-13681-2503201700",
+        "price": {
+          "raw": 1947314.0,
+          "formatted": "₦1,947,314",
+          "pricingOptionId": "8UY8xatnxLMM"
+        },
+        "legs": [
+          {
+            "id": "13681-2503131340--32340-1-13554-2503140635",
+            "origin": {
+              "id": "LOS",
+              "entityId": "95673335",
+              "name": "Lagos",
+              "displayCode": "LOS",
+              "city": "Lagos",
+              "country": "Nigeria",
+              "isHighlighted": false
+            },
+            "destination": {
+              "id": "LHR",
+              "entityId": "95565050",
+              "name": "London Heathrow",
+              "displayCode": "LHR",
+              "city": "London",
+              "country": "United Kingdom",
+              "isHighlighted": false
+            },
+            "durationInMinutes": 1075,
+            "stopCount": 1,
+            "isSmallestStops": false,
+            "departure": "2025-03-13T13:40:00",
+            "arrival": "2025-03-14T06:35:00",
+            "timeDeltaInDays": 1,
+            "carriers": {
+              "marketing": [
+                {
+                  "id": -32340,
+                  "alternateId": "ET",
+                  "logoUrl": "https://logos.skyscnr.com/images/airlines/favicon/ET.png",
+                  "name": "Ethiopian Airlines"
+                }
+              ],
+              "operationType": "fully_operated"
+            },
+            "segments": [
+              {
+                "id": "13681-9252-2503131340-2503132100--32340",
+                "origin": {
+                  "flightPlaceId": "LOS",
+                  "displayCode": "LOS",
+                  "parent": {
+                    "flightPlaceId": "LOSA",
+                    "displayCode": "LOS",
+                    "name": "Lagos",
+                    "type": "City"
+                  },
+                  "name": "Lagos",
+                  "type": "Airport",
+                  "country": "Nigeria"
+                },
+                "destination": {
+                  "flightPlaceId": "ADD",
+                  "displayCode": "ADD",
+                  "parent": {
+                    "flightPlaceId": "ADDA",
+                    "displayCode": "ADD",
+                    "name": "Addis Ababa",
+                    "type": "City"
+                  },
+                  "name": "Addis Ababa",
+                  "type": "Airport",
+                  "country": "Ethiopia"
+                },
+                "departure": "2025-03-13T13:40:00",
+                "arrival": "2025-03-13T21:00:00",
+                "durationInMinutes": 320,
+                "flightNumber": "900",
+                "marketingCarrier": {
+                  "id": -32340,
+                  "name": "Ethiopian Airlines",
+                  "alternateId": "ET",
+                  "allianceId": 0,
+                  "displayCode": ""
+                },
+                "operatingCarrier": {
+                  "id": -32340,
+                  "name": "Ethiopian Airlines",
+                  "alternateId": "ET",
+                  "allianceId": 0,
+                  "displayCode": ""
+                }
+              },
+              {
+                "id": "9252-13554-2503140135-2503140635--32340",
+                "origin": {
+                  "flightPlaceId": "ADD",
+                  "displayCode": "ADD",
+                  "parent": {
+                    "flightPlaceId": "ADDA",
+                    "displayCode": "ADD",
+                    "name": "Addis Ababa",
+                    "type": "City"
+                  },
+                  "name": "Addis Ababa",
+                  "type": "Airport",
+                  "country": "Ethiopia"
+                },
+                "destination": {
+                  "flightPlaceId": "LHR",
+                  "displayCode": "LHR",
+                  "parent": {
+                    "flightPlaceId": "LOND",
+                    "displayCode": "LON",
+                    "name": "London",
+                    "type": "City"
+                  },
+                  "name": "London Heathrow",
+                  "type": "Airport",
+                  "country": "United Kingdom"
+                },
+                "departure": "2025-03-14T01:35:00",
+                "arrival": "2025-03-14T06:35:00",
+                "durationInMinutes": 480,
+                "flightNumber": "700",
+                "marketingCarrier": {
+                  "id": -32340,
+                  "name": "Ethiopian Airlines",
+                  "alternateId": "ET",
+                  "allianceId": 0,
+                  "displayCode": ""
+                },
+                "operatingCarrier": {
+                  "id": -32340,
+                  "name": "Ethiopian Airlines",
+                  "alternateId": "ET",
+                  "allianceId": 0,
+                  "displayCode": ""
+                }
+              }
+            ]
+          },
+          {
+            "id": "13554-2503192015--32340,-32557-3-13681-2503201700",
+            "origin": {
+              "id": "LHR",
+              "entityId": "95565050",
+              "name": "London Heathrow",
+              "displayCode": "LHR",
+              "city": "London",
+              "country": "United Kingdom",
+              "isHighlighted": false
+            },
+            "destination": {
+              "id": "LOS",
+              "entityId": "95673335",
+              "name": "Lagos",
+              "displayCode": "LOS",
+              "city": "Lagos",
+              "country": "Nigeria",
+              "isHighlighted": false
+            },
+            "durationInMinutes": 1185,
+            "stopCount": 3,
+            "isSmallestStops": false,
+            "departure": "2025-03-19T20:15:00",
+            "arrival": "2025-03-20T17:00:00",
+            "timeDeltaInDays": 1,
+            "carriers": {
+              "marketing": [
+                {
+                  "id": -32340,
+                  "alternateId": "ET",
+                  "logoUrl": "https://logos.skyscnr.com/images/airlines/favicon/ET.png",
+                  "name": "Ethiopian Airlines"
+                },
+                {
+                  "id": -32557,
+                  "alternateId": "KP",
+                  "logoUrl": "https://logos.skyscnr.com/images/airlines/favicon/KP.png",
+                  "name": "ASKY Airlines"
+                }
+              ],
+              "operationType": "fully_operated"
+            },
+            "segments": [
+              {
+                "id": "13554-9252-2503192015-2503200700--32340",
+                "origin": {
+                  "flightPlaceId": "LHR",
+                  "displayCode": "LHR",
+                  "parent": {
+                    "flightPlaceId": "LOND",
+                    "displayCode": "LON",
+                    "name": "London",
+                    "type": "City"
+                  },
+                  "name": "London Heathrow",
+                  "type": "Airport",
+                  "country": "United Kingdom"
+                },
+                "destination": {
+                  "flightPlaceId": "ADD",
+                  "displayCode": "ADD",
+                  "parent": {
+                    "flightPlaceId": "ADDA",
+                    "displayCode": "ADD",
+                    "name": "Addis Ababa",
+                    "type": "City"
+                  },
+                  "name": "Addis Ababa",
+                  "type": "Airport",
+                  "country": "Ethiopia"
+                },
+                "departure": "2025-03-19T20:15:00",
+                "arrival": "2025-03-20T07:00:00",
+                "durationInMinutes": 465,
+                "flightNumber": "701",
+                "marketingCarrier": {
+                  "id": -32340,
+                  "name": "Ethiopian Airlines",
+                  "alternateId": "ET",
+                  "allianceId": 0,
+                  "displayCode": ""
+                },
+                "operatingCarrier": {
+                  "id": -32340,
+                  "name": "Ethiopian Airlines",
+                  "alternateId": "ET",
+                  "allianceId": 0,
+                  "displayCode": ""
+                }
+              },
+              {
+                "id": "9252-13521-2503200900-2503201130--32340",
+                "origin": {
+                  "flightPlaceId": "ADD",
+                  "displayCode": "ADD",
+                  "parent": {
+                    "flightPlaceId": "ADDA",
+                    "displayCode": "ADD",
+                    "name": "Addis Ababa",
+                    "type": "City"
+                  },
+                  "name": "Addis Ababa",
+                  "type": "Airport",
+                  "country": "Ethiopia"
+                },
+                "destination": {
+                  "flightPlaceId": "LFW",
+                  "displayCode": "LFW",
+                  "parent": {
+                    "flightPlaceId": "LFWA",
+                    "displayCode": "LFW",
+                    "name": "Lome",
+                    "type": "City"
+                  },
+                  "name": "Lome",
+                  "type": "Airport",
+                  "country": "Togo"
+                },
+                "departure": "2025-03-20T09:00:00",
+                "arrival": "2025-03-20T11:30:00",
+                "durationInMinutes": 330,
+                "flightNumber": "514",
+                "marketingCarrier": {
+                  "id": -32340,
+                  "name": "Ethiopian Airlines",
+                  "alternateId": "ET",
+                  "allianceId": 0,
+                  "displayCode": ""
+                },
+                "operatingCarrier": {
+                  "id": -32340,
+                  "name": "Ethiopian Airlines",
+                  "alternateId": "ET",
+                  "allianceId": 0,
+                  "displayCode": ""
+                }
+              },
+              {
+                "id": "13521-10675-2503201410-2503201550--32557",
+                "origin": {
+                  "flightPlaceId": "LFW",
+                  "displayCode": "LFW",
+                  "parent": {
+                    "flightPlaceId": "LFWA",
+                    "displayCode": "LFW",
+                    "name": "Lome",
+                    "type": "City"
+                  },
+                  "name": "Lome",
+                  "type": "Airport",
+                  "country": "Togo"
+                },
+                "destination": {
+                  "flightPlaceId": "COO",
+                  "displayCode": "COO",
+                  "parent": {
+                    "flightPlaceId": "COOA",
+                    "displayCode": "COO",
+                    "name": "Cotonou",
+                    "type": "City"
+                  },
+                  "name": "Cotonou",
+                  "type": "Airport",
+                  "country": "Benin"
+                },
+                "departure": "2025-03-20T14:10:00",
+                "arrival": "2025-03-20T15:50:00",
+                "durationInMinutes": 40,
+                "flightNumber": "62",
+                "marketingCarrier": {
+                  "id": -32557,
+                  "name": "ASKY Airlines",
+                  "alternateId": "KP",
+                  "allianceId": 0,
+                  "displayCode": ""
+                },
+                "operatingCarrier": {
+                  "id": -32557,
+                  "name": "ASKY Airlines",
+                  "alternateId": "KP",
+                  "allianceId": 0,
+                  "displayCode": ""
+                }
+              },
+              {
+                "id": "10675-13681-2503201630-2503201700--32557",
+                "origin": {
+                  "flightPlaceId": "COO",
+                  "displayCode": "COO",
+                  "parent": {
+                    "flightPlaceId": "COOA",
+                    "displayCode": "COO",
+                    "name": "Cotonou",
+                    "type": "City"
+                  },
+                  "name": "Cotonou",
+                  "type": "Airport",
+                  "country": "Benin"
+                },
+                "destination": {
+                  "flightPlaceId": "LOS",
+                  "displayCode": "LOS",
+                  "parent": {
+                    "flightPlaceId": "LOSA",
+                    "displayCode": "LOS",
+                    "name": "Lagos",
+                    "type": "City"
+                  },
+                  "name": "Lagos",
+                  "type": "Airport",
+                  "country": "Nigeria"
+                },
+                "departure": "2025-03-20T16:30:00",
+                "arrival": "2025-03-20T17:00:00",
+                "durationInMinutes": 30,
+                "flightNumber": "62",
+                "marketingCarrier": {
+                  "id": -32557,
+                  "name": "ASKY Airlines",
+                  "alternateId": "KP",
+                  "allianceId": 0,
+                  "displayCode": ""
+                },
+                "operatingCarrier": {
+                  "id": -32557,
+                  "name": "ASKY Airlines",
+                  "alternateId": "KP",
+                  "allianceId": 0,
+                  "displayCode": ""
+                }
+              }
+            ]
+          }
+        ],
+        "isSelfTransfer": false,
+        "isProtectedSelfTransfer": false,
+        "farePolicy": {
+          "isChangeAllowed": false,
+          "isPartiallyChangeable": false,
+          "isCancellationAllowed": false,
+          "isPartiallyRefundable": false
+        },
+        "fareAttributes": {},
+        "isMashUp": false,
+        "hasFlexibleOptions": false,
+        "score": 0.434759
+      },
+      {
+        "id": "13681-2503131340--32340,-32544-2-13554-2503140820|13554-2503192015--32340-1-13681-2503201225",
+        "price": {
+          "raw": 2420823.0,
+          "formatted": "₦2,420,823",
+          "pricingOptionId": "gXKS0X5yaiHN"
+        },
+        "legs": [
+          {
+            "id": "13681-2503131340--32340,-32544-2-13554-2503140820",
+            "origin": {
+              "id": "LOS",
+              "entityId": "95673335",
+              "name": "Lagos",
+              "displayCode": "LOS",
+              "city": "Lagos",
+              "country": "Nigeria",
+              "isHighlighted": false
+            },
+            "destination": {
+              "id": "LHR",
+              "entityId": "95565050",
+              "name": "London Heathrow",
+              "displayCode": "LHR",
+              "city": "London",
+              "country": "United Kingdom",
+              "isHighlighted": false
+            },
+            "durationInMinutes": 1180,
+            "stopCount": 2,
+            "isSmallestStops": false,
+            "departure": "2025-03-13T13:40:00",
+            "arrival": "2025-03-14T08:20:00",
+            "timeDeltaInDays": 1,
+            "carriers": {
+              "marketing": [
+                {
+                  "id": -32340,
+                  "alternateId": "ET",
+                  "logoUrl": "https://logos.skyscnr.com/images/airlines/favicon/ET.png",
+                  "name": "Ethiopian Airlines"
+                },
+                {
+                  "id": -32544,
+                  "alternateId": "OS",
+                  "logoUrl": "https://logos.skyscnr.com/images/airlines/favicon/OS.png",
+                  "name": "Austrian Airlines"
+                }
+              ],
+              "operationType": "fully_operated"
+            },
+            "segments": [
+              {
+                "id": "13681-9252-2503131340-2503132100--32340",
+                "origin": {
+                  "flightPlaceId": "LOS",
+                  "displayCode": "LOS",
+                  "parent": {
+                    "flightPlaceId": "LOSA",
+                    "displayCode": "LOS",
+                    "name": "Lagos",
+                    "type": "City"
+                  },
+                  "name": "Lagos",
+                  "type": "Airport",
+                  "country": "Nigeria"
+                },
+                "destination": {
+                  "flightPlaceId": "ADD",
+                  "displayCode": "ADD",
+                  "parent": {
+                    "flightPlaceId": "ADDA",
+                    "displayCode": "ADD",
+                    "name": "Addis Ababa",
+                    "type": "City"
+                  },
+                  "name": "Addis Ababa",
+                  "type": "Airport",
+                  "country": "Ethiopia"
+                },
+                "departure": "2025-03-13T13:40:00",
+                "arrival": "2025-03-13T21:00:00",
+                "durationInMinutes": 320,
+                "flightNumber": "900",
+                "marketingCarrier": {
+                  "id": -32340,
+                  "name": "Ethiopian Airlines",
+                  "alternateId": "ET",
+                  "allianceId": 0,
+                  "displayCode": ""
+                },
+                "operatingCarrier": {
+                  "id": -32340,
+                  "name": "Ethiopian Airlines",
+                  "alternateId": "ET",
+                  "allianceId": 0,
+                  "displayCode": ""
+                }
+              },
+              {
+                "id": "9252-17517-2503140120-2503140555--32340",
+                "origin": {
+                  "flightPlaceId": "ADD",
+                  "displayCode": "ADD",
+                  "parent": {
+                    "flightPlaceId": "ADDA",
+                    "displayCode": "ADD",
+                    "name": "Addis Ababa",
+                    "type": "City"
+                  },
+                  "name": "Addis Ababa",
+                  "type": "Airport",
+                  "country": "Ethiopia"
+                },
+                "destination": {
+                  "flightPlaceId": "VIE",
+                  "displayCode": "VIE",
+                  "parent": {
+                    "flightPlaceId": "VIEN",
+                    "displayCode": "VIE",
+                    "name": "Vienna",
+                    "type": "City"
+                  },
+                  "name": "Vienna",
+                  "type": "Airport",
+                  "country": "Austria"
+                },
+                "departure": "2025-03-14T01:20:00",
+                "arrival": "2025-03-14T05:55:00",
+                "durationInMinutes": 395,
+                "flightNumber": "724",
+                "marketingCarrier": {
+                  "id": -32340,
+                  "name": "Ethiopian Airlines",
+                  "alternateId": "ET",
+                  "allianceId": 0,
+                  "displayCode": ""
+                },
+                "operatingCarrier": {
+                  "id": -32340,
+                  "name": "Ethiopian Airlines",
+                  "alternateId": "ET",
+                  "allianceId": 0,
+                  "displayCode": ""
+                }
+              },
+              {
+                "id": "17517-13554-2503140650-2503140820--32544",
+                "origin": {
+                  "flightPlaceId": "VIE",
+                  "displayCode": "VIE",
+                  "parent": {
+                    "flightPlaceId": "VIEN",
+                    "displayCode": "VIE",
+                    "name": "Vienna",
+                    "type": "City"
+                  },
+                  "name": "Vienna",
+                  "type": "Airport",
+                  "country": "Austria"
+                },
+                "destination": {
+                  "flightPlaceId": "LHR",
+                  "displayCode": "LHR",
+                  "parent": {
+                    "flightPlaceId": "LOND",
+                    "displayCode": "LON",
+                    "name": "London",
+                    "type": "City"
+                  },
+                  "name": "London Heathrow",
+                  "type": "Airport",
+                  "country": "United Kingdom"
+                },
+                "departure": "2025-03-14T06:50:00",
+                "arrival": "2025-03-14T08:20:00",
+                "durationInMinutes": 150,
+                "flightNumber": "451",
+                "marketingCarrier": {
+                  "id": -32544,
+                  "name": "Austrian Airlines",
+                  "alternateId": "OS",
+                  "allianceId": 0,
+                  "displayCode": ""
+                },
+                "operatingCarrier": {
+                  "id": -32544,
+                  "name": "Austrian Airlines",
+                  "alternateId": "OS",
+                  "allianceId": 0,
+                  "displayCode": ""
+                }
+              }
+            ]
+          },
+          {
+            "id": "13554-2503192015--32340-1-13681-2503201225",
+            "origin": {
+              "id": "LHR",
+              "entityId": "95565050",
+              "name": "London Heathrow",
+              "displayCode": "LHR",
+              "city": "London",
+              "country": "United Kingdom",
+              "isHighlighted": false
+            },
+            "destination": {
+              "id": "LOS",
+              "entityId": "95673335",
+              "name": "Lagos",
+              "displayCode": "LOS",
+              "city": "Lagos",
+              "country": "Nigeria",
+              "isHighlighted": false
+            },
+            "durationInMinutes": 910,
+            "stopCount": 1,
+            "isSmallestStops": false,
+            "departure": "2025-03-19T20:15:00",
+            "arrival": "2025-03-20T12:25:00",
+            "timeDeltaInDays": 1,
+            "carriers": {
+              "marketing": [
+                {
+                  "id": -32340,
+                  "alternateId": "ET",
+                  "logoUrl": "https://logos.skyscnr.com/images/airlines/favicon/ET.png",
+                  "name": "Ethiopian Airlines"
+                }
+              ],
+              "operationType": "fully_operated"
+            },
+            "segments": [
+              {
+                "id": "13554-9252-2503192015-2503200700--32340",
+                "origin": {
+                  "flightPlaceId": "LHR",
+                  "displayCode": "LHR",
+                  "parent": {
+                    "flightPlaceId": "LOND",
+                    "displayCode": "LON",
+                    "name": "London",
+                    "type": "City"
+                  },
+                  "name": "London Heathrow",
+                  "type": "Airport",
+                  "country": "United Kingdom"
+                },
+                "destination": {
+                  "flightPlaceId": "ADD",
+                  "displayCode": "ADD",
+                  "parent": {
+                    "flightPlaceId": "ADDA",
+                    "displayCode": "ADD",
+                    "name": "Addis Ababa",
+                    "type": "City"
+                  },
+                  "name": "Addis Ababa",
+                  "type": "Airport",
+                  "country": "Ethiopia"
+                },
+                "departure": "2025-03-19T20:15:00",
+                "arrival": "2025-03-20T07:00:00",
+                "durationInMinutes": 465,
+                "flightNumber": "701",
+                "marketingCarrier": {
+                  "id": -32340,
+                  "name": "Ethiopian Airlines",
+                  "alternateId": "ET",
+                  "allianceId": 0,
+                  "displayCode": ""
+                },
+                "operatingCarrier": {
+                  "id": -32340,
+                  "name": "Ethiopian Airlines",
+                  "alternateId": "ET",
+                  "allianceId": 0,
+                  "displayCode": ""
+                }
+              },
+              {
+                "id": "9252-13681-2503200900-2503201225--32340",
+                "origin": {
+                  "flightPlaceId": "ADD",
+                  "displayCode": "ADD",
+                  "parent": {
+                    "flightPlaceId": "ADDA",
+                    "displayCode": "ADD",
+                    "name": "Addis Ababa",
+                    "type": "City"
+                  },
+                  "name": "Addis Ababa",
+                  "type": "Airport",
+                  "country": "Ethiopia"
+                },
+                "destination": {
+                  "flightPlaceId": "LOS",
+                  "displayCode": "LOS",
+                  "parent": {
+                    "flightPlaceId": "LOSA",
+                    "displayCode": "LOS",
+                    "name": "Lagos",
+                    "type": "City"
+                  },
+                  "name": "Lagos",
+                  "type": "Airport",
+                  "country": "Nigeria"
+                },
+                "departure": "2025-03-20T09:00:00",
+                "arrival": "2025-03-20T12:25:00",
+                "durationInMinutes": 325,
+                "flightNumber": "901",
+                "marketingCarrier": {
+                  "id": -32340,
+                  "name": "Ethiopian Airlines",
+                  "alternateId": "ET",
+                  "allianceId": 0,
+                  "displayCode": ""
+                },
+                "operatingCarrier": {
+                  "id": -32340,
+                  "name": "Ethiopian Airlines",
+                  "alternateId": "ET",
+                  "allianceId": 0,
+                  "displayCode": ""
+                }
+              }
+            ]
+          }
+        ],
+        "isSelfTransfer": false,
+        "isProtectedSelfTransfer": false,
+        "farePolicy": {
+          "isChangeAllowed": false,
+          "isPartiallyChangeable": false,
+          "isCancellationAllowed": false,
+          "isPartiallyRefundable": false
+        },
+        "fareAttributes": {},
+        "tags": ["second_shortest"],
+        "isMashUp": false,
+        "hasFlexibleOptions": false,
+        "score": 0.399953
+      },
+      {
+        "id": "13681-2503130915--32557,-32340-3-13554-2503140635|13554-2503192015--32340,-32557-3-13681-2503201700",
+        "price": {
+          "raw": 2100376.0,
+          "formatted": "₦2,100,376",
+          "pricingOptionId": "vuhHBlXpyoMQ"
+        },
+        "legs": [
+          {
+            "id": "13681-2503130915--32557,-32340-3-13554-2503140635",
+            "origin": {
+              "id": "LOS",
+              "entityId": "95673335",
+              "name": "Lagos",
+              "displayCode": "LOS",
+              "city": "Lagos",
+              "country": "Nigeria",
+              "isHighlighted": false
+            },
+            "destination": {
+              "id": "LHR",
+              "entityId": "95565050",
+              "name": "London Heathrow",
+              "displayCode": "LHR",
+              "city": "London",
+              "country": "United Kingdom",
+              "isHighlighted": false
+            },
+            "durationInMinutes": 1340,
+            "stopCount": 3,
+            "isSmallestStops": false,
+            "departure": "2025-03-13T09:15:00",
+            "arrival": "2025-03-14T06:35:00",
+            "timeDeltaInDays": 1,
+            "carriers": {
+              "marketing": [
+                {
+                  "id": -32557,
+                  "alternateId": "KP",
+                  "logoUrl": "https://logos.skyscnr.com/images/airlines/favicon/KP.png",
+                  "name": "ASKY Airlines"
+                },
+                {
+                  "id": -32340,
+                  "alternateId": "ET",
+                  "logoUrl": "https://logos.skyscnr.com/images/airlines/favicon/ET.png",
+                  "name": "Ethiopian Airlines"
+                }
+              ],
+              "operationType": "fully_operated"
+            },
+            "segments": [
+              {
+                "id": "13681-10675-2503130915-2503130945--32557",
+                "origin": {
+                  "flightPlaceId": "LOS",
+                  "displayCode": "LOS",
+                  "parent": {
+                    "flightPlaceId": "LOSA",
+                    "displayCode": "LOS",
+                    "name": "Lagos",
+                    "type": "City"
+                  },
+                  "name": "Lagos",
+                  "type": "Airport",
+                  "country": "Nigeria"
+                },
+                "destination": {
+                  "flightPlaceId": "COO",
+                  "displayCode": "COO",
+                  "parent": {
+                    "flightPlaceId": "COOA",
+                    "displayCode": "COO",
+                    "name": "Cotonou",
+                    "type": "City"
+                  },
+                  "name": "Cotonou",
+                  "type": "Airport",
+                  "country": "Benin"
+                },
+                "departure": "2025-03-13T09:15:00",
+                "arrival": "2025-03-13T09:45:00",
+                "durationInMinutes": 30,
+                "flightNumber": "63",
+                "marketingCarrier": {
+                  "id": -32557,
+                  "name": "ASKY Airlines",
+                  "alternateId": "KP",
+                  "allianceId": 0,
+                  "displayCode": ""
+                },
+                "operatingCarrier": {
+                  "id": -32557,
+                  "name": "ASKY Airlines",
+                  "alternateId": "KP",
+                  "allianceId": 0,
+                  "displayCode": ""
+                }
+              },
+              {
+                "id": "10675-13521-2503131025-2503131005--32557",
+                "origin": {
+                  "flightPlaceId": "COO",
+                  "displayCode": "COO",
+                  "parent": {
+                    "flightPlaceId": "COOA",
+                    "displayCode": "COO",
+                    "name": "Cotonou",
+                    "type": "City"
+                  },
+                  "name": "Cotonou",
+                  "type": "Airport",
+                  "country": "Benin"
+                },
+                "destination": {
+                  "flightPlaceId": "LFW",
+                  "displayCode": "LFW",
+                  "parent": {
+                    "flightPlaceId": "LFWA",
+                    "displayCode": "LFW",
+                    "name": "Lome",
+                    "type": "City"
+                  },
+                  "name": "Lome",
+                  "type": "Airport",
+                  "country": "Togo"
+                },
+                "departure": "2025-03-13T10:25:00",
+                "arrival": "2025-03-13T10:05:00",
+                "durationInMinutes": 40,
+                "flightNumber": "63",
+                "marketingCarrier": {
+                  "id": -32557,
+                  "name": "ASKY Airlines",
+                  "alternateId": "KP",
+                  "allianceId": 0,
+                  "displayCode": ""
+                },
+                "operatingCarrier": {
+                  "id": -32557,
+                  "name": "ASKY Airlines",
+                  "alternateId": "KP",
+                  "allianceId": 0,
+                  "displayCode": ""
+                }
+              },
+              {
+                "id": "13521-9252-2503131245-2503132110--32340",
+                "origin": {
+                  "flightPlaceId": "LFW",
+                  "displayCode": "LFW",
+                  "parent": {
+                    "flightPlaceId": "LFWA",
+                    "displayCode": "LFW",
+                    "name": "Lome",
+                    "type": "City"
+                  },
+                  "name": "Lome",
+                  "type": "Airport",
+                  "country": "Togo"
+                },
+                "destination": {
+                  "flightPlaceId": "ADD",
+                  "displayCode": "ADD",
+                  "parent": {
+                    "flightPlaceId": "ADDA",
+                    "displayCode": "ADD",
+                    "name": "Addis Ababa",
+                    "type": "City"
+                  },
+                  "name": "Addis Ababa",
+                  "type": "Airport",
+                  "country": "Ethiopia"
+                },
+                "departure": "2025-03-13T12:45:00",
+                "arrival": "2025-03-13T21:10:00",
+                "durationInMinutes": 325,
+                "flightNumber": "517",
+                "marketingCarrier": {
+                  "id": -32340,
+                  "name": "Ethiopian Airlines",
+                  "alternateId": "ET",
+                  "allianceId": 0,
+                  "displayCode": ""
+                },
+                "operatingCarrier": {
+                  "id": -32340,
+                  "name": "Ethiopian Airlines",
+                  "alternateId": "ET",
+                  "allianceId": 0,
+                  "displayCode": ""
+                }
+              },
+              {
+                "id": "9252-13554-2503140135-2503140635--32340",
+                "origin": {
+                  "flightPlaceId": "ADD",
+                  "displayCode": "ADD",
+                  "parent": {
+                    "flightPlaceId": "ADDA",
+                    "displayCode": "ADD",
+                    "name": "Addis Ababa",
+                    "type": "City"
+                  },
+                  "name": "Addis Ababa",
+                  "type": "Airport",
+                  "country": "Ethiopia"
+                },
+                "destination": {
+                  "flightPlaceId": "LHR",
+                  "displayCode": "LHR",
+                  "parent": {
+                    "flightPlaceId": "LOND",
+                    "displayCode": "LON",
+                    "name": "London",
+                    "type": "City"
+                  },
+                  "name": "London Heathrow",
+                  "type": "Airport",
+                  "country": "United Kingdom"
+                },
+                "departure": "2025-03-14T01:35:00",
+                "arrival": "2025-03-14T06:35:00",
+                "durationInMinutes": 480,
+                "flightNumber": "700",
+                "marketingCarrier": {
+                  "id": -32340,
+                  "name": "Ethiopian Airlines",
+                  "alternateId": "ET",
+                  "allianceId": 0,
+                  "displayCode": ""
+                },
+                "operatingCarrier": {
+                  "id": -32340,
+                  "name": "Ethiopian Airlines",
+                  "alternateId": "ET",
+                  "allianceId": 0,
+                  "displayCode": ""
+                }
+              }
+            ]
+          },
+          {
+            "id": "13554-2503192015--32340,-32557-3-13681-2503201700",
+            "origin": {
+              "id": "LHR",
+              "entityId": "95565050",
+              "name": "London Heathrow",
+              "displayCode": "LHR",
+              "city": "London",
+              "country": "United Kingdom",
+              "isHighlighted": false
+            },
+            "destination": {
+              "id": "LOS",
+              "entityId": "95673335",
+              "name": "Lagos",
+              "displayCode": "LOS",
+              "city": "Lagos",
+              "country": "Nigeria",
+              "isHighlighted": false
+            },
+            "durationInMinutes": 1185,
+            "stopCount": 3,
+            "isSmallestStops": false,
+            "departure": "2025-03-19T20:15:00",
+            "arrival": "2025-03-20T17:00:00",
+            "timeDeltaInDays": 1,
+            "carriers": {
+              "marketing": [
+                {
+                  "id": -32340,
+                  "alternateId": "ET",
+                  "logoUrl": "https://logos.skyscnr.com/images/airlines/favicon/ET.png",
+                  "name": "Ethiopian Airlines"
+                },
+                {
+                  "id": -32557,
+                  "alternateId": "KP",
+                  "logoUrl": "https://logos.skyscnr.com/images/airlines/favicon/KP.png",
+                  "name": "ASKY Airlines"
+                }
+              ],
+              "operationType": "fully_operated"
+            },
+            "segments": [
+              {
+                "id": "13554-9252-2503192015-2503200700--32340",
+                "origin": {
+                  "flightPlaceId": "LHR",
+                  "displayCode": "LHR",
+                  "parent": {
+                    "flightPlaceId": "LOND",
+                    "displayCode": "LON",
+                    "name": "London",
+                    "type": "City"
+                  },
+                  "name": "London Heathrow",
+                  "type": "Airport",
+                  "country": "United Kingdom"
+                },
+                "destination": {
+                  "flightPlaceId": "ADD",
+                  "displayCode": "ADD",
+                  "parent": {
+                    "flightPlaceId": "ADDA",
+                    "displayCode": "ADD",
+                    "name": "Addis Ababa",
+                    "type": "City"
+                  },
+                  "name": "Addis Ababa",
+                  "type": "Airport",
+                  "country": "Ethiopia"
+                },
+                "departure": "2025-03-19T20:15:00",
+                "arrival": "2025-03-20T07:00:00",
+                "durationInMinutes": 465,
+                "flightNumber": "701",
+                "marketingCarrier": {
+                  "id": -32340,
+                  "name": "Ethiopian Airlines",
+                  "alternateId": "ET",
+                  "allianceId": 0,
+                  "displayCode": ""
+                },
+                "operatingCarrier": {
+                  "id": -32340,
+                  "name": "Ethiopian Airlines",
+                  "alternateId": "ET",
+                  "allianceId": 0,
+                  "displayCode": ""
+                }
+              },
+              {
+                "id": "9252-13521-2503200900-2503201130--32340",
+                "origin": {
+                  "flightPlaceId": "ADD",
+                  "displayCode": "ADD",
+                  "parent": {
+                    "flightPlaceId": "ADDA",
+                    "displayCode": "ADD",
+                    "name": "Addis Ababa",
+                    "type": "City"
+                  },
+                  "name": "Addis Ababa",
+                  "type": "Airport",
+                  "country": "Ethiopia"
+                },
+                "destination": {
+                  "flightPlaceId": "LFW",
+                  "displayCode": "LFW",
+                  "parent": {
+                    "flightPlaceId": "LFWA",
+                    "displayCode": "LFW",
+                    "name": "Lome",
+                    "type": "City"
+                  },
+                  "name": "Lome",
+                  "type": "Airport",
+                  "country": "Togo"
+                },
+                "departure": "2025-03-20T09:00:00",
+                "arrival": "2025-03-20T11:30:00",
+                "durationInMinutes": 330,
+                "flightNumber": "514",
+                "marketingCarrier": {
+                  "id": -32340,
+                  "name": "Ethiopian Airlines",
+                  "alternateId": "ET",
+                  "allianceId": 0,
+                  "displayCode": ""
+                },
+                "operatingCarrier": {
+                  "id": -32340,
+                  "name": "Ethiopian Airlines",
+                  "alternateId": "ET",
+                  "allianceId": 0,
+                  "displayCode": ""
+                }
+              },
+              {
+                "id": "13521-10675-2503201410-2503201550--32557",
+                "origin": {
+                  "flightPlaceId": "LFW",
+                  "displayCode": "LFW",
+                  "parent": {
+                    "flightPlaceId": "LFWA",
+                    "displayCode": "LFW",
+                    "name": "Lome",
+                    "type": "City"
+                  },
+                  "name": "Lome",
+                  "type": "Airport",
+                  "country": "Togo"
+                },
+                "destination": {
+                  "flightPlaceId": "COO",
+                  "displayCode": "COO",
+                  "parent": {
+                    "flightPlaceId": "COOA",
+                    "displayCode": "COO",
+                    "name": "Cotonou",
+                    "type": "City"
+                  },
+                  "name": "Cotonou",
+                  "type": "Airport",
+                  "country": "Benin"
+                },
+                "departure": "2025-03-20T14:10:00",
+                "arrival": "2025-03-20T15:50:00",
+                "durationInMinutes": 40,
+                "flightNumber": "62",
+                "marketingCarrier": {
+                  "id": -32557,
+                  "name": "ASKY Airlines",
+                  "alternateId": "KP",
+                  "allianceId": 0,
+                  "displayCode": ""
+                },
+                "operatingCarrier": {
+                  "id": -32557,
+                  "name": "ASKY Airlines",
+                  "alternateId": "KP",
+                  "allianceId": 0,
+                  "displayCode": ""
+                }
+              },
+              {
+                "id": "10675-13681-2503201630-2503201700--32557",
+                "origin": {
+                  "flightPlaceId": "COO",
+                  "displayCode": "COO",
+                  "parent": {
+                    "flightPlaceId": "COOA",
+                    "displayCode": "COO",
+                    "name": "Cotonou",
+                    "type": "City"
+                  },
+                  "name": "Cotonou",
+                  "type": "Airport",
+                  "country": "Benin"
+                },
+                "destination": {
+                  "flightPlaceId": "LOS",
+                  "displayCode": "LOS",
+                  "parent": {
+                    "flightPlaceId": "LOSA",
+                    "displayCode": "LOS",
+                    "name": "Lagos",
+                    "type": "City"
+                  },
+                  "name": "Lagos",
+                  "type": "Airport",
+                  "country": "Nigeria"
+                },
+                "departure": "2025-03-20T16:30:00",
+                "arrival": "2025-03-20T17:00:00",
+                "durationInMinutes": 30,
+                "flightNumber": "62",
+                "marketingCarrier": {
+                  "id": -32557,
+                  "name": "ASKY Airlines",
+                  "alternateId": "KP",
+                  "allianceId": 0,
+                  "displayCode": ""
+                },
+                "operatingCarrier": {
+                  "id": -32557,
+                  "name": "ASKY Airlines",
+                  "alternateId": "KP",
+                  "allianceId": 0,
+                  "displayCode": ""
+                }
+              }
+            ]
+          }
+        ],
+        "isSelfTransfer": false,
+        "isProtectedSelfTransfer": false,
+        "farePolicy": {
+          "isChangeAllowed": false,
+          "isPartiallyChangeable": false,
+          "isCancellationAllowed": false,
+          "isPartiallyRefundable": false
+        },
+        "fareAttributes": {},
+        "isMashUp": false,
+        "hasFlexibleOptions": false,
+        "score": 0.382526
+      },
+      {
+        "id": "13681-2503131340--32340-1-13554-2503140635|13554-2503191730--32090,-32340-2-13681-2503201225",
+        "price": {
+          "raw": 2468860.0,
+          "formatted": "₦2,468,860",
+          "pricingOptionId": "7HrTvNam3NVy"
+        },
+        "legs": [
+          {
+            "id": "13681-2503131340--32340-1-13554-2503140635",
+            "origin": {
+              "id": "LOS",
+              "entityId": "95673335",
+              "name": "Lagos",
+              "displayCode": "LOS",
+              "city": "Lagos",
+              "country": "Nigeria",
+              "isHighlighted": false
+            },
+            "destination": {
+              "id": "LHR",
+              "entityId": "95565050",
+              "name": "London Heathrow",
+              "displayCode": "LHR",
+              "city": "London",
+              "country": "United Kingdom",
+              "isHighlighted": false
+            },
+            "durationInMinutes": 1075,
+            "stopCount": 1,
+            "isSmallestStops": false,
+            "departure": "2025-03-13T13:40:00",
+            "arrival": "2025-03-14T06:35:00",
+            "timeDeltaInDays": 1,
+            "carriers": {
+              "marketing": [
+                {
+                  "id": -32340,
+                  "alternateId": "ET",
+                  "logoUrl": "https://logos.skyscnr.com/images/airlines/favicon/ET.png",
+                  "name": "Ethiopian Airlines"
+                }
+              ],
+              "operationType": "fully_operated"
+            },
+            "segments": [
+              {
+                "id": "13681-9252-2503131340-2503132100--32340",
+                "origin": {
+                  "flightPlaceId": "LOS",
+                  "displayCode": "LOS",
+                  "parent": {
+                    "flightPlaceId": "LOSA",
+                    "displayCode": "LOS",
+                    "name": "Lagos",
+                    "type": "City"
+                  },
+                  "name": "Lagos",
+                  "type": "Airport",
+                  "country": "Nigeria"
+                },
+                "destination": {
+                  "flightPlaceId": "ADD",
+                  "displayCode": "ADD",
+                  "parent": {
+                    "flightPlaceId": "ADDA",
+                    "displayCode": "ADD",
+                    "name": "Addis Ababa",
+                    "type": "City"
+                  },
+                  "name": "Addis Ababa",
+                  "type": "Airport",
+                  "country": "Ethiopia"
+                },
+                "departure": "2025-03-13T13:40:00",
+                "arrival": "2025-03-13T21:00:00",
+                "durationInMinutes": 320,
+                "flightNumber": "900",
+                "marketingCarrier": {
+                  "id": -32340,
+                  "name": "Ethiopian Airlines",
+                  "alternateId": "ET",
+                  "allianceId": 0,
+                  "displayCode": ""
+                },
+                "operatingCarrier": {
+                  "id": -32340,
+                  "name": "Ethiopian Airlines",
+                  "alternateId": "ET",
+                  "allianceId": 0,
+                  "displayCode": ""
+                }
+              },
+              {
+                "id": "9252-13554-2503140135-2503140635--32340",
+                "origin": {
+                  "flightPlaceId": "ADD",
+                  "displayCode": "ADD",
+                  "parent": {
+                    "flightPlaceId": "ADDA",
+                    "displayCode": "ADD",
+                    "name": "Addis Ababa",
+                    "type": "City"
+                  },
+                  "name": "Addis Ababa",
+                  "type": "Airport",
+                  "country": "Ethiopia"
+                },
+                "destination": {
+                  "flightPlaceId": "LHR",
+                  "displayCode": "LHR",
+                  "parent": {
+                    "flightPlaceId": "LOND",
+                    "displayCode": "LON",
+                    "name": "London",
+                    "type": "City"
+                  },
+                  "name": "London Heathrow",
+                  "type": "Airport",
+                  "country": "United Kingdom"
+                },
+                "departure": "2025-03-14T01:35:00",
+                "arrival": "2025-03-14T06:35:00",
+                "durationInMinutes": 480,
+                "flightNumber": "700",
+                "marketingCarrier": {
+                  "id": -32340,
+                  "name": "Ethiopian Airlines",
+                  "alternateId": "ET",
+                  "allianceId": 0,
+                  "displayCode": ""
+                },
+                "operatingCarrier": {
+                  "id": -32340,
+                  "name": "Ethiopian Airlines",
+                  "alternateId": "ET",
+                  "allianceId": 0,
+                  "displayCode": ""
+                }
+              }
+            ]
+          },
+          {
+            "id": "13554-2503191730--32090,-32340-2-13681-2503201225",
+            "origin": {
+              "id": "LHR",
+              "entityId": "95565050",
+              "name": "London Heathrow",
+              "displayCode": "LHR",
+              "city": "London",
+              "country": "United Kingdom",
+              "isHighlighted": false
+            },
+            "destination": {
+              "id": "LOS",
+              "entityId": "95673335",
+              "name": "Lagos",
+              "displayCode": "LOS",
+              "city": "Lagos",
+              "country": "Nigeria",
+              "isHighlighted": false
+            },
+            "durationInMinutes": 1075,
+            "stopCount": 2,
+            "isSmallestStops": false,
+            "departure": "2025-03-19T17:30:00",
+            "arrival": "2025-03-20T12:25:00",
+            "timeDeltaInDays": 1,
+            "carriers": {
+              "marketing": [
+                {
+                  "id": -32090,
+                  "alternateId": "LH",
+                  "logoUrl": "https://logos.skyscnr.com/images/airlines/favicon/LH.png",
+                  "name": "Lufthansa"
+                },
+                {
+                  "id": -32340,
+                  "alternateId": "ET",
+                  "logoUrl": "https://logos.skyscnr.com/images/airlines/favicon/ET.png",
+                  "name": "Ethiopian Airlines"
+                }
+              ],
+              "operationType": "fully_operated"
+            },
+            "segments": [
+              {
+                "id": "13554-11616-2503191730-2503192005--32090",
+                "origin": {
+                  "flightPlaceId": "LHR",
+                  "displayCode": "LHR",
+                  "parent": {
+                    "flightPlaceId": "LOND",
+                    "displayCode": "LON",
+                    "name": "London",
+                    "type": "City"
+                  },
+                  "name": "London Heathrow",
+                  "type": "Airport",
+                  "country": "United Kingdom"
+                },
+                "destination": {
+                  "flightPlaceId": "FRA",
+                  "displayCode": "FRA",
+                  "parent": {
+                    "flightPlaceId": "FRAN",
+                    "displayCode": "FRA",
+                    "name": "Frankfurt",
+                    "type": "City"
+                  },
+                  "name": "Frankfurt am Main",
+                  "type": "Airport",
+                  "country": "Germany"
+                },
+                "departure": "2025-03-19T17:30:00",
+                "arrival": "2025-03-19T20:05:00",
+                "durationInMinutes": 95,
+                "flightNumber": "915",
+                "marketingCarrier": {
+                  "id": -32090,
+                  "name": "Lufthansa",
+                  "alternateId": "LH",
+                  "allianceId": 0,
+                  "displayCode": ""
+                },
+                "operatingCarrier": {
+                  "id": -32090,
+                  "name": "Lufthansa",
+                  "alternateId": "LH",
+                  "allianceId": 0,
+                  "displayCode": ""
+                }
+              },
+              {
+                "id": "11616-9252-2503192135-2503200625--32340",
+                "origin": {
+                  "flightPlaceId": "FRA",
+                  "displayCode": "FRA",
+                  "parent": {
+                    "flightPlaceId": "FRAN",
+                    "displayCode": "FRA",
+                    "name": "Frankfurt",
+                    "type": "City"
+                  },
+                  "name": "Frankfurt am Main",
+                  "type": "Airport",
+                  "country": "Germany"
+                },
+                "destination": {
+                  "flightPlaceId": "ADD",
+                  "displayCode": "ADD",
+                  "parent": {
+                    "flightPlaceId": "ADDA",
+                    "displayCode": "ADD",
+                    "name": "Addis Ababa",
+                    "type": "City"
+                  },
+                  "name": "Addis Ababa",
+                  "type": "Airport",
+                  "country": "Ethiopia"
+                },
+                "departure": "2025-03-19T21:35:00",
+                "arrival": "2025-03-20T06:25:00",
+                "durationInMinutes": 410,
+                "flightNumber": "707",
+                "marketingCarrier": {
+                  "id": -32340,
+                  "name": "Ethiopian Airlines",
+                  "alternateId": "ET",
+                  "allianceId": 0,
+                  "displayCode": ""
+                },
+                "operatingCarrier": {
+                  "id": -32340,
+                  "name": "Ethiopian Airlines",
+                  "alternateId": "ET",
+                  "allianceId": 0,
+                  "displayCode": ""
+                }
+              },
+              {
+                "id": "9252-13681-2503200900-2503201225--32340",
+                "origin": {
+                  "flightPlaceId": "ADD",
+                  "displayCode": "ADD",
+                  "parent": {
+                    "flightPlaceId": "ADDA",
+                    "displayCode": "ADD",
+                    "name": "Addis Ababa",
+                    "type": "City"
+                  },
+                  "name": "Addis Ababa",
+                  "type": "Airport",
+                  "country": "Ethiopia"
+                },
+                "destination": {
+                  "flightPlaceId": "LOS",
+                  "displayCode": "LOS",
+                  "parent": {
+                    "flightPlaceId": "LOSA",
+                    "displayCode": "LOS",
+                    "name": "Lagos",
+                    "type": "City"
+                  },
+                  "name": "Lagos",
+                  "type": "Airport",
+                  "country": "Nigeria"
+                },
+                "departure": "2025-03-20T09:00:00",
+                "arrival": "2025-03-20T12:25:00",
+                "durationInMinutes": 325,
+                "flightNumber": "901",
+                "marketingCarrier": {
+                  "id": -32340,
+                  "name": "Ethiopian Airlines",
+                  "alternateId": "ET",
+                  "allianceId": 0,
+                  "displayCode": ""
+                },
+                "operatingCarrier": {
+                  "id": -32340,
+                  "name": "Ethiopian Airlines",
+                  "alternateId": "ET",
+                  "allianceId": 0,
+                  "displayCode": ""
+                }
+              }
+            ]
+          }
+        ],
+        "isSelfTransfer": false,
+        "isProtectedSelfTransfer": false,
+        "farePolicy": {
+          "isChangeAllowed": false,
+          "isPartiallyChangeable": false,
+          "isCancellationAllowed": false,
+          "isPartiallyRefundable": false
+        },
+        "fareAttributes": {},
+        "tags": ["third_shortest"],
+        "isMashUp": false,
+        "hasFlexibleOptions": false,
+        "score": 0.377424
+      },
+      {
+        "id": "13681-2503130915--32557,-32340-3-13554-2503140635|13554-2503192015--32340-3-13681-2503201700",
+        "price": {
+          "raw": 2081723.0,
+          "formatted": "₦2,081,723",
+          "pricingOptionId": "UCrvTo2js__b"
+        },
+        "legs": [
+          {
+            "id": "13681-2503130915--32557,-32340-3-13554-2503140635",
+            "origin": {
+              "id": "LOS",
+              "entityId": "95673335",
+              "name": "Lagos",
+              "displayCode": "LOS",
+              "city": "Lagos",
+              "country": "Nigeria",
+              "isHighlighted": false
+            },
+            "destination": {
+              "id": "LHR",
+              "entityId": "95565050",
+              "name": "London Heathrow",
+              "displayCode": "LHR",
+              "city": "London",
+              "country": "United Kingdom",
+              "isHighlighted": false
+            },
+            "durationInMinutes": 1340,
+            "stopCount": 3,
+            "isSmallestStops": false,
+            "departure": "2025-03-13T09:15:00",
+            "arrival": "2025-03-14T06:35:00",
+            "timeDeltaInDays": 1,
+            "carriers": {
+              "marketing": [
+                {
+                  "id": -32557,
+                  "alternateId": "KP",
+                  "logoUrl": "https://logos.skyscnr.com/images/airlines/favicon/KP.png",
+                  "name": "ASKY Airlines"
+                },
+                {
+                  "id": -32340,
+                  "alternateId": "ET",
+                  "logoUrl": "https://logos.skyscnr.com/images/airlines/favicon/ET.png",
+                  "name": "Ethiopian Airlines"
+                }
+              ],
+              "operationType": "fully_operated"
+            },
+            "segments": [
+              {
+                "id": "13681-10675-2503130915-2503130945--32557",
+                "origin": {
+                  "flightPlaceId": "LOS",
+                  "displayCode": "LOS",
+                  "parent": {
+                    "flightPlaceId": "LOSA",
+                    "displayCode": "LOS",
+                    "name": "Lagos",
+                    "type": "City"
+                  },
+                  "name": "Lagos",
+                  "type": "Airport",
+                  "country": "Nigeria"
+                },
+                "destination": {
+                  "flightPlaceId": "COO",
+                  "displayCode": "COO",
+                  "parent": {
+                    "flightPlaceId": "COOA",
+                    "displayCode": "COO",
+                    "name": "Cotonou",
+                    "type": "City"
+                  },
+                  "name": "Cotonou",
+                  "type": "Airport",
+                  "country": "Benin"
+                },
+                "departure": "2025-03-13T09:15:00",
+                "arrival": "2025-03-13T09:45:00",
+                "durationInMinutes": 30,
+                "flightNumber": "63",
+                "marketingCarrier": {
+                  "id": -32557,
+                  "name": "ASKY Airlines",
+                  "alternateId": "KP",
+                  "allianceId": 0,
+                  "displayCode": ""
+                },
+                "operatingCarrier": {
+                  "id": -32557,
+                  "name": "ASKY Airlines",
+                  "alternateId": "KP",
+                  "allianceId": 0,
+                  "displayCode": ""
+                }
+              },
+              {
+                "id": "10675-13521-2503131025-2503131005--32557",
+                "origin": {
+                  "flightPlaceId": "COO",
+                  "displayCode": "COO",
+                  "parent": {
+                    "flightPlaceId": "COOA",
+                    "displayCode": "COO",
+                    "name": "Cotonou",
+                    "type": "City"
+                  },
+                  "name": "Cotonou",
+                  "type": "Airport",
+                  "country": "Benin"
+                },
+                "destination": {
+                  "flightPlaceId": "LFW",
+                  "displayCode": "LFW",
+                  "parent": {
+                    "flightPlaceId": "LFWA",
+                    "displayCode": "LFW",
+                    "name": "Lome",
+                    "type": "City"
+                  },
+                  "name": "Lome",
+                  "type": "Airport",
+                  "country": "Togo"
+                },
+                "departure": "2025-03-13T10:25:00",
+                "arrival": "2025-03-13T10:05:00",
+                "durationInMinutes": 40,
+                "flightNumber": "63",
+                "marketingCarrier": {
+                  "id": -32557,
+                  "name": "ASKY Airlines",
+                  "alternateId": "KP",
+                  "allianceId": 0,
+                  "displayCode": ""
+                },
+                "operatingCarrier": {
+                  "id": -32557,
+                  "name": "ASKY Airlines",
+                  "alternateId": "KP",
+                  "allianceId": 0,
+                  "displayCode": ""
+                }
+              },
+              {
+                "id": "13521-9252-2503131245-2503132110--32340",
+                "origin": {
+                  "flightPlaceId": "LFW",
+                  "displayCode": "LFW",
+                  "parent": {
+                    "flightPlaceId": "LFWA",
+                    "displayCode": "LFW",
+                    "name": "Lome",
+                    "type": "City"
+                  },
+                  "name": "Lome",
+                  "type": "Airport",
+                  "country": "Togo"
+                },
+                "destination": {
+                  "flightPlaceId": "ADD",
+                  "displayCode": "ADD",
+                  "parent": {
+                    "flightPlaceId": "ADDA",
+                    "displayCode": "ADD",
+                    "name": "Addis Ababa",
+                    "type": "City"
+                  },
+                  "name": "Addis Ababa",
+                  "type": "Airport",
+                  "country": "Ethiopia"
+                },
+                "departure": "2025-03-13T12:45:00",
+                "arrival": "2025-03-13T21:10:00",
+                "durationInMinutes": 325,
+                "flightNumber": "517",
+                "marketingCarrier": {
+                  "id": -32340,
+                  "name": "Ethiopian Airlines",
+                  "alternateId": "ET",
+                  "allianceId": 0,
+                  "displayCode": ""
+                },
+                "operatingCarrier": {
+                  "id": -32340,
+                  "name": "Ethiopian Airlines",
+                  "alternateId": "ET",
+                  "allianceId": 0,
+                  "displayCode": ""
+                }
+              },
+              {
+                "id": "9252-13554-2503140135-2503140635--32340",
+                "origin": {
+                  "flightPlaceId": "ADD",
+                  "displayCode": "ADD",
+                  "parent": {
+                    "flightPlaceId": "ADDA",
+                    "displayCode": "ADD",
+                    "name": "Addis Ababa",
+                    "type": "City"
+                  },
+                  "name": "Addis Ababa",
+                  "type": "Airport",
+                  "country": "Ethiopia"
+                },
+                "destination": {
+                  "flightPlaceId": "LHR",
+                  "displayCode": "LHR",
+                  "parent": {
+                    "flightPlaceId": "LOND",
+                    "displayCode": "LON",
+                    "name": "London",
+                    "type": "City"
+                  },
+                  "name": "London Heathrow",
+                  "type": "Airport",
+                  "country": "United Kingdom"
+                },
+                "departure": "2025-03-14T01:35:00",
+                "arrival": "2025-03-14T06:35:00",
+                "durationInMinutes": 480,
+                "flightNumber": "700",
+                "marketingCarrier": {
+                  "id": -32340,
+                  "name": "Ethiopian Airlines",
+                  "alternateId": "ET",
+                  "allianceId": 0,
+                  "displayCode": ""
+                },
+                "operatingCarrier": {
+                  "id": -32340,
+                  "name": "Ethiopian Airlines",
+                  "alternateId": "ET",
+                  "allianceId": 0,
+                  "displayCode": ""
+                }
+              }
+            ]
+          },
+          {
+            "id": "13554-2503192015--32340-3-13681-2503201700",
+            "origin": {
+              "id": "LHR",
+              "entityId": "95565050",
+              "name": "London Heathrow",
+              "displayCode": "LHR",
+              "city": "London",
+              "country": "United Kingdom",
+              "isHighlighted": false
+            },
+            "destination": {
+              "id": "LOS",
+              "entityId": "95673335",
+              "name": "Lagos",
+              "displayCode": "LOS",
+              "city": "Lagos",
+              "country": "Nigeria",
+              "isHighlighted": false
+            },
+            "durationInMinutes": 1185,
+            "stopCount": 3,
+            "isSmallestStops": false,
+            "departure": "2025-03-19T20:15:00",
+            "arrival": "2025-03-20T17:00:00",
+            "timeDeltaInDays": 1,
+            "carriers": {
+              "marketing": [
+                {
+                  "id": -32340,
+                  "alternateId": "ET",
+                  "logoUrl": "https://logos.skyscnr.com/images/airlines/favicon/ET.png",
+                  "name": "Ethiopian Airlines"
+                }
+              ],
+              "operating": [
+                {
+                  "id": -32557,
+                  "alternateId": "KP",
+                  "logoUrl": "https://logos.skyscnr.com/images/airlines/favicon/KP.png",
+                  "name": "ASKY Airlines"
+                }
+              ],
+              "operationType": "partially_operated"
+            },
+            "segments": [
+              {
+                "id": "13554-9252-2503192015-2503200700--32340",
+                "origin": {
+                  "flightPlaceId": "LHR",
+                  "displayCode": "LHR",
+                  "parent": {
+                    "flightPlaceId": "LOND",
+                    "displayCode": "LON",
+                    "name": "London",
+                    "type": "City"
+                  },
+                  "name": "London Heathrow",
+                  "type": "Airport",
+                  "country": "United Kingdom"
+                },
+                "destination": {
+                  "flightPlaceId": "ADD",
+                  "displayCode": "ADD",
+                  "parent": {
+                    "flightPlaceId": "ADDA",
+                    "displayCode": "ADD",
+                    "name": "Addis Ababa",
+                    "type": "City"
+                  },
+                  "name": "Addis Ababa",
+                  "type": "Airport",
+                  "country": "Ethiopia"
+                },
+                "departure": "2025-03-19T20:15:00",
+                "arrival": "2025-03-20T07:00:00",
+                "durationInMinutes": 465,
+                "flightNumber": "701",
+                "marketingCarrier": {
+                  "id": -32340,
+                  "name": "Ethiopian Airlines",
+                  "alternateId": "ET",
+                  "allianceId": 0,
+                  "displayCode": ""
+                },
+                "operatingCarrier": {
+                  "id": -32340,
+                  "name": "Ethiopian Airlines",
+                  "alternateId": "ET",
+                  "allianceId": 0,
+                  "displayCode": ""
+                }
+              },
+              {
+                "id": "9252-13521-2503200900-2503201130--32340",
+                "origin": {
+                  "flightPlaceId": "ADD",
+                  "displayCode": "ADD",
+                  "parent": {
+                    "flightPlaceId": "ADDA",
+                    "displayCode": "ADD",
+                    "name": "Addis Ababa",
+                    "type": "City"
+                  },
+                  "name": "Addis Ababa",
+                  "type": "Airport",
+                  "country": "Ethiopia"
+                },
+                "destination": {
+                  "flightPlaceId": "LFW",
+                  "displayCode": "LFW",
+                  "parent": {
+                    "flightPlaceId": "LFWA",
+                    "displayCode": "LFW",
+                    "name": "Lome",
+                    "type": "City"
+                  },
+                  "name": "Lome",
+                  "type": "Airport",
+                  "country": "Togo"
+                },
+                "departure": "2025-03-20T09:00:00",
+                "arrival": "2025-03-20T11:30:00",
+                "durationInMinutes": 330,
+                "flightNumber": "514",
+                "marketingCarrier": {
+                  "id": -32340,
+                  "name": "Ethiopian Airlines",
+                  "alternateId": "ET",
+                  "allianceId": 0,
+                  "displayCode": ""
+                },
+                "operatingCarrier": {
+                  "id": -32340,
+                  "name": "Ethiopian Airlines",
+                  "alternateId": "ET",
+                  "allianceId": 0,
+                  "displayCode": ""
+                }
+              },
+              {
+                "id": "13521-10675-2503201410-2503201550--32340",
+                "origin": {
+                  "flightPlaceId": "LFW",
+                  "displayCode": "LFW",
+                  "parent": {
+                    "flightPlaceId": "LFWA",
+                    "displayCode": "LFW",
+                    "name": "Lome",
+                    "type": "City"
+                  },
+                  "name": "Lome",
+                  "type": "Airport",
+                  "country": "Togo"
+                },
+                "destination": {
+                  "flightPlaceId": "COO",
+                  "displayCode": "COO",
+                  "parent": {
+                    "flightPlaceId": "COOA",
+                    "displayCode": "COO",
+                    "name": "Cotonou",
+                    "type": "City"
+                  },
+                  "name": "Cotonou",
+                  "type": "Airport",
+                  "country": "Benin"
+                },
+                "departure": "2025-03-20T14:10:00",
+                "arrival": "2025-03-20T15:50:00",
+                "durationInMinutes": 40,
+                "flightNumber": "1026",
+                "marketingCarrier": {
+                  "id": -32340,
+                  "name": "Ethiopian Airlines",
+                  "alternateId": "ET",
+                  "allianceId": 0,
+                  "displayCode": ""
+                },
+                "operatingCarrier": {
+                  "id": -32557,
+                  "name": "ASKY Airlines",
+                  "alternateId": "KP",
+                  "allianceId": 0,
+                  "displayCode": ""
+                }
+              },
+              {
+                "id": "10675-13681-2503201630-2503201700--32340",
+                "origin": {
+                  "flightPlaceId": "COO",
+                  "displayCode": "COO",
+                  "parent": {
+                    "flightPlaceId": "COOA",
+                    "displayCode": "COO",
+                    "name": "Cotonou",
+                    "type": "City"
+                  },
+                  "name": "Cotonou",
+                  "type": "Airport",
+                  "country": "Benin"
+                },
+                "destination": {
+                  "flightPlaceId": "LOS",
+                  "displayCode": "LOS",
+                  "parent": {
+                    "flightPlaceId": "LOSA",
+                    "displayCode": "LOS",
+                    "name": "Lagos",
+                    "type": "City"
+                  },
+                  "name": "Lagos",
+                  "type": "Airport",
+                  "country": "Nigeria"
+                },
+                "departure": "2025-03-20T16:30:00",
+                "arrival": "2025-03-20T17:00:00",
+                "durationInMinutes": 30,
+                "flightNumber": "1026",
+                "marketingCarrier": {
+                  "id": -32340,
+                  "name": "Ethiopian Airlines",
+                  "alternateId": "ET",
+                  "allianceId": 0,
+                  "displayCode": ""
+                },
+                "operatingCarrier": {
+                  "id": -32557,
+                  "name": "ASKY Airlines",
+                  "alternateId": "KP",
+                  "allianceId": 0,
+                  "displayCode": ""
+                }
+              }
+            ]
+          }
+        ],
+        "isSelfTransfer": false,
+        "isProtectedSelfTransfer": false,
+        "farePolicy": {
+          "isChangeAllowed": false,
+          "isPartiallyChangeable": false,
+          "isCancellationAllowed": false,
+          "isPartiallyRefundable": false
+        },
+        "fareAttributes": {},
+        "isMashUp": false,
+        "hasFlexibleOptions": false,
+        "score": 0.375291
+      }
+    ],
+    "messages": [],
+    "filterStats": {
+      "duration": {
+        "min": 1075,
+        "max": 1685,
+        "multiCityMin": 1985,
+        "multiCityMax": 2710
+      },
+      "airports": [
+        {
+          "city": "Lagos",
+          "airports": [{ "id": "LOS", "entityId": "95673335", "name": "Lagos" }]
+        },
+        {
+          "city": "London",
+          "airports": [
+            { "id": "LHR", "entityId": "95565050", "name": "London Heathrow" }
+          ]
+        }
+      ],
+      "carriers": [
+        {
+          "id": -32557,
+          "alternateId": "KP",
+          "logoUrl": "https://logos.skyscnr.com/images/airlines/favicon/KP.png",
+          "name": "ASKY Airlines"
+        },
+        {
+          "id": -32544,
+          "alternateId": "OS",
+          "logoUrl": "https://logos.skyscnr.com/images/airlines/favicon/OS.png",
+          "name": "Austrian Airlines"
+        },
+        {
+          "id": -32340,
+          "alternateId": "ET",
+          "logoUrl": "https://logos.skyscnr.com/images/airlines/favicon/ET.png",
+          "name": "Ethiopian Airlines"
+        },
+        {
+          "id": -32139,
+          "alternateId": "KQ",
+          "logoUrl": "https://logos.skyscnr.com/images/airlines/favicon/KQ.png",
+          "name": "Kenya Airways"
+        },
+        {
+          "id": -32090,
+          "alternateId": "LH",
+          "logoUrl": "https://logos.skyscnr.com/images/airlines/favicon/LH.png",
+          "name": "Lufthansa"
+        }
+      ],
+      "stopPrices": {
+        "direct": { "isPresent": false },
+        "one": { "isPresent": true, "formattedPrice": "₦1,260,138" },
+        "twoOrMore": { "isPresent": true, "formattedPrice": "₦1,767,484" }
+      }
+    },
+    "flightsSessionId": "73070a0c-61a4-4716-962f-419a52c8b8f7",
+    "destinationImageUrl": "https://content.skyscnr.com/m/3719e8f4a5daf43d/original/Flights-Placeholder.jpg",
+    "token": "eyJhIjoxLCJjIjowLCJpIjowLCJjYyI6ImVjb25vbXkiLCJvIjoiTE9TIiwiZCI6IkxIUiIsImQxIjoiMjAyNS0wMy0xMyIsImQyIjoiMjAyNS0wMy0xOSJ9"
+  },
+  "status": true,
+  "message": "Successful"
+}

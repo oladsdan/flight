@@ -15,6 +15,67 @@ export const AuthProvider = ({ children }) => {
     const [passwordReset, setPasswordReset] = useState(false);
 
 
+    //seerch components for flight card to be used as state
+    //we dynamically call the trip type by using state
+  const [tripType, setTripType] = useState("oneWay");
+  const [departureCity, setDepartureCity] = useState("");
+  const [destinationCity, setDestinationCity] = useState("");
+  const [airports, setAirports] = useState([]);
+  const [suggestions, setSuggestions] = useState([]);
+  const [departureDate, setDepartureDate] = useState("");
+  const [returnDate, setReturnDate] = useState("");
+  const [showModal, setShowModal] = useState(false);
+  const [activeField, setActiveField] = useState("");
+
+
+  //functions used for search components
+  const getSuggestions = (value) => {
+    const inputValue = value.trim().toLowerCase();
+    const inputLength = inputValue.length;
+
+    return inputLength === 0
+      ? []
+      : airports.filter((airport) =>
+         airport.location? airport.location.toLowerCase().includes(inputValue) : airport.name.toLowerCase().includes(inputValue) || airport.iata.toLowerCase().includes(inputValue)
+        ).slice(0, 10);
+  };
+  
+
+  //we handleInputChange
+  const handleInputChange = (e, field) => {
+    const value = e.target.value;
+    if (field === "departure") {
+      setDepartureCity(value);
+      setActiveField("departure");
+    } else {
+      setDestinationCity(value);
+      setActiveField("destination");
+    }
+    setSuggestions(getSuggestions(value));
+    if (value === "") {
+      setShowModal(false);
+    }else{
+      setShowModal(true);
+    }
+    
+  };
+
+
+
+  const handleSuggestionClick = (suggestion) => {
+    if (activeField === "departure") {
+      setDepartureCity(`${suggestion.name} (${suggestion.iata})`);
+    } else {
+      setDestinationCity(`${suggestion.name} (${suggestion.iata})`);
+    }
+    setShowModal(false);
+    setSuggestions([]);
+  };
+
+
+
+
+
     const signup = async (name, email, password) => {
         setIsLoading(true);
         setError(null);
@@ -185,7 +246,7 @@ export const AuthProvider = ({ children }) => {
 
 
     return (
-        <AuthContext.Provider value={{ user, isAuthenticated, error, isLoading, message, passwordReset, login, setPasswordReset, signup, verifyEmail, forgotPassword, resetPassword, logout }}>
+        <AuthContext.Provider value={{ user, isAuthenticated, error, isLoading, message, passwordReset, login, setPasswordReset, signup, verifyEmail, forgotPassword, resetPassword, logout, tripType, setTripType, departureCity, setDepartureCity, destinationCity, setDestinationCity, airports, setAirports, suggestions, setSuggestions, departureDate, setDepartureDate, returnDate, setReturnDate, showModal, setShowModal, activeField, setActiveField, handleInputChange, handleSuggestionClick}}>
             {children}
         </AuthContext.Provider>
     );
