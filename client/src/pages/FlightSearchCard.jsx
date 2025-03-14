@@ -1,35 +1,31 @@
-import { Fullscreen } from "lucide-react";
 import FlightSearchDesign from "../components/FlightSearchDesign";
 import { useContext, useState } from "react";
 import AuthContext from "../stateManagement/Auth";
 import slidesData from "../components/slidesData";
 import FlightDetailsCard from "../components/FlightDetailsCard";
 import FlightDetailsCardResult from "../components/FlightDetailsCardResult";
+import dataResult from "../Data/queryData.json";
 
 
 const FlightSearchCard = () => {
+
+  const itineriaries = dataResult?.data?.itineraries;
 
 
     const {setTripType, departureCity, handleInputChange, showModal, activeField, suggestions, handleSuggestionClick, destinationCity, departureDate, setDepartureDate, tripType, returnDate, setReturnDate} = useContext(AuthContext);
 
     const itemHeight = 160;
     const totalHeight = slidesData.length * (itemHeight * 1.3);
-    // const dragElastic = 0.5;
-    // const dragConstraints = {
-    // top: -totalHeight + window.innerHeight,
-    // bottom: 0,
-    // };
-    // const transition = { type: "tween", duration: 0.5, ease: "easeInOut" 
-
+    
 
     //we paginate
     const [currentPage, setCurrentPage] = useState(1);
     const flightsPerPage = 3;
-    const totalItems = slidesData.length;
+    const totalItems = itineriaries?.length;
     const totalPages = Math.ceil(totalItems / flightsPerPage);
     const startIndex = (currentPage - 1) * flightsPerPage;
     const endIndex = startIndex + flightsPerPage;
-    const currentFlightData = slidesData.slice(startIndex, endIndex);
+    const currentFlightData = itineriaries.slice(startIndex, endIndex);
 
     // function to change the page
     const handlePageChange = (page) => {
@@ -71,81 +67,81 @@ const FlightSearchCard = () => {
         
         </div>
 
-        <div className="flex h-screen">
-      {/* Filter Section */}
-      <div className="w-1/4 p-4 bg-gray-100">
-        <h2 className="text-lg font-semibold mb-4">Filter</h2>
+        <div className="flex ">
+            {/* Filter Section */}
+            <div className="w-1/4 p-4 bg-gray-100 ">
+              <h2 className="text-lg font-semibold mb-4">Filter</h2>
 
-        {/* Price Filter Example */}
-        <label className="block mb-2">Min Price</label>
-        <input type="number" className="w-full p-2 border rounded mb-4" />
+              {/* Price Filter Example */}
+              <label className="block mb-2">Min Price</label>
+              <input type="number" className="w-full p-2 border rounded mb-4" />
 
-        <label className="block mb-2">Max Price</label>
-        <input type="number" className="w-full p-2 border rounded mb-4" />
+              <label className="block mb-2">Max Price</label>
+              <input type="number" className="w-full p-2 border rounded mb-4" />
 
-        <button className="w-full bg-blue-500 text-white p-2 rounded">
-          Apply
-        </button>
-      </div>
-
-      {/* Results Section */}
-        <div className="flex-1 p-4 overflow-hidden"
-            style={{ height: "calc(100vh - 0.5rem)" }}
-                
-            >
-            {currentFlightData.map((_, index) => (
-                // <div
-                //     key={index}
-                //     className="overflow-hidden"
-                //     style={{ minHeight: `${itemHeight}px` }}
-                // >
-                //     <FlightDetailsCard
-                //     departure="Paris - CDG"
-                //     arrival={destinationCity}
-                //     isRoundTrip={true}s
-                //     cabinClass="Economy"
-                //     adultsCount={4}
-                //     childrenCount={1}
-                //     />
-                // </div>
-                <>
-                  <div
-                    key={index}
-                    className="overflow-hidden"
-                    style={{ minHeight: `${itemHeight}px` }}
-                  >
-                      
-                      <FlightDetailsCardResult />  
-
-                  </div>
-
-                
-                </>
-
-              
-            ))}
-
-
-
-            {/* Pagination */}
-            <div className="flex justify-center items-center mt-4">
-                {Array.from({ length: totalPages }).map((_, index) => (
-                    <button
-                    key={index}
-                    onClick={() => handlePageChange(index + 1)}
-                    className={`px-4 py-2 mx-1 rounded ${
-                        currentPage === index + 1 ? "bg-blue-500 text-white" : "bg-white"
-                    }`}
-                    >
-                    {index + 1}
-                    </button>
-                ))}
+              <button className="w-full bg-blue-500 text-white p-2 rounded">
+                Apply
+              </button>
             </div>
-        </div>
+
+            {/* Results Section */}
+              <div className="flex-1 p-4"
+                  // style={{ height: "calc(100vh - 0.5rem)" }}
+                      
+                  >
+                  {currentFlightData.map((item, index) => (
+                      // <div
+                      //     key={index}
+                      //     className="overflow-hidden"
+                      //     style={{ minHeight: `${itemHeight}px` }}
+                      // >
+                      //     <FlightDetailsCard
+                      //     departure="Paris - CDG"
+                      //     arrival={destinationCity}
+                      //     isRoundTrip={true}s
+                      //     cabinClass="Economy"
+                      //     adultsCount={4} 
+                      //     childrenCount={1}
+                      //     />
+                      // </div>
+                      <>
+                        <div
+                          key={index}
+                          className="overflow-hidden"
+                          style={{ minHeight: `${itemHeight}px` }}
+                        >
+                            
+                            <FlightDetailsCardResult item={item}  />  
+
+                        </div>
+
+                      
+                      </>
+
+                    
+                  ))}
+
+
+
+                  {/* Pagination */}
+                  <div className="flex justify-center items-center mt-4">
+                      {Array.from({ length: totalPages }).map((_, index) => (
+                          <button
+                          key={index}
+                          onClick={() => handlePageChange(index + 1)}
+                          className={`px-4 py-2 mx-1 rounded ${
+                              currentPage === index + 1 ? "bg-blue-500 text-white" : "bg-white"
+                          }`}
+                          >
+                          {index + 1}
+                          </button>
+                      ))}
+                  </div>
+              </div>
 
 
         
-    </div>
+        </div>
 
         
     
