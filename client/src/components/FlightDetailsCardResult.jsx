@@ -35,7 +35,7 @@ const FlightDetailsCardResult = ({item}) => {
             hour12: false,
         });
 
-        const ran = (Math.random() * (1.2 - 0.1) + 0.1).toFixed(2);
+        const ran = (Math.random() * (1.2 - 0.9) + 0.9).toFixed(2);
         const flexiblePrice = item?.price?.raw * ran;
         const formattedFlexiblePrice = flexiblePrice.toLocaleString("en-NG", {
           style: "currency",
@@ -43,7 +43,7 @@ const FlightDetailsCardResult = ({item}) => {
             minimumFractionDigits: 0
         });
        
-      
+    1
 
   return (
     <div>
