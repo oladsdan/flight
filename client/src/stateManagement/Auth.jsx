@@ -26,6 +26,7 @@ export const AuthProvider = ({ children }) => {
   const [returnDate, setReturnDate] = useState("");
   const [showModal, setShowModal] = useState(false);
   const [activeField, setActiveField] = useState("");
+  const [loading, setLoading] = useState(false);
 
 
   //functions used for search components
@@ -246,7 +247,7 @@ export const AuthProvider = ({ children }) => {
 
 
     return (
-        <AuthContext.Provider value={{ user, isAuthenticated, error, isLoading, message, passwordReset, login, setPasswordReset, signup, verifyEmail, forgotPassword, resetPassword, logout, tripType, setTripType, departureCity, setDepartureCity, destinationCity, setDestinationCity, airports, setAirports, suggestions, setSuggestions, departureDate, setDepartureDate, returnDate, setReturnDate, showModal, setShowModal, activeField, setActiveField, handleInputChange, handleSuggestionClick}}>
+        <AuthContext.Provider value={{ user, isAuthenticated, error, isLoading, message, passwordReset, login, setPasswordReset, signup, verifyEmail, forgotPassword, resetPassword, logout, tripType, setTripType, departureCity, setDepartureCity, destinationCity, setDestinationCity, airports, setAirports, suggestions, setSuggestions, departureDate, setDepartureDate, returnDate, setReturnDate, showModal, setShowModal, activeField, setActiveField, handleInputChange, handleSuggestionClick, loading, setLoading }}>
             {children}
         </AuthContext.Provider>
     );

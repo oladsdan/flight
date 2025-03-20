@@ -14,8 +14,8 @@ const FlightSearchCard = () => {
   
   const LoadingIcon = () => (
     <div className="flex-1 flex p-5 justify-center items-center h-screen">
-      <div className="w-16 h-16 rounded-full p-4 bg-blue-500 flex justify-center items-center transform -translate-y-40">
-        <img src={loadingGif} alt="Loading" className="rounded-full  bg-brown" />
+      <div className="w-16 h-16 rounded-full p-4 bg-gray-500 flex justify-center items-center transform -translate-y-40">
+        <img src={loadingGif} alt="Loading" className="rounded-full  bg-blue-500" />
       </div>
     </div>
   );
@@ -24,10 +24,10 @@ const FlightSearchCard = () => {
   const itineriaries = dataResult?.data?.itineraries;
 
 
-    const {setTripType, departureCity, handleInputChange, showModal, activeField, suggestions, handleSuggestionClick, destinationCity, departureDate, setDepartureDate, tripType, returnDate, setReturnDate} = useContext(AuthContext);
+    const {setTripType, departureCity, handleInputChange, showModal, activeField, suggestions, handleSuggestionClick, destinationCity, departureDate, setDepartureDate, tripType, returnDate, setReturnDate, loading} = useContext(AuthContext);
 
     //loading state
-    const [isLoading, setisLoading] = useState(true);
+    // const [isLoading, setisLoading] = useState(true);
 
 
 
@@ -103,7 +103,7 @@ const FlightSearchCard = () => {
             
 
 
-              {isLoading ? (
+              {loading ? (
                 <LoadingIcon />
               ) : (
                 <div className="flex-1 p-4"
