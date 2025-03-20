@@ -2,7 +2,7 @@
 import { Card, Datepicker } from "flowbite-react";
 import { useEffect, useState, useContext, useMemo } from "react";
 import AirportModal from "../components/AirportModal";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import  AuthContext  from "../stateManagement/Auth";
 import data from "../Data/airportdata.json";
 
@@ -14,6 +14,13 @@ function Home() {
   const { tripType, setTripType, departureCity, setDepartureCity, destinationCity, setDestinationCity, airports, setAirports, suggestions, setSuggestions, departureDate, setDepartureDate, returnDate, setReturnDate, showModal, setShowModal, activeField, setActiveField, handleInputChange, handleSuggestionClick } = useContext(AuthContext);
 
   setAirports(data.data);
+
+  const navigate = useNavigate();
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    navigate("/flightsearchcard");
+  }
 
 
   // we call the 
@@ -161,102 +168,106 @@ function Home() {
 
       {/* Flight Search Section */}
 
-     
-      <div className="flex flex-col gap-8 bg-gradient-to-br from-green-400 to-blue-600  shadow-lg rounded-lg mx-auto mt-[-3rem] w-9/12 max-w-9xl p-6 relative">
-        <div className="flex justify-start gap-4 items-center ">
-          <div className="flex items-center ">
-            {/* <input type="radio" id="oneWay" name="tripType" onChange={() => setTripType("oneWay")} defaultChecked  /> */}
-            <input type="radio" id="oneWay" name="tripType" onClick={() => setTripType("oneWay")} defaultChecked  />
-            <label htmlFor="oneWay" className="text-white">
-              One-way
-            </label>
-          </div>
-          <div className="flex items-center ">
-            {/* <input type="radio" id="roundTrip" name="tripType" onChange={() => setTripType("roundTrip")} checked={tripType === "roundTrip"} /> */}
-            <input type="radio" id="roundTrip" name="tripType" onClick={() => setTripType("roundTrip")} checked={tripType === "roundTrip"} />
-            <label htmlFor="roundTrip" className="text-white">
-              Roundtrip
-            </label>
-          </div>
-        </div>
-
-        <div className="grid grid-cols-1 md:grid-cols-6 lg:grid-cols-5  gap-4 w-full text-black text-sm">
-          <div className="relative">
-            <p className="flex">Departure City</p>
-            <input
-              type="text"
-              placeholder="Departure City"
-              value={departureCity}
-              onChange={(e) => handleInputChange(e, "departure")}
-              className="border rounded-lg  focus:outline-none focus:ring-2 focus:ring-blue-500 text-sm"
-            />
-            {showModal && activeField === "departure" && (
-            <AirportModal suggestions={suggestions} handleSuggestionClick={handleSuggestionClick} />
-          )}
-          
+     <form onSubmit={handleSubmit} >
+        <div className="flex flex-col gap-8 bg-gradient-to-br from-green-400 to-blue-600  shadow-lg rounded-lg mx-auto mt-[-3rem] w-9/12 max-w-9xl p-6 relative">
+          <div className="flex justify-start gap-4 items-center ">
+            <div className="flex items-center ">
+              {/* <input type="radio" id="oneWay" name="tripType" onChange={() => setTripType("oneWay")} defaultChecked  /> */}
+              <input type="radio" id="oneWay" name="tripType" onClick={() => setTripType("oneWay")} defaultChecked  />
+              <label htmlFor="oneWay" className="text-white">
+                One-way
+              </label>
+            </div>
+            <div className="flex items-center ">
+              {/* <input type="radio" id="roundTrip" name="tripType" onChange={() => setTripType("roundTrip")} checked={tripType === "roundTrip"} /> */}
+              <input type="radio" id="roundTrip" name="tripType" onClick={() => setTripType("roundTrip")} checked={tripType === "roundTrip"} />
+              <label htmlFor="roundTrip" className="text-white">
+                Roundtrip
+              </label>
+            </div>
           </div>
 
-          <div className="relative">
-            <p>Destination City</p>
-            <input
-              type="text"
-              placeholder="Destination City"
-              value={destinationCity}
-              onChange={(e) => handleInputChange(e, "destination")}
-              className="border rounded-lg text-black focus:outline-none focus:ring-2 focus:ring-blue-500 text-sm"
-            />
-
-            {showModal && activeField === "destination" && (
-            <AirportModal suggestions={suggestions} handleSuggestionClick={handleSuggestionClick} />
+          <div className="grid grid-cols-1 md:grid-cols-6 lg:grid-cols-5  gap-4 w-full text-black text-sm">
+            <div className="relative">
+              <p className="flex">Departure City</p>
+              <input
+                type="text"
+                placeholder="Departure City"
+                value={departureCity}
+                onChange={(e) => handleInputChange(e, "departure")}
+                className="border rounded-lg  focus:outline-none focus:ring-2 focus:ring-blue-500 text-sm"
+                required
+              />
+              {showModal && activeField === "departure" && (
+              <AirportModal suggestions={suggestions} handleSuggestionClick={handleSuggestionClick} />
             )}
+            
+            </div>
 
-          </div>
-          <div>
-            <p>Departure Date</p>
-            <Datepicker
-              selected={departureDate}
-              onChange={(date) => setDepartureDate(date)}
-              minDate={new Date()}
-              className="border rounded-lg text-black focus:outline-none focus:ring-2 focus:ring-blue-500 text-sm"
-            />
-          </div>
-
-          {tripType === "roundTrip" && (
-            <div>
-              <p>Return Date</p>
-              <Datepicker
-                selected={returnDate}
-                onChange={(date) => setReturnDate(date)}
-                minDate={departureDate}
+            <div className="relative">
+              <p>Destination City</p>
+              <input
+                type="text"
+                placeholder="Destination City"
+                value={destinationCity}
+                onChange={(e) => handleInputChange(e, "destination")}
                 className="border rounded-lg text-black focus:outline-none focus:ring-2 focus:ring-blue-500 text-sm"
+                required
+              />
+
+              {showModal && activeField === "destination" && (
+              <AirportModal suggestions={suggestions} handleSuggestionClick={handleSuggestionClick} />
+              )}
+
+            </div>
+            <div>
+              <p>Departure Date</p>
+              <Datepicker
+                selected={departureDate}
+                onChange={(date) => setDepartureDate(date)}
+                minDate={new Date()}
+                className="border rounded-lg text-black focus:outline-none focus:ring-2 focus:ring-blue-500 text-sm"
+                required
               />
             </div>
 
-          )}
+            {tripType === "roundTrip" && (
+              <div>
+                <p>Return Date</p>
+                <Datepicker
+                  selected={returnDate}
+                  onChange={(date) => setReturnDate(date)}
+                  minDate={departureDate}
+                  className="border rounded-lg text-black focus:outline-none focus:ring-2 focus:ring-blue-500 text-sm"
+                />
+              </div>
 
-          <div>
-            <p>Cabin class</p>
-            <select
-              className="border rounded-lg text-black focus:outline-none focus:ring-2 focus:ring-blue-500 text-sm"
-              defaultValue="Domestic"
+            )}
+
+            <div>
+              <p>Cabin class</p>
+              <select
+                className="border rounded-lg text-black focus:outline-none focus:ring-2 focus:ring-blue-500 text-sm"
+                defaultValue="Domestic"
+              >
+                <option>Domestic</option>
+                <option>International</option>
+              </select>
+            </div>
+          </div>
+
+    
+          <div className=" font-serif font-semibold w-full flex justify-center items-center pt-1">
+            <div
+              className="flex justify-center items-center bg-white p-2 rounded-xl border-2 hover:bg-[#01004D] hover:text-white
+              transition ease-in-out duration-500 border-white w-1/3 "
             >
-              <option>Domestic</option>
-              <option>International</option>
-            </select>
+              <button type="submit">Search flights</button>
+            </div>
           </div>
         </div>
 
-   
-        <div className=" font-serif font-semibold w-full flex justify-center items-center pt-1">
-          <Link
-            to="/flightsearchcard"
-            className="flex justify-center items-center bg-white p-2 rounded-xl border-2 hover:bg-[#01004D] hover:text-white
-             transition ease-in-out duration-500 border-white w-1/3 "
-          >
-            <button>Search flights</button>
-          </Link>
-        </div>
-      </div>
+     </form>
 
 
 
@@ -355,34 +366,3 @@ function Home() {
 
 export default Home;
 
-// import React from "react";
-
-// function Home() {
-//   return (
-//     <>
-//       <div className="bg-gray-50 min-h-screen">
-//         <div
-//           className="h-[60vh] flex justify-center items-center bg-cover  bg-center w-full
-//          "
-//           style={{
-//             backgroundImage: "url('/img/illustration-flying-airplane.jpg')",
-//             objectFit: "cover",
-//             backgroundSize: "cover",
-//             backgroundPosition: "center",
-//           }}
-//         >
-//           <div>
-//             <h1 className="pr-2 pl-2 text-6xl font-bold text-center md:text-6xl text-black pb-3">
-//               Let's Book Your Next Trip.
-//             </h1>
-//             <p className="text-black font-bold text-center">
-//               Choose From Over 450 Airlines Worldwide
-//             </p>
-//           </div>
-//         </div>
-//       </div>
-//     </>
-//   );
-// }
-
-// export default Home;

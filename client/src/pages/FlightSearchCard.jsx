@@ -5,14 +5,31 @@ import slidesData from "../components/slidesData";
 import FlightDetailsCard from "../components/FlightDetailsCard";
 import FlightDetailsCardResult from "../components/FlightDetailsCardResult";
 import dataResult from "../Data/queryData.json";
+import loadingGif from "../assets/loading.gif"
 
 
 const FlightSearchCard = () => {
+
+
+  
+  const LoadingIcon = () => (
+    <div className="flex-1 flex p-5 justify-center items-center h-screen">
+      <div className="w-16 h-16 rounded-full p-4 bg-blue-500 flex justify-center items-center transform -translate-y-40">
+        <img src={loadingGif} alt="Loading" className="rounded-full  bg-brown" />
+      </div>
+    </div>
+  );
+
 
   const itineriaries = dataResult?.data?.itineraries;
 
 
     const {setTripType, departureCity, handleInputChange, showModal, activeField, suggestions, handleSuggestionClick, destinationCity, departureDate, setDepartureDate, tripType, returnDate, setReturnDate} = useContext(AuthContext);
+
+    //loading state
+    const [isLoading, setisLoading] = useState(true);
+
+
 
     const itemHeight = 160;
     const totalHeight = slidesData.length * (itemHeight * 1.3);
@@ -83,27 +100,18 @@ const FlightSearchCard = () => {
                 Apply
               </button>
             </div>
+            
 
-            {/* Results Section */}
-              <div className="flex-1 p-4"
+
+              {isLoading ? (
+                <LoadingIcon />
+              ) : (
+                <div className="flex-1 p-4"
                   // style={{ height: "calc(100vh - 0.5rem)" }}
                       
                   >
                   {currentFlightData.map((item, index) => (
-                      // <div
-                      //     key={index}
-                      //     className="overflow-hidden"
-                      //     style={{ minHeight: `${itemHeight}px` }}
-                      // >
-                      //     <FlightDetailsCard
-                      //     departure="Paris - CDG"
-                      //     arrival={destinationCity}
-                      //     isRoundTrip={true}s
-                      //     cabinClass="Economy"
-                      //     adultsCount={4} 
-                      //     childrenCount={1}
-                      //     />
-                      // </div>
+                     
                       <>
                         <div
                           key={index}
@@ -122,8 +130,8 @@ const FlightSearchCard = () => {
                   ))}
 
 
-
-                  {/* Pagination */}
+                    {/* pagination */}
+                  
                   <div className="flex justify-center items-center mt-4">
                       {Array.from({ length: totalPages }).map((_, index) => (
                           <button
@@ -137,7 +145,8 @@ const FlightSearchCard = () => {
                           </button>
                       ))}
                   </div>
-              </div>
+                </div>
+              )}
 
 
         
