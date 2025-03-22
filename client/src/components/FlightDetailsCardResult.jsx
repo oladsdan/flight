@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 
 import { TicketsPlane } from 'lucide-react';
 import { IoIosAirplane } from "react-icons/io";
