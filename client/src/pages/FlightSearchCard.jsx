@@ -6,8 +6,9 @@ import FlightDetailsCard from "../components/FlightDetailsCard";
 import FlightDetailsCardResult from "../components/FlightDetailsCardResult";
 import dataResult from "../Data/queryData.json";
 import loadingGif from "../assets/loading.gif";
-import { TicketsPlane, PlaneTakeoff } from 'lucide-react';
+import { TicketsPlane, PlaneTakeoff, Filter } from 'lucide-react';
 import { IoIosAirplane } from "react-icons/io";
+import FlightFilterPanel from "../components/FlightFilterPanel";
 
 
 
@@ -17,9 +18,12 @@ const FlightSearchCard = () => {
   
   const LoadingIcon = () => (
     <div className="flex-1 flex p-5 justify-center items-center h-screen">
-      <div className="w-16 h-16 rounded-full p-4 bg-gray-500 flex justify-center items-center transform -translate-y-40">
+      {/* <div className="w-16 h-16 rounded-full p-4 bg-gray-500 flex justify-center items-center transform -translate-y-40">
         <img src={loadingGif} alt="Loading" className="rounded-full  bg-blue-500" />
-      </div>
+      </div> */}
+      <div className="flex justify-center items-center py-20">
+          <div className="animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-blue-500"></div>
+        </div>
     </div>
   );
 
@@ -28,6 +32,17 @@ const FlightSearchCard = () => {
 
 
     const {setTripType, departureCity, handleInputChange, showModal, activeField, suggestions, handleSuggestionClick, destinationCity, departureDate, setDepartureDate, tripType, returnDate, setReturnDate, loading} = useContext(AuthContext);
+
+
+    //state for the filter options
+    const [filters, setFilters] = useState({
+      priceRange: [0, 10000000], // 0 to 10,000,000
+      airlines: [],
+      stops: [],
+      duration: null,
+      travelTime: [0, 1440], // 0 to 24 hours in minutes
+      cabinClass: [],
+    });
 
     //loading state
     // const [isLoading, setisLoading] = useState(true);
@@ -46,6 +61,8 @@ const FlightSearchCard = () => {
     const startIndex = (currentPage - 1) * flightsPerPage;
     const endIndex = startIndex + flightsPerPage;
     const currentFlightData = itineriaries.slice(startIndex, endIndex);
+
+    // state for
 
     // function to change the page
     const handlePageChange = (page) => {
@@ -89,7 +106,7 @@ const FlightSearchCard = () => {
 
         <div className="flex ">
             {/* Filter Section */}
-            <div className="w-1/4 p-4 m-8 rounded-2xl bg-gray-100  ">
+            <div className="w-1/4 p-4 m-8 rounded-2xl bg-gray-100 transition-all duration-300 ease-in-out ">
 
               <div className="flex gap-2 items-center p-2">
                   <TicketsPlane />
@@ -104,17 +121,22 @@ const FlightSearchCard = () => {
                   
               </div>
               {/* best flight */}
+              <span className="text-gray-500 text-sm italic flex justify-center">Cheapest Flight</span>
+              <div className="flex flex-row place-items-center justify-between gap-3 p-2">
+                <div className="flex items-center gap-2">
+                    <img alt="Airline Logo" className="w-10 h-10" src="https://logos.skyscnr.com/images/airlines/favicon/ET.png"/>
+                    
+                    <div className="flex flex-col ml-2">
+                        <p className="text-xs text-gray-500 font-bold">Ethopian Airlines</p>
+                        <p className="text-xs text-gray-500">QR1456</p>  
+                    </div>
 
-              <div className="flex flex-row place-items-center gap-3 p-2">
-                  <img alt="Airline Logo" className="w-10 h-10" src="https://logos.skyscnr.com/images/airlines/favicon/ET.png"/>
-                  
-                  <div className="flex flex-col ml-2">
-                      <p className="text-xs text-gray-500 font-bold">Ethopian Airlines</p>
-                      <p className="text-xs text-gray-500">QR1456</p>  
-                  </div>
+                </div>
+                <button className=" hover:shadow-md text-green-500 bg-gray-300 font-bold py-2 px-4 rounded underline italic">Book</button>
+
               </div>
 
-                <div className="flex items-center justify-between gap-2 p-2">
+                <div className="flex items-center justify-between gap-2 p-2 border-b border-gray-400">
                   <div className="flex flex-col"> 
                     <span className="font-semibold">Lagos (LOS)</span>
                     <p className="text-gray-500 text-sm">10:00</p>
@@ -132,6 +154,10 @@ const FlightSearchCard = () => {
                   <p className="text-gray-500 text-sm">18:34</p>
                   </div>
                 </div>
+
+                {/* filter section */}
+
+                <FlightFilterPanel filters={filters} setFilters={setFilters} />
 
                      
             </div>
