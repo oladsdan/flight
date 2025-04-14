@@ -67,7 +67,7 @@ const FlightDetailsCardResult = ({item}) => {
 
                     {/* using grid layout */}
 
-                    <div className="mt-2 grid grid-rows-2 sm:grid-cols-4 gap-4 mx-6">
+                    <div className="mt-2 grid auto-rows-min sm:grid-cols-4 gap-2 mx-6 ">
                         <div className="flex flex-row place-items-center p-2">
                                 <img alt="Airline Logo" className="w-10 h-10" src={item?.legs[0]?.carriers?.marketing[0]?.logoUrl} />
                             
@@ -111,54 +111,61 @@ const FlightDetailsCardResult = ({item}) => {
                         </div>
 
                         {/* return Leg */}
-
-                        <div className="flex flex-row place-items-center p-2">
-                                <img alt="Airline Logo" className="w-10 h-10" src={item?.legs[1]?.carriers?.marketing[0]?.logoUrl} />
-                            
-                            <div className="flex flex-col ml-2">
-                                <p className="text-xs text-gray-500 font-bold">{item?.legs[1]?.carriers.marketing[0]?.name}</p>
-                                <p className="text-xs text-gray-500">QR1456</p>
-                                <div className="text-xs text-gray-500">2*23kg</div>
-                            </div>
-                        </div>
-
-                        <div className="flex flex-col p-2">
-                            <p className="font-bold">{formattedReturnDepatureTime}</p>
-                            <p className="text-gray-500"><span className="font-bold">{item?.legs[1]?.origin?.displayCode}</span> {item?.legs[1]?.origin?.name}</p>
-                            <p className="text-gray-500">{item?.legs[0]?.origin?.city}</p>
-                        </div>
-
-
-                        <div className="flex flex-col py-6 items-center">
-                            <p className="text-xs text-foreground/70">{formatTravelTime(item.legs[1]?.durationInMinutes)}</p>
-                            <div className="flex items-center w-20 md:w-32">
-                                <div className="h-[2px] flex-grow bg-gray-300"></div>
-                                <ArrowRight className="h-4 w-4 text-gray-400 mx-1" />
-                                <div className="h-[2px] flex-grow bg-gray-300"></div>
-                            </div>
-                            <div className="flex items-center text-xs text-foreground/70 mt-1">
-                                {item.legs[0].stopCount === 0 ? (
-                                <span>Direct</span>
-                                ) : (
-                                <span>{item.legs[1].stopCount} stop{item.legs[1].stopCount > 1 ? 's' : ''}</span>
-                                )}
-                            </div>
-                        </div>
                         
-                        
+                        {item?.legs[1] && (
 
-                        
-                        <div className="flex flex-col flex-wrap p-2">
-                            <p className="font-bold">{formattedReturnArrivalTime}</p>
-                            <p className="text-gray-500"><span className="font-bold">{item?.legs[1]?.destination?.displayCode}</span> {item?.legs[1]?.destination?.name}</p>
-                            <p className="text-gray-500">{item?.legs[0]?.destination?.city}</p>
-                        </div>
+                            <>
+                                <div className="flex flex-row place-items-center p-2">
+                                        <img alt="Airline Logo" className="w-10 h-10" src={item?.legs[1]?.carriers?.marketing[0]?.logoUrl} />
+                                    
+                                    <div className="flex flex-col ml-2">
+                                        <p className="text-xs text-gray-500 font-bold">{item?.legs[1]?.carriers.marketing[0]?.name}</p>
+                                        <p className="text-xs text-gray-500">QR1456</p>
+                                        <div className="text-xs text-gray-500">2*23kg</div>
+                                    </div>
+                                </div>
+
+                                <div className="flex flex-col p-2">
+                                    <p className="font-bold">{formattedReturnDepatureTime}</p>
+                                    <p className="text-gray-500"><span className="font-bold">{item?.legs[1]?.origin?.displayCode}</span> {item?.legs[1]?.origin?.name}</p>
+                                    <p className="text-gray-500">{item?.legs[0]?.origin?.city}</p>
+                                </div>
+
+
+                                <div className="flex flex-col py-6 items-center">
+                                    <p className="text-xs text-foreground/70">{formatTravelTime(item.legs[1]?.durationInMinutes)}</p>
+                                    <div className="flex items-center w-20 md:w-32">
+                                        <div className="h-[2px] flex-grow bg-gray-300"></div>
+                                        <ArrowRight className="h-4 w-4 text-gray-400 mx-1" />
+                                        <div className="h-[2px] flex-grow bg-gray-300"></div>
+                                    </div>
+                                    <div className="flex items-center text-xs text-foreground/70 mt-1">
+                                        {item.legs[0].stopCount === 0 ? (
+                                        <span>Direct</span>
+                                        ) : (
+                                        <span>{item.legs[1].stopCount} stop{item.legs[1].stopCount > 1 ? 's' : ''}</span>
+                                        )}
+                                    </div>
+                                </div>
+                                
+                                
+
+                                
+                                <div className="flex flex-col flex-wrap p-2">
+                                    <p className="font-bold">{formattedReturnArrivalTime}</p>
+                                    <p className="text-gray-500"><span className="font-bold">{item?.legs[1]?.destination?.displayCode}</span> {item?.legs[1]?.destination?.name}</p>
+                                    <p className="text-gray-500">{item?.legs[0]?.destination?.city}</p>
+                                </div>
+                            </>
+
+                        )}
+
 
                     </div>
 
 
                    
-
+                    {/* ticket price */}
 
                     <div className="mt-4 bg-gray-100 flex flex-row flex-wrap md:flex-nowrap justify-between items-baseline">
                         <div className="flex mx-6 py-4 flex-row flex-wrap">
