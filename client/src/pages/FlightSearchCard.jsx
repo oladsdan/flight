@@ -1,7 +1,7 @@
 import FlightSearchDesign from "../components/FlightSearchDesign";
-import { useContext, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import AuthContext from "../stateManagement/Auth";
-import slidesData from "../components/slidesData";
+
 import FlightDetailsCard from "../components/FlightDetailsCard";
 import FlightDetailsCardResult from "../components/FlightDetailsCardResult";
 import dataResult from "../Data/queryData.json";
@@ -18,27 +18,25 @@ const FlightSearchCard = () => {
   
   const LoadingIcon = () => (
     <div className="flex-1 flex p-5 justify-center items-center h-screen">
-      {/* <div className="w-16 h-16 rounded-full p-4 bg-gray-500 flex justify-center items-center transform -translate-y-40">
-        <img src={loadingGif} alt="Loading" className="rounded-full  bg-blue-500" />
-      </div> */}
-      <div className="flex justify-center items-center py-20">
+      <div className="flex justify-center items-center py-20 transform -translate-y-40">
           <div className="animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-blue-500"></div>
         </div>
     </div>
   );
 
 
-  const itineriaries = dataResult?.data?.itineraries;
+  const itineriaries  = dataResult?.data?.itineraries;
+  const [filteredItineraries, setFilteredItineraries] = useState("");
 
 
-    const {setTripType, departureCity, handleInputChange, showModal, activeField, suggestions, handleSuggestionClick, destinationCity, departureDate, setDepartureDate, tripType, returnDate, setReturnDate, loading} = useContext(AuthContext);
+    const {setTripType, departureCity, handleInputChange, showModal, activeField, suggestions, handleSuggestionClick, destinationCity, departureDate, setDepartureDate, tripType, returnDate, setReturnDate, loading, setLoading} = useContext(AuthContext);
 
 
     //state for the filter options
     const [filters, setFilters] = useState({
       priceRange: [0, 10000000], // 0 to 10,000,000
       airlines: [],
-      stops: [],
+      stops: [1,2],
       duration: null,
       travelTime: [0, 1440], // 0 to 24 hours in minutes
       cabinClass: [],
@@ -50,12 +48,38 @@ const FlightSearchCard = () => {
 
 
     const itemHeight = 160;
-    const totalHeight = slidesData.length * (itemHeight * 1.3);
-    
+    // const totalHeight = slidesData.length * (itemHeight * 1.3);
+
+    //Apply fliters whenever they change
+
+    useEffect(() => {
+      setLoading(true);
+      const filteredData = dataResult?.data?.itineraries?.filter((item) => {
+        // enable loading state
+        return (
+          item.price >= filters.priceRange[0] &&
+          item.price <= filters.priceRange[1] &&
+          filters.airlines.includes(item.airline) &&
+          filters.stops.includes(item.stops) &&
+          item.duration <= filters.duration &&
+          item.travelTime >= filters.travelTime[0] &&
+          item.travelTime <= filters.travelTime[1] &&
+          filters.cabinClass.includes(item.cabinClass)
+        );
+      });
+      
+      setTimeout(() => {
+        setFilteredItineraries(filteredData);
+        setLoading(false);
+      }, 2000);
+    }, [filters.priceRange, filters.airlines, filters.stops, filters.duration, filters.travelTime, filters.cabinClass]
+    );
+
+   
 
     //we paginate
     const [currentPage, setCurrentPage] = useState(1);
-    const flightsPerPage = 3;
+    const flightsPerPage = 5;
     const totalItems = itineriaries?.length;
     const totalPages = Math.ceil(totalItems / flightsPerPage);
     const startIndex = (currentPage - 1) * flightsPerPage;

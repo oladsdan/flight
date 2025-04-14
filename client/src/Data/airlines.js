@@ -8,7 +8,8 @@ export const airlines = [
     "Air France",
     "Cathay Pacific",
     "United Airlines",
-    "Etihad Airways"
+    "Etihad Airways",
+    "Ethiopian Airlines",
 ];
 
 export const cabinClassOptions = [
