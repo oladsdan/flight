@@ -21,7 +21,7 @@ function Home() {
   const handleSubmit = (e) => {
     setLoading(true);
     e.preventDefault();
-    navigate("/flightsearchcard");
+    navigate("/flight-search");
 
     setTimeout(() => {
       setLoading(false);

@@ -1,3 +1,4 @@
+
 import FlightSearchDesign from "../components/FlightSearchDesign";
 import { useContext, useEffect, useState } from "react";
 import AuthContext from "../stateManagement/Auth";
@@ -70,6 +71,8 @@ const FlightSearchCard = () => {
       
       setTimeout(() => {
         setFilteredItineraries(filteredData);
+        console.log("this is the filtereddata");
+        console.log(filteredData);
         setLoading(false);
       }, 2000);
     }, [filters.priceRange, filters.airlines, filters.stops, filters.duration, filters.travelTime, filters.cabinClass]
@@ -233,7 +236,7 @@ const FlightSearchCard = () => {
               </div>
             )}
 
-
+            
         
         </div>
 

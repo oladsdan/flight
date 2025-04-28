@@ -14,6 +14,7 @@ import ForgetPassword from "./pages/ForgetPassword";
 import ResetLink from "./pages/ResetLink";
 import EmailVerificationPage from "./pages/EmailVerificationPage";
 import FlightSearchCard from "./pages/FlightSearchCard";
+import Booking from "./pages/Booking";
 
 // import Logout from "./components/Logout";
 // import Banner from "./components/Banner";
@@ -85,7 +86,9 @@ function App() {
           <Route path="/about" element={<About />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/email-verification" element={<EmailVerificationPage />} />
-          <Route path="/flightsearchcard" element={<FlightSearchCard />} />
+          <Route path="/flight-search" element={<FlightSearchCard />} />
+          <Route path="/flight-search/booking" element={<Booking />} />
+          {/* <Route path="/booking" element={<Booking />} /> */}
          
 
           {/* we catch all routes */}
