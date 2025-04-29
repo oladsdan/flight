@@ -3,9 +3,18 @@
 import { TicketsPlane, ArrowRight } from 'lucide-react';
 import { IoIosAirplane } from "react-icons/io";
 import { formatTravelTime } from './FlightFilterPanel';
+import { useNavigate } from 'react-router-dom';
 
 
 const FlightDetailsCardResult = ({item}) => {
+
+    //navigate to the booking page
+     const navigate = useNavigate();
+
+     const handlebooking = () => {
+        navigate("/flight-search/booking",);
+    };
+
 
         const date = new Date(item?.legs[0].departure);
         const formattedDate = date.toLocaleDateString("en-US", { month: "long", day: "numeric" });
@@ -184,7 +193,7 @@ const FlightDetailsCardResult = ({item}) => {
                             <p className="font-bold">{formattedFlexiblePrice}</p>
                             <p className="text-xs text-gray-500">Price per adult</p>
                         </div>
-                        <button className="w-32 h-11 rounded flex border-solid border text-white bg-green-800 mx-2 justify-center place-items-center"><div className="">Book</div></button>
+                        <button onClick={handlebooking} className="w-32 h-11 rounded flex border-solid border text-white bg-green-800 mx-2 justify-center place-items-center"><div className="">Book</div></button>
                         </div>
                     </div>
             </div>
