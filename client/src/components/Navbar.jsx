@@ -7,6 +7,8 @@ import  AuthContext  from "../stateManagement/Auth";
 
 function CustomNavbar() {
 
+  
+
 
   const {  isAuthenticated, logout } = useContext(AuthContext);
   const [dropdownVisible, setDropdownVisible] = useState(false);

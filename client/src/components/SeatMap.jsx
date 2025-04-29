@@ -85,7 +85,7 @@ const SeatMap = ({selectedSeats, onSeatSelect}) => {
 
   const columns = ["A", "B", "C", "D", "E", "F"];
   const rows = Array.from(new Set(seats.map((seat) => seat.row))).sort((a, b) => a - b); // Generates an array of numbers from 1 to 30
-  console.log("this is rows", rows)
+  
 
   return (
     <div className="flex flex-col items-center mb-8" >
@@ -131,6 +131,7 @@ const SeatMap = ({selectedSeats, onSeatSelect}) => {
                         if (!seat) return null;
                         
                         const status = getSeatStatus(seat);
+                       
                         
                         return (
                           <div key={`seat-${row}${col}`} className={(
@@ -143,11 +144,12 @@ const SeatMap = ({selectedSeats, onSeatSelect}) => {
                               disabled={status === "occupied"}
                               className={`
                                 "w-10 h-10 rounded-t-md p-3 flex items-center justify-center transition-colors",
-                                ${status === "available" && seat.type === "standard" && "bg-gray-200 hover:bg-travel/30 dark:bg-gray-700 dark:hover:bg-travel/50"},
+                                ${status === "available" && seat.type === "standard" && "bg-gray-200 hover:bg-gray-300/30 dark:bg-gray-700 dark:hover:bg-travel/50"},
                                 ${status === "available" && seat.type === "extra-legroom" &&  "bg-blue-200 hover:bg-blue-300 dark:bg-blue-900/50 dark:hover:bg-blue-800/60"},
                                 ${status === "available" && seat.type === "window" && "bg-purple-200 hover:bg-purple-300 dark:bg-purple-900/50 dark:hover:bg-purple-800/60"},
+                                ${status === "available" && seat.type === "aisle" && "bg-red-200 hover:bg-purple-300 dark:bg-red-600/50 dark:hover:bg-red-800/60"},
                                 ${status === "occupied" && "bg-gray-300 dark:bg-gray-600 cursor-not-allowed"},
-                                ${status === "selected" && "bg-travel hover:bg-travel-dark dark:bg-travel dark:hover:bg-travel-dark text-white"}
+                                ${status === "selected" && "bg-blue-900 hover:bg-gray-900 text-white"}
                               `}
                             >
                               {status === "occupied" ? (
