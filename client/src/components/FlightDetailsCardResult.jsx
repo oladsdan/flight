@@ -11,8 +11,11 @@ const FlightDetailsCardResult = ({item}) => {
     //navigate to the booking page
      const navigate = useNavigate();
 
+     
      const handlebooking = () => {
-        navigate("/flight-search/booking",);
+        navigate("/flight-search/booking", {state: {
+            flightPrice: item?.price?.formatted, realFlightnums:item?.price?.raw
+        }});
     };
 
 

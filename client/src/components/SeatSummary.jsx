@@ -2,10 +2,24 @@
 // import { Button } from "@/components/ui/button";
 import { X } from "lucide-react";
 
+export const formattedPriceNaira = (price) => {
+  const formattedtotalPrice = price.toLocaleString("en-NG", {
+    style: "currency",
+      currency: "NGN",
+      minimumFractionDigits: 0
+  });
 
-export const SeatSummary = ({ selectedSeats, flight, onContinue, onRemoveSeat }) => {
+  return formattedtotalPrice;
+}
+
+export const SeatSummary = ({ selectedSeats, flight, onContinue, onRemoveSeat, flightPrice, realFlightnums }) => {
   const totalSeatPrice = selectedSeats?.reduce((sum, seat) => sum + seat.price, 0);
-  const totalPrice = flight?.price + totalSeatPrice;
+  const totalPrice = realFlightnums + totalSeatPrice;
+
+  
+
+
+
   
   return (
     <div className="bg-white/50 dark:bg-gray-900/50 rounded-xl p-6 shadow-subtle sticky top-6">
@@ -17,13 +31,13 @@ export const SeatSummary = ({ selectedSeats, flight, onContinue, onRemoveSeat })
             <p className="font-medium">{flight?.airline}</p>
             <p className="text-sm text-foreground/70">{flight?.departureCity} to {flight?.arrivalCity}</p>
           </div>
-          <span className="font-semibold">${flight?.price}</span>
+          <span className="font-semibold">{flightPrice}</span>
         </div>
         
         <div>
           <div className="flex justify-between items-center mb-2">
             <span className="text-sm font-medium">Flight Base Price</span>
-            <span className="text-sm">${flight?.price}</span>
+            <span className="text-sm">{flightPrice}</span>
           </div>
           <div className="flex justify-between items-center mb-2">
             <span className="text-sm font-medium">Taxes & Fees</span>
@@ -55,7 +69,7 @@ export const SeatSummary = ({ selectedSeats, flight, onContinue, onRemoveSeat })
                 </div>
                 
                 <div className="flex items-center gap-2">
-                  <span className="text-sm font-medium">${seat.price}</span>
+                  <span className="text-sm font-medium">{formattedPriceNaira(seat.price)}</span>
                   <button 
                     onClick={() => onRemoveSeat(seat.id)}
                     className="p-1 rounded-full hover:bg-gray-200 dark:hover:bg-gray-800 transition-colors"
@@ -72,12 +86,12 @@ export const SeatSummary = ({ selectedSeats, flight, onContinue, onRemoveSeat })
       <div className="mb-8 pb-6 border-b border-border/40">
         <div className="flex justify-between items-center mb-2">
           <span className="text-sm font-medium">Seat Selection</span>
-          <span className="text-sm">${totalSeatPrice}</span>
+          <span className="text-sm">{formattedPriceNaira(totalSeatPrice)}</span>
         </div>
         
         <div className="flex justify-between items-center font-bold mt-4">
           <span>Total</span>
-          <span>${totalPrice}</span>
+          <span>{formattedPriceNaira(totalPrice)}</span>
         </div>
       </div>
       

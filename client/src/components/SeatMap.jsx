@@ -27,16 +27,16 @@ const SeatMap = ({selectedSeats, onSeatSelect}) => {
 
         if (col === "A" || col === "F") {
           type = "window";
-          price = 45;
+          price = 67500;
         } else if (col === "C" || col === "D") {
           type = "aisle";
-          price = 30;
+          price = 45000;
         } else if (row === 1) {
           type = "extra-legroom";
-          price = 25;
+          price = 37500;
         } else {
           type = "standard";
-          price = 15;
+          price = 22500;
           
         }
 

@@ -2,12 +2,19 @@ import { useState } from "react";
 import SeatMap from "../components/SeatMap"
 import { SeatLegend } from "../components/SeatLegend";
 import { SeatSummary } from "../components/SeatSummary";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useLocation } from "react-router-dom";
+
 
 
 const Booking = () => {
 
   const navigate = useNavigate();
+  const location = useLocation();
+
+  const {flightPrice, realFlightnums} = location.state || ""
+
+
+
 
   const [selectedSeats, setSelectedSeats] = useState([]);
   const [flight, setFlight] = useState({
@@ -106,7 +113,9 @@ const Booking = () => {
           <div>
             <SeatSummary 
               selectedSeats={selectedSeats} 
-              flight={flight} 
+              flight={flight}
+              flightPrice={flightPrice}
+              realFlightnums={realFlightnums}
               onContinue={handleContinue}
               onRemoveSeat={(seatId) => setSelectedSeats(selectedSeats.filter(s => s.id !== seatId))}
             />

@@ -1,5 +1,6 @@
 
 import { Armchair, X } from "lucide-react";
+import { formattedPriceNaira } from "./SeatSummary"
 
 export const SeatLegend = () => {
   return (
@@ -8,21 +9,21 @@ export const SeatLegend = () => {
         <div className="w-8 h-8 rounded-t-md bg-gray-200 dark:bg-gray-700 flex items-center justify-center">
           <Armchair className="h-4 w-4" />
         </div>
-        <span className="text-sm">Standard Seat ($15)</span>
+        <span className="text-sm">Standard Seat ({formattedPriceNaira(22500)})</span>
       </div>
       
       <div className="flex items-center gap-2">
         <div className="w-8 h-8 rounded-t-md bg-blue-200 dark:bg-blue-900/50 flex items-center justify-center">
           <Armchair className="h-4 w-4" />
         </div>
-        <span className="text-sm">Extra Legroom ($25)</span>
+        <span className="text-sm">Extra Legroom ({formattedPriceNaira(37500)})</span>
       </div>
       
       <div className="flex items-center gap-2">
         <div className="w-8 h-8 rounded-t-md bg-purple-200 dark:bg-purple-900/50 flex items-center justify-center">
           <Armchair className="h-4 w-4" />
         </div>
-        <span className="text-sm">Window($45)</span>
+        <span className="text-sm">Window ({formattedPriceNaira(67500)})</span>
       </div>
 
 
@@ -30,14 +31,14 @@ export const SeatLegend = () => {
         <div className="w-8 h-8 rounded-t-md bg-red-200 dark:bg-purple-900/50 flex items-center justify-center">
           <Armchair className="h-4 w-4" />
         </div>
-        <span className="text-sm">Aisle($45)</span>
+        <span className="text-sm">Aisle ({formattedPriceNaira(45000)})</span>
       </div>
       
       <div className="flex items-center gap-2">
         <div className="w-8 h-8 rounded-t-md bg-blue-900 dark:bg-travel flex items-center justify-center">
           <Armchair className="h-4 w-4 text-white" />
         </div>
-        <span className="text-sm">Selected Seat</span>
+        <span className="text-sm">Selected Seat ({formattedPriceNaira(22500)})</span>
       </div>
       
       <div className="flex items-center gap-2">
