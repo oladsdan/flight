@@ -6,6 +6,7 @@ import cors from "cors";
 import corsOptions from "./config/corsOptions.js";
 import cookieParser from "cookie-parser";
 import authRoutes from "./routes/authRoutes.js";
+import bookingRoutes from "./routes/bookingRoutes.js"
 import dotenv from "dotenv";
 
 dotenv.config();
@@ -23,6 +24,7 @@ app.use(cookieParser());
 app.use(express.json());
 
 app.use('/auth', authRoutes);
+app.use('/api-booking', bookingRoutes);
 
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => {

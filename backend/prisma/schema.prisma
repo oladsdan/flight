@@ -14,7 +14,7 @@ datasource db {
 }
 
 model user {
-  id                          Int      @id @default(autoincrement())
+  id                          String   @id @default(uuid())
   email                       String   @unique
   password                    String
   name                        String?
@@ -25,10 +25,26 @@ model user {
   isVerified                  Boolean  @default(false)
   role     Role?
 
+  bookings Bookings[]
+
 }
 
 
 enum Role {
   ADMIN
   USER
+}
+
+model Bookings {
+   id    String   @id @default(uuid())
+  userId String
+  user user @relation(fields: [userId], references: [id])
+  flightNumber String
+  departure String
+  arrival String
+  travelDate String
+  returnDate String?
+  price Int
+  cabinClass String
+  createdAt DateTime @default(now())
 }
