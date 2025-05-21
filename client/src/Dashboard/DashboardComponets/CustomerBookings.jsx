@@ -158,7 +158,7 @@ const CustomerBookings = () => {
                     <div className="text-center py-8">
                 <h3 className="text-lg font-medium mb-2">No bookings found</h3>
                 <p className="text-muted-foreground mb-4">Start your journey by booking a flight today!</p>
-                <button>
+                <button className="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 transition duration-200">
                   <Link to="/flight-search">Search Flights</Link>
                 </button>
                     </div>
