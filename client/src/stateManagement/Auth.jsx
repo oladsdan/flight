@@ -8,7 +8,7 @@ const API_URL = "http://localhost:5000";
 
 export const AuthProvider = ({ children }) => {
     const [user, setUser] = useState(null);
-    const [isAuthenticated, setIsAuthenticated] = useState(false);
+    const [isAuthenticated, setIsAuthenticated] = useState("");
     const [error, setError] = useState(null);
     const [isLoading, setIsLoading] = useState(false);
     const [message, setMessage] = useState(null);
@@ -99,6 +99,7 @@ export const AuthProvider = ({ children }) => {
             setIsAuthenticated(true);
             setIsLoading(false);
             setMessage(data.message);
+           
 
         } catch (error) {
             setError(error.message || "Error signing up");
@@ -126,9 +127,10 @@ export const AuthProvider = ({ children }) => {
             }
             const data = await response.json();
             setUser(data.user);
-            setIsAuthenticated(true);
+            setIsAuthenticated(data?.token);
             setIsLoading(false);
             setMessage(data.message);
+
         } catch (error) {
             setError(error.message || "Error logging in");
             setIsLoading(false);
@@ -229,15 +231,16 @@ export const AuthProvider = ({ children }) => {
         setIsLoading(true);
         setError(null);
         try {
-            await fetch(`${API_URL}/auth/logout`, {
-                method: 'POST',
-                headers: {
-                  'Content-Type': 'application/json',
-                },
-            });
+            // await fetch(`${API_URL}/auth/logout`, {
+            //     method: 'POST',
+            //     headers: {
+            //       'Content-Type': 'application/json',
+            //     },
+            // });
             setUser(null);
-            setIsAuthenticated(false);
+            setIsAuthenticated("");
             setIsLoading(false);
+            
         } catch (error) {
             setError(error.message || "Error logging out");
             setIsLoading(false);

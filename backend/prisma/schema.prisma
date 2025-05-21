@@ -14,21 +14,19 @@ datasource db {
 }
 
 model user {
-  id                          String   @id @default(uuid())
-  email                       String   @unique
-  password                    String
-  name                        String?
-  resetPasswordToken          String?
-  resetPasswordExpiresAt      DateTime?
-  verificationToken           String?
-  verificationTokenExpiresAt  DateTime?
-  isVerified                  Boolean  @default(false)
-  role     Role?
+  id                         String    @id @default(uuid())
+  email                      String    @unique
+  password                   String
+  name                       String?
+  resetPasswordToken         String?
+  resetPasswordExpiresAt     DateTime?
+  verificationToken          String?
+  verificationTokenExpiresAt DateTime?
+  isVerified                 Boolean   @default(false)
+  role                       Role?
 
   bookings Bookings[]
-
 }
-
 
 enum Role {
   ADMIN
@@ -36,15 +34,16 @@ enum Role {
 }
 
 model Bookings {
-   id    String   @id @default(uuid())
-  userId String
-  user user @relation(fields: [userId], references: [id])
+  id           String   @id @default(uuid())
+  userId       String
+  user         user     @relation(fields: [userId], references: [id])
   flightNumber String
-  departure String
-  arrival String
-  travelDate String
-  returnDate String?
-  price Int
-  cabinClass String
-  createdAt DateTime @default(now())
+  departure    String
+  arrival      String
+  travelDate   String
+  returnDate   String?
+  price        String
+  stopCount    String?
+  airline      String?
+  createdAt    DateTime @default(now())
 }

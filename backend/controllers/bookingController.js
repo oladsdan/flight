@@ -23,7 +23,7 @@ export const createBooking = async (req, res) => {
     }
     
 
-    const {flightNumber, departure, arrival, travelDate, returnDate, cabinClass, price} = req.body;
+    const {flightNumber, airline, departure, arrival, travelDate, returnDate, stopCount,  price,} = req.body;
 
     //we create the bookings
     const booking = await prisma.Bookings.create({
@@ -33,8 +33,9 @@ export const createBooking = async (req, res) => {
             arrival,
             travelDate,
             returnDate,
-            cabinClass,
             price,
+            airline,
+            stopCount,
             userId: id,
         },
     });

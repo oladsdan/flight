@@ -5,9 +5,9 @@ import { MdFlightTakeoff } from "react-icons/md";
 function Sidebar() {
   const sidelinks = [
     {
-      title: "Dashboard",
+      title: "Bookings",
       icon: <RiDashboard2Fill />,
-      link: "/dashboard",
+      link: "/bookings",
       user: "All",
     },
     {

@@ -3,24 +3,80 @@
 import { TicketsPlane, ArrowRight } from 'lucide-react';
 import { IoIosAirplane } from "react-icons/io";
 import { formatTravelTime } from './FlightFilterPanel';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useLocation } from 'react-router-dom';
+import { useContext } from 'react';
+import AuthContext from '../stateManagement/Auth';
+import { toast } from 'react-toastify';
+
 
 
 const FlightDetailsCardResult = ({item}) => {
 
     //navigate to the booking page
      const navigate = useNavigate();
+     const location = useLocation();
+    const {isAuthenticated} = useContext(AuthContext);
 
      
-     const handlebooking = () => {
-        navigate("/flight-search/booking", {state: {
-            flightPrice: item?.price?.formatted, realFlightnums:item?.price?.raw
-        }});
+     const handlebooking = async () => {
+
+        //now we first check if the user is authenticated
+        //if not we redirect them to the login page
+        if (!isAuthenticated) {
+            navigate("/login", { state: { from: location.pathname } });
+            return;
+        }
+
+    
+        await fetch("http://localhost:5000/api-booking/create-booking", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+                "Authorization": `Bearer ${isAuthenticated}`, // ← Set token in header
+            },
+            body: JSON.stringify({
+                price: item?.price?.formatted,
+                airline: item?.legs[0]?.carriers?.marketing[0]?.name,
+                flightNumber: item?.legs[0]?.segments[0]?.flightNumber,
+                departure: item?.legs[0]?.origin?.name,
+                arrival: item?.legs[0]?.destination?.name,
+                travelDate: formattedDate,
+                returnDate: formattedReturnDate,
+                stopCount: String(item?.legs[0]?.stopCount),
+
+            }),
+        })  //and we put a toast message to say susccessful
+            .then((response) => {
+                if (response.ok) {
+                    toast.success("Booking created successfully");
+                }
+                return response.json();
+
+
+            })
+            //we then navigate to the booking page
+            .then(() => {
+                navigate("/flight-search/booking", {state: {
+                    flightPrice: item?.price?.formatted, realFlightnums:item?.price?.raw
+                }});
+            })
+            .catch((error) => {
+                console.error("Error creating booking:", error);
+                toast.error("Error creating booking");
+            });
+
+
+
+        // navigate("/flight-search/booking", {state: {
+        //     flightPrice: item?.price?.formatted, realFlightnums:item?.price?.raw
+        // }});
     };
 
 
         const date = new Date(item?.legs[0].departure);
         const formattedDate = date.toLocaleDateString("en-US", { month: "long", day: "numeric" });
+
+        const formattedReturnDate = new Date(item?.legs[1]?.departure).toLocaleDateString("en-US", { month: "long", day: "numeric" });
 
         const formattedDepertureTime = date.toLocaleTimeString("en-US", {
           hour: "numeric",

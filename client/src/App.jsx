@@ -18,7 +18,7 @@ import Booking from "./pages/Booking";
 
 // import Logout from "./components/Logout";
 // import Banner from "./components/Banner";
-// import AuthContext from "./stateManagement/Auth";
+import AuthContext from "./stateManagement/Auth";
 
 
 
@@ -27,22 +27,21 @@ import Booking from "./pages/Booking";
 
 // protected routes that require authentication
 
-// const ProtectedRoute = ({ children }) => {
+const ProtectedRoute = ({ children }) => {
 
-//   const {isAuthenticated, user} = useContext(AuthContext);
+  const {isAuthenticated, user} = useContext(AuthContext);
+  if (!isAuthenticated) {
+    return <Navigate to="/login" replace />;
+  }
 
-//   if (!isAuthenticated) {
-//     return <Navigate to="/login" replace />;
-//   }
+  if (!user.isVerified){
+    return <Navigate to="/email-verification" replace />;
+  }
 
-//   if (!user.isVerified){
-//     return <Navigate to="/email-verification" replace />;
-//   }
-
-//   return children;
+  return children;
 
 
-// }
+}
 
 //redirect authenticated users and verified users to homepage
 
@@ -61,6 +60,10 @@ import Booking from "./pages/Booking";
 
 
 function App() {
+
+  
+
+
   
   return (
     <>
@@ -82,7 +85,11 @@ function App() {
             
             } />
           {/* <Route path="/logout" element={<Logout />} /> */}
-          <Route path="/dashboard" element={<Dashboard />} />
+          <Route path="/dashboard" element={ <ProtectedRoute>
+            <Dashboard />
+          </ProtectedRoute>
+            
+            } />
           <Route path="/about" element={<About />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/email-verification" element={<EmailVerificationPage />} />
