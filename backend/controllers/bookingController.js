@@ -91,3 +91,47 @@ export const getAllBookings = async (req, res) => {
     });
 
 }
+
+//delete a booking
+export const deleteBooking = async (req, res) => {
+    const {id} = req.user;
+    const {bookingId} = req.params;
+
+    //check if the user exists
+    const user = await prisma.user.findUnique({
+        where: {
+            id: id,
+        },
+    });
+   
+    if (!user) {
+        return res.status(404).json({
+            message: "User not found",
+        });
+    }
+
+    //check if the booking exists
+    const booking = await prisma.Bookings.findUnique({
+        where: {
+            id: bookingId,
+        },
+    });
+
+    if (!booking) {
+        return res.status(404).json({
+            message: "Booking not found",
+        });
+    }
+
+    //delete the booking
+    await prisma.Bookings.delete({
+        where: {
+            id: bookingId,
+        },
+    });
+
+    res.status(200).json({
+        "suuccess": true,
+        "message": "Booking deleted successfully",
+    });
+}

@@ -1,4 +1,4 @@
-import { Card } from "flowbite-react";
+import { Card, Toast } from "flowbite-react";
 import { Armchair } from "lucide-react";
 import { Table, TableBody, TableCell, TableHead, TableHeadCell, TableRow } from "flowbite-react";
 import { useContext, useEffect, useState } from "react";
@@ -14,6 +14,8 @@ const CustomerBookings = () => {
     // get the booking history from the backend
     const [bookings, setBookings] = useState([]);
     const [loading, setLoading] = useState(true);
+    const [showToast, setShowToast] = useState(false);
+    const [toastMsg, setToastMsg] = useState("");
 
     useEffect(() => {
         const fetchBookings = async () => {
@@ -43,6 +45,40 @@ const CustomerBookings = () => {
 
     console.log("this is the bookings", bookings)
 
+
+    //handle delete booking
+    const handleDeleteBooking = async (bookingId) => {
+        try {
+            const response = await fetch(`http://localhost:5000/api-booking/delete-booking/${bookingId}`, {
+                method: 'DELETE',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Authorization': `Bearer ${isAuthenticated}`,
+                  },
+                }
+            );
+            console.log(response)
+            if (!response.ok) {
+                setToastMsg("Failed to delete booking. Please try again.");
+                setShowToast(true);
+            } else{
+
+                setToastMsg("Booking deleted successfully.");
+                setShowToast(true);
+                setBookings(prevBookings => prevBookings.filter(booking => booking?.id !== bookingId));
+            }
+             // Hide toast after 3 seconds
+            setTimeout(() => setShowToast(false), 3000);
+            
+            
+            // Update the bookings state by removing the deleted booking
+        } catch (error) {
+            console.error('Error deleting booking:', error);
+             setToastMsg("Error deleting booking.");
+                setShowToast(true);
+                setTimeout(() => setShowToast(false), 3000);
+        }
+    };
 
 
     if (loading) {
@@ -145,9 +181,9 @@ const CustomerBookings = () => {
                             <TableCell>{booking?.stopCount}</TableCell>
                             <TableCell>{booking?.price}</TableCell>
                             <TableCell>
-                                <a href="#" className="font-medium text-cyan-600 hover:underline dark:text-cyan-500">
+                                <span onClick={() => handleDeleteBooking(booking?.id)} className="font-medium text-cyan-600 hover:underline dark:text-cyan-500 cursor-pointer">
                                     Delete
-                                </a>
+                                </span>
                             </TableCell>
                         </TableRow>
                         ))}
@@ -169,6 +205,13 @@ const CustomerBookings = () => {
         
         
         </div>
+        {showToast && (
+        <div className="fixed top-5 right-5 z-50">
+          <Toast>
+            <div className="text-sm font-medium">{toastMsg}</div>
+          </Toast>
+        </div>
+      )}
 
 
         
