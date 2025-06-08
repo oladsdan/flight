@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const Footer = () => {
   return (
@@ -33,6 +34,8 @@ const Footer = () => {
             <a href="https://www.instagram.com" className="hover:text-blue-400">
               Instagram
             </a>
+
+            <Link to="/admin"><p className="hover:text-blue-400">Admin</p></Link>
           </div>
         </div>
       </div>

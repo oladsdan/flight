@@ -19,6 +19,7 @@ import Booking from "./pages/Booking";
 // import Logout from "./components/Logout";
 // import Banner from "./components/Banner";
 import AuthContext from "./stateManagement/Auth";
+import AdminDashboard from "./Admin/AdminDashboard";
 
 
 
@@ -94,10 +95,18 @@ function App() {
           <Route path="/contact" element={<Contact />} />
           <Route path="/email-verification" element={<EmailVerificationPage />} />
           <Route path="/flight-search" element={<FlightSearchCard />} />
-          <Route path="/flight-search/booking" element={<Booking />} />
+          <Route path="/flight-search/booking" element={
+            <ProtectedRoute>
+              <Booking />
+            </ProtectedRoute>
+            
+            } />
           {/* <Route path="/booking" element={<Booking />} /> */}
          
-
+            {/* routes for admin */}
+          <Route path="/admin" element={
+            <AdminDashboard />
+            } />
           {/* we catch all routes */}
           <Route path='*' element={<Navigate to='/' replace />} />
         </Routes>
