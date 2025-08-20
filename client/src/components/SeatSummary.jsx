@@ -1,6 +1,10 @@
 
 // import { Button } from "@/components/ui/button";
 import { X } from "lucide-react";
+import { useContext } from "react";
+import AuthContext, { API_URL } from "../stateManagement/Auth";
+import { toast } from "react-toastify";
+import useFlutterwaveCheckout from "../hooks/useFlutterwaveCheckout";
 
 export const formattedPriceNaira = (price) => {
   const formattedtotalPrice = price.toLocaleString("en-NG", {
@@ -12,15 +16,98 @@ export const formattedPriceNaira = (price) => {
   return formattedtotalPrice;
 }
 
-export const SeatSummary = ({ selectedSeats, flight, onContinue, onRemoveSeat, flightPrice, realFlightnums }) => {
+export const SeatSummary = ({ selectedSeats, flight, onRemoveSeat, flightPrice, realFlightnums }) => {
   const totalSeatPrice = selectedSeats?.reduce((sum, seat) => sum + seat.price, 0);
   const totalPrice = realFlightnums + totalSeatPrice;
-
   
+   const openCheckout = useFlutterwaveCheckout();
 
 
+   //we get the name of the user loggedin
+  const {user, isAuthenticated} = useContext(AuthContext);
 
+  //as flutterwave testing doesnt allow charge above 5000000
+  const chargedPrice = 450000
+
+  const handlePayment = async (bookingId, amount ) => {
+      const customer = {
+        email : user?.email,
+        name : user?.name
+      }
   
+      if (selectedSeats?.length === 0) {
+        toast.error("Please select at least one seat to continue.");
+        return;
+      }
+        try {
+          const response = await fetch(`${API_URL}/api-payments/init`, {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+              'Authorization': `Bearer ${isAuthenticated}`
+            },
+            body: JSON.stringify({ bookingId, amount, customer }),
+          });
+
+          const data = await response.json();
+
+          console.log("this is data", data);
+  
+          openCheckout({
+            public_key: data.publicKey,
+            tx_ref: data.txRef,
+            amount: data.amount,
+            currency: data.currency,
+            payment_options: "card,banktransfer,ussd",
+            customer: {
+              email : data.customer.email,
+              name: data.customer.name
+            },
+            customizations: {
+              title: "Travel Booking",
+              description: `Booking #${data.bookingId}`,
+              logo: "https://yourcdn.com/logo.png"
+            },
+            callback: function (response) {
+
+                  fetch(`${API_URL}/api-payments/verify?id=${response.transaction_id}`, { 
+                    method: "GET",
+                    headers: {
+                      "Content-Type": "application/json",
+                    },
+                    // body: JSON.stringify({ transactionId: response.transaction_id }),
+                    
+                  }).then(res => {
+                    if (res.data.verified) {
+                      alert("Payment successful! Booking confirmed.");
+                    } else {
+                      alert("Could not verify payment.");
+                    }
+                  });
+
+                  // axios.get(`/api/payments/verify?id=${response.transaction_id}`)
+                  //   .then(res => {
+                  //     if (res.data.verified) {
+                  //       alert("Payment successful! Booking confirmed.");
+                  //     } else {
+                  //       alert("Could not verify payment.");
+                  //     }
+                  // });
+                },
+            onclose: function() {
+            console.log("Checkout closed");
+            }
+            // redirect_url: data.redirectUrl
+          });
+      } catch (err) {
+        console.error("Error starting payment:", err);
+      }
+      
+      // In a real app, we would pass this to a booking confirmation page
+      // toast.success(`${selectedSeats.length} seat(s) selected!`);
+      // navigate("/", { state: { selectedSeats, flight } });
+    };
+
   return (
     <div className="bg-white/50 dark:bg-gray-900/50 rounded-xl p-6 shadow-subtle sticky top-6">
       <h3 className="text-xl font-semibold mb-4">Booking Summary</h3>
@@ -96,7 +183,7 @@ export const SeatSummary = ({ selectedSeats, flight, onContinue, onRemoveSeat, f
       </div>
       
       <button
-        onClick={onContinue}
+        onClick={() => handlePayment(flight?.id, chargedPrice)}
         className="w-full p-2 bg-blue-600 rounded-lg  hover:bg-blue-700 text-white"
         size="lg"
       >

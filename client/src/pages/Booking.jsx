@@ -3,10 +3,23 @@ import SeatMap from "../components/SeatMap"
 import { SeatLegend } from "../components/SeatLegend";
 import { SeatSummary } from "../components/SeatSummary";
 import { useNavigate, useLocation } from "react-router-dom";
+import useFlutterwaveCheckout from "../hooks/useFlutterwaveCheckout";
+import AuthContext, { API_URL } from "../stateManagement/Auth";
+import { useContext } from "react";
+
+
+
 
 
 
 const Booking = () => {
+
+  //we get the name of the user loggedin
+  const {user} = useContext(AuthContext);
+
+  console.log(user)
+
+  const openCheckout = useFlutterwaveCheckout();
 
   const navigate = useNavigate();
   const location = useLocation();
@@ -39,16 +52,44 @@ const Booking = () => {
     }
   };
 
-  const handleContinue = () => {
-    if (selectedSeats.length === 0) {
-      // toast.error("Please select at least one seat to continue.");
-      return;
-    }
+  // const handlePayment = async (bookingId, amount ) => {
+  //   const customer = user?.name;
+
+  //   if (selectedSeats.length === 0) {
+  //     // toast.error("Please select at least one seat to continue.");
+  //     return;
+  //   }
+  //     try {
+  //       const { data } = await fetch(`${API_URL}/api-payments/init`, {
+  //         method: "POST",
+  //         headers: {
+  //           "Content-Type": "application/json",
+  //         },
+  //         body: JSON.stringify({ bookingId, amount, customer }),
+  //       });
+
+  //       openCheckout({
+  //         public_key: data.publicKey,
+  //         tx_ref: data.txRef,
+  //         amount: data.amount,
+  //         currency: data.currency,
+  //         payment_options: "card,banktransfer,ussd",
+  //         customer: data.customer,
+  //         customizations: {
+  //           title: "Travel Booking",
+  //           description: `Booking #${data.bookingId}`,
+  //           logo: "https://yourcdn.com/logo.png"
+  //         },
+  //         redirect_url: data.redirectUrl
+  //       });
+  //   } catch (err) {
+  //     console.error("Error starting payment:", err);
+  //   }
     
-    // In a real app, we would pass this to a booking confirmation page
-    // toast.success(`${selectedSeats.length} seat(s) selected!`);
-    navigate("/", { state: { selectedSeats, flight } });
-  };
+  //   // In a real app, we would pass this to a booking confirmation page
+  //   // toast.success(`${selectedSeats.length} seat(s) selected!`);
+  //   // navigate("/", { state: { selectedSeats, flight } });
+  // };
   
 
   return (
@@ -116,7 +157,7 @@ const Booking = () => {
               flight={flight}
               flightPrice={flightPrice}
               realFlightnums={realFlightnums}
-              onContinue={handleContinue}
+              // onContinue={handlePayment(bookingid, price)}
               onRemoveSeat={(seatId) => setSelectedSeats(selectedSeats.filter(s => s.id !== seatId))}
             />
           </div>

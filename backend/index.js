@@ -7,6 +7,7 @@ import corsOptions from "./config/corsOptions.js";
 import cookieParser from "cookie-parser";
 import authRoutes from "./routes/authRoutes.js";
 import bookingRoutes from "./routes/bookingRoutes.js"
+import flutterWaveRoutes from "./routes/flutterWaveRoutes.js"
 import dotenv from "dotenv";
 
 dotenv.config();
@@ -25,6 +26,7 @@ app.use(express.json());
 
 app.use('/auth', authRoutes);
 app.use('/api-booking', bookingRoutes);
+app.use('/api-payments', flutterWaveRoutes);
 
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => {

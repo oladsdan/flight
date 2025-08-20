@@ -22,6 +22,7 @@
     "crypto": "^1.0.1",
     "dotenv": "^16.4.7",
     "express": "^4.21.2",
+    "flutterwave-node-v3": "^1.3.0",
     "jsonwebtoken": "^9.0.2",
     "nodemailer": "^6.9.16"
   }
