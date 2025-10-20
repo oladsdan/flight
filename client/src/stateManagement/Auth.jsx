@@ -1,4 +1,4 @@
-import { createContext, useState } from "react";
+import { createContext, useEffect, useState } from "react";
 
 
 
@@ -28,6 +28,35 @@ export const AuthProvider = ({ children }) => {
   const [activeField, setActiveField] = useState("");
   const [loading, setLoading] = useState(false);
 
+  useEffect(() => {
+    const fetchUser = async () => {
+      try {
+        const response = await fetch(`${API_URL}/auth/me`, {
+          method: "GET",
+          credentials: "include", // VERY IMPORTANT — sends httpOnly cookie
+        });
+
+        if (!response.ok) {
+          setUser(null);
+          setIsAuthenticated(null);
+          setIsLoading(false);
+          return;
+        }
+
+        const data = await response.json();
+        setUser(data.user);
+        setIsAuthenticated(data?.token);
+      } catch (err) {
+        console.error("Error fetching user:", err);
+        setUser(null);
+        setIsAuthenticated(false);
+      } finally {
+        setIsLoading(false);
+      }
+    };
+
+    fetchUser();
+  }, []);
 
   //functions used for search components
   const getSuggestions = (value) => {

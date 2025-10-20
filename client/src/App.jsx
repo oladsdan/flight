@@ -96,7 +96,7 @@ function App() {
           <Route path="/contact" element={<Contact />} />
           <Route path="/email-verification" element={<EmailVerificationPage />} />
           <Route path="/flight-search" element={<FlightSearchCard />} />
-          <Route pat="/payment-complete" element={<PaymentComplete />} />
+          <Route path="/payment-complete" element={<PaymentComplete />} />
           <Route path="/flight-search/booking" element={
             <ProtectedRoute>
               <Booking />
