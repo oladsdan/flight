@@ -96,8 +96,8 @@ export const SeatSummary = ({ selectedSeats, flight, onRemoveSeat, flightPrice, 
                 },
             onclose: function() {
             console.log("Checkout closed");
-            }
-            // redirect_url: data.redirectUrl
+            },
+            redirect_url: data.redirectUrl
           });
       } catch (err) {
         console.error("Error starting payment:", err);
