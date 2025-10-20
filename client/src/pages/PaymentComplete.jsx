@@ -1,6 +1,8 @@
 // import React, { useEffect, useState } from "react";
 // import axios from "axios";
 
+import { Link } from "react-router-dom";
+
 export default function PaymentComplete() {
   // const [message, setMessage] = useState("Verifying payment...");
 
@@ -34,7 +36,7 @@ export default function PaymentComplete() {
     <div style={{ display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", height: "100vh" }}>
       <h1>Payment Verified</h1>
       <p>Your payment has been successfully verified. Thank you for your booking!</p>
-      <a href="/" style={{ textDecoration: "none", color: "white", backgroundColor: "#007bff", padding: "10px 20px", borderRadius: "5px" }}>Go to Home Page</a>
+      <Link to="/" style={{ textDecoration: "none", color: "white", backgroundColor: "#007bff", padding: "10px 20px", borderRadius: "5px" }}>Go to Home Page</Link>
     </div>
   );  
   
