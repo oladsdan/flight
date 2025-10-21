@@ -40,10 +40,14 @@ export const AuthProvider = ({ children }) => {
         const response = await fetch(`${API_URL}/auth/me`, {
           method: "GET",
           headers: {
-            "Content-Type": "application/json",
             "Authorization": `Bearer ${storedToken}`,
           },
         });
+
+          console.log('Response status:', response.status);
+          console.log('Response headers:', response.headers);
+
+        // console.log("this is response", response)
 
         if (!response.ok) {
           setUser(null);
@@ -55,7 +59,7 @@ export const AuthProvider = ({ children }) => {
         const data = await response.json();
         console.log("this is the data from useEffect fetchUser:", data);
         setUser(data.user);
-        setIsAuthenticated(data?.token);
+        setIsAuthenticated(storedToken);
       } catch (err) {
         console.error("Error fetching user:", err);
         setUser(null);

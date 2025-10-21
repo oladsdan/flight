@@ -13,7 +13,7 @@ const corsOptions = {
             callback(new Error('Not allowed by Cors'))
         }
     },
-    credentials: true,
+    allowedHeaders: ['Content-Type', 'Authorization']
 }
 
 export default corsOptions

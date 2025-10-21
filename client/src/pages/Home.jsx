@@ -12,7 +12,7 @@ import data from "../Data/airportdata.json";
 
 function Home() {
 
-  const { tripType, user, setTripType, departureCity, setDepartureCity, destinationCity, setDestinationCity, airports, setAirports, suggestions, setSuggestions, departureDate, setDepartureDate, returnDate, setReturnDate, showModal, setShowModal, activeField, setActiveField, handleInputChange, handleSuggestionClick, setLoading } = useContext(AuthContext);
+  const { tripType, setTripType, departureCity, setDepartureCity, destinationCity, setDestinationCity, airports, setAirports, suggestions, setSuggestions, departureDate, setDepartureDate, returnDate, setReturnDate, showModal, setShowModal, activeField, setActiveField, handleInputChange, handleSuggestionClick, setLoading } = useContext(AuthContext);
 
   setAirports(data.data);
 
