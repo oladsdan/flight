@@ -150,7 +150,7 @@ export const AuthProvider = ({ children }) => {
     }
 
     const login = async (email, password) => {
-      console.log("Login called with:", email, password);
+      // console.log("Login called with:", email, password);
         setIsLoading(true);
         setError(null);
         try {
