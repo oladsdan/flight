@@ -61,7 +61,7 @@ export const login = async(req, res) => {
     }
 
     const token = generateToken(user.id, user.role);
-    res.cookie("auth-token", token, { httpOnly: true, secure: process.env.NODE_ENV === "production", sameSite: "strict", maxAge: 24 * 60 * 60 * 1000 });
+    res.cookie("auth-token", token, { httpOnly: true, secure: process.env.NODE_ENV === "production", sameSite: "none", maxAge: 24 * 60 * 60 * 1000 });
     // return res.header("auth-token", token).status(200).json({success: true, message:"You are now logged in", token: token});
 
     res.status(200).json({ success: true, message: "You are now logged in", token: token, user: {...user, password: undefined} });

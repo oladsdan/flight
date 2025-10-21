@@ -27,13 +27,22 @@ export const AuthProvider = ({ children }) => {
   const [showModal, setShowModal] = useState(false);
   const [activeField, setActiveField] = useState("");
   const [loading, setLoading] = useState(false);
+  
 
   useEffect(() => {
     const fetchUser = async () => {
+      const storedToken = localStorage.getItem("auth-token");
+      if(!storedToken){
+        setIsLoading(false);
+        return;
+      }
       try {
         const response = await fetch(`${API_URL}/auth/me`, {
           method: "GET",
-          credentials: "include", // VERY IMPORTANT — sends httpOnly cookie
+          headers: {
+            "Content-Type": "application/json",
+            "Authorization": `Bearer ${storedToken}`,
+          },
         });
 
         if (!response.ok) {
@@ -44,6 +53,7 @@ export const AuthProvider = ({ children }) => {
         }
 
         const data = await response.json();
+        console.log("this is the data from useEffect fetchUser:", data);
         setUser(data.user);
         setIsAuthenticated(data?.token);
       } catch (err) {
@@ -140,6 +150,7 @@ export const AuthProvider = ({ children }) => {
     }
 
     const login = async (email, password) => {
+      console.log("Login called with:", email, password);
         setIsLoading(true);
         setError(null);
         try {
@@ -155,6 +166,10 @@ export const AuthProvider = ({ children }) => {
                 throw new Error(errorData.error);
             }
             const data = await response.json();
+
+            //store token in localStorage
+            localStorage.setItem("auth-token", data.token);
+
             setUser(data.user);
             setIsAuthenticated(data?.token);
             setIsLoading(false);
@@ -269,6 +284,7 @@ export const AuthProvider = ({ children }) => {
             setUser(null);
             setIsAuthenticated("");
             setIsLoading(false);
+            localStorage.removeItem("auth-token");
             
         } catch (error) {
             setError(error.message || "Error logging out");
